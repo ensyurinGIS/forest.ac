@@ -7,8 +7,8 @@ mapboxgl.accessToken = "pk.eyJ1IjoiZW5zeXVyaW5naXMiLCJhIjoiY2t6cHBhdHp2MDFlMTJ3b
 
 //マップの表示範囲制限
 const bounds = [
-    [124.12999909678109, 25.35253652689525],
-    [149.0132986021867, 48.24960402824195],
+    [135.120849, 33.935330],
+    [139.031982, 37.694841],
 ];
 
 //回転用変数
