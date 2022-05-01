@@ -894,18 +894,6 @@ map.on("load", () => {
         url: "mapbox://ensyuringis.cl2ema9zq4hg82do9vu7boodc-1p3wl",
     });
 
-    //消火器・避難器具等1F
-    map.addSource("SYOUKA1F-TEXT", {
-        type: "geojson",
-        data: "https://raw.githubusercontent.com/ensyurinGIS/map/main/geojson/SYOUKA1F-TEXT.geojson",
-    });
-
-    //消火器・避難器具等2F
-    map.addSource("SYOUKA2F-TEXT", {
-        type: "geojson",
-        data: "https://raw.githubusercontent.com/ensyurinGIS/map/main/geojson/SYOUKA2F-TEXT.geojson",
-    });
-
     //翔楓祭2021企画
     map.addSource("syohusai2021", {
         type: "geojson",
@@ -2653,83 +2641,6 @@ map.on("load", () => {
     });
 
     map.addLayer({
-        id: "消火器・避難器具等1F",
-        source: "SYOUKA1F-TEXT",
-        type: "symbol",
-        layout: {
-            visibility: "none",
-            "text-field": ["to-string", ["get", "name"]],
-            "text-size": 12,
-            "text-variable-anchor": ["top", "bottom", "left", "right"],
-            "text-radial-offset": 0.5,
-            "text-justify": "auto",
-            "icon-image": [
-            "case",
-            ["match", ["get", "name"], ["消火器"], true, false],
-            "消火器のアイコン4",
-            ["match", ["get", "name"], ["パッケージ型消火器"], true, false],
-            "消火器のアイコン4",
-            "dot-11",
-            ],
-            "icon-size": [
-            "case",
-            ["match", ["get", "name"], ["消火器"], true, false],
-            0.05,
-            ["match", ["get", "name"], ["パッケージ型消火器"], true, false],
-            0.05,
-            1,
-            ],
-        },
-        paint: {
-            "text-halo-color": "#ffffff",
-            "text-halo-width": 1,
-            "text-opacity": 1,
-            "text-color": "#000000",
-        },
-    });
-
-
-    map.addLayer({
-        id: "消火器・避難器具等2F",
-        source: "SYOUKA2F-TEXT",
-        type: "symbol",
-        layout: {
-            visibility: "none",
-            "text-field": ["to-string", ["get", "name"]],
-            "text-size": 12,
-            "text-variable-anchor": ["top", "bottom", "left", "right"],
-            "text-radial-offset": 0.5,
-            "text-justify": "auto",
-            "icon-image": [
-            "case",
-            ["match", ["get", "name"], ["消火器"], true, false],
-            "消火器のアイコン4",
-            ["match", ["get", "name"], ["パッケージ型消火器"], true, false],
-            "消火器のアイコン4",
-            ["match", ["get", "name"], ["避難梯子"], true, false],
-            "非常口のあの人のアイコン",
-            "dot-11",
-            ],
-            "icon-size": [
-            "case",
-            ["match", ["get", "name"], ["消火器"], true, false],
-            0.05,
-            ["match", ["get", "name"], ["パッケージ型消火器"], true, false],
-            0.05,
-            ["match", ["get", "name"], ["避難梯子"], true, false],
-            0.05,
-            1,
-            ],
-        },
-        paint: {
-            "text-halo-color": "#ffffff",
-            "text-halo-width": 1,
-            "text-opacity": 1,
-            "text-color": "#000000",
-        },
-    });
-
-    map.addLayer({
         id: "翔楓祭2021企画",
         source: "syohusai2021",
         type: "symbol",
@@ -2842,8 +2753,6 @@ for (const id of toggleableLayerIds) {
 const toggleableLayerIds2 = [
     "未来の森づくり予定地",
     "平面図-自力建設",
-    "消火器・避難器具等1F",
-    "消火器・避難器具等2F",
     "施設案内塔",
     "駐車場",
     "サインポール",
