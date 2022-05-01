@@ -914,7 +914,7 @@
                 {
                 type: "Feature",
                 properties: {
-                    title: "木立のみち<div hidden>建物、たてもの、自力建設、じりきけんせつ、こだてのみち"
+                    title: "木立のこみち<div hidden>建物、たてもの、自力建設、じりきけんせつ、こだてのこみち"
                 },
                 geometry: {
                     type: "Point",
