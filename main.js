@@ -2,6 +2,16 @@
 $("#splash").delay(3000).fadeOut(1000);
 $("#splash_logo").delay(5000).fadeOut(1000);
 
+//起動後にアップ
+window.setTimeout(function(){
+    map.fitBounds(
+        [
+        [136.919170, 35.546920], // southwestern corner of the bounds
+        [136.926816, 35.555121] // northeastern corner of the bounds
+        ]
+        );
+}, 4500);
+
 //★★★アクセストークン★★★
 mapboxgl.accessToken = "pk.eyJ1IjoiZW5zeXVyaW5naXMiLCJhIjoiY2t6cHBhdHp2MDFlMTJ3bmRsNzY4dTlkbiJ9.BtuWDU9uyDaR5Var2Y6-4A";
 
@@ -2833,3 +2843,5 @@ if (visibility === "visible") {
 const layers = document.getElementById("menu_vector");
 layers.appendChild(link);
 }
+
+
