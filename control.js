@@ -129,7 +129,7 @@ class Control_360 {
 
         map.flyTo({ 
             center: [136.92300400916308, 35.5509525769706],
-            zoom: 15,
+            zoom: 16,
             bearing: 90,
             pitch: 40,
             duration: 3000,
