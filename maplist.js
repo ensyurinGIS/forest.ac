@@ -1,7 +1,7 @@
 //ベースマップメニュー定義
 var mapselectID = {
         saisinsyasin_Base: "全国最新写真(シームレス)",
-        kihonzu_Base: "森林基本図",
+        kihonzu_Base: "基本図(美濃市)",
         csrittai_Base: "CS立体図(岐阜県森林研究所)",
         keiyakubun_Base: "傾斜区分図(岐阜県森林研究所)",
         hyouzyun_Base: "国土地理院標準地図",
@@ -38,7 +38,7 @@ var mapselectID = {
 var rasterselectID = {
         nasi_Raster: "(重ねて表示しない)",
         saisinsyasin_Raster: "＋全国最新写真(シームレス)",
-        kihonzu_Raster: "＋森林基本図",
+        kihonzu_Raster: "＋基本図(美濃市)",
         csrittai_Raster: "＋CS立体図(岐阜県森林研究所)",
         keiyakubun_Raster: "＋傾斜区分図(岐阜県森林研究所)",
         hyouzyun_Raster: "＋国土地理院標準地図",
