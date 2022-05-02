@@ -1498,7 +1498,7 @@ map.on("load", () => {
         type: "fill",
         source: "ENSYURIN_rinhanzu",
         "source-layer": "ENSYURIN_rinhanzu",
-        filter: ["all", ["match", ["get", "樹種"], ["スラッシュマ"], true, false]],
+        filter: ["all", ["match", ["get", "樹種"], ["スラッシュマツ"], true, false]],
         layout: {
         visibility: "visible",
         },
