@@ -152,12 +152,20 @@ label {
     display: none;
 }
 
+.dropdown__radio:not(:checked) ~ .dropdown__label-close-left {
+    display: none;
+}
+
+.dropdown__radio:not(:checked) ~ .dropdown__label-close-right {
+    display: none;
+}
+
 /* button部分 */
 .dropdown__label-open {
     display: block;
     line-height: 2.5rem;
     color: white;
-    text-align: center;    display: flex;
+    text-align: center;
     justify-content: center;
     align-items: center;
 }
@@ -168,8 +176,28 @@ label {
     line-height: 2.5rem;
     color: white;
     text-align: center;
-    background-color: rgba(211, 28, 28, 0.75);
+    background-color: rgba(11, 126, 11, 0.75);
     font-family: 'Noto Sans JP', sans-serif;
+}
+
+.dropdown__label-close-left {
+    display: block;
+    line-height: 2.5rem;
+    color: white;
+    text-align: center;
+    background-color: rgba(11, 126, 11, 0.75);
+    font-family: 'Noto Sans JP', sans-serif;
+    border-radius: 0.25rem 0rem 0rem 0.25rem;
+}
+
+.dropdown__label-close-right {
+    display: block;
+    line-height: 2.5rem;
+    color: white;
+    text-align: center;
+    background-color: rgba(11, 126, 11, 0.75);
+    font-family: 'Noto Sans JP', sans-serif;
+    border-radius: 0rem 0.25rem 0.25rem 0rem;
 }
 
 /* 隠しメニュー スマホ*/
@@ -184,8 +212,8 @@ label {
     opacity: 0;
     pointer-events: none;
     border-radius: 0.25rem;
-    transition: all 0.25s ease-in-out;
-    transform: translate3d(0, 1.5rem, 0) scaleY(0.5);
+    transition: all 0.3s ease-in-out;
+    transform: translate3d(0, -1.5rem, 0) scaleY(0);
     transform-origin: 0 100%;
 }
 
@@ -196,7 +224,7 @@ label {
         right: calc(50% - 16rem);
         top: 4rem;
         bottom: 55%;
-        transform: translate3d(0, -1.5rem, 0) scaleY(0.75);
+        transform: translate3d(0, -1.5rem, 0) scaleY(0);
         transform-origin: 0 0;
     }
 }
@@ -238,7 +266,6 @@ label {
     padding: 0 1rem;
     line-height: 2rem;
     color: white;
-    background-color: rgba(0, 0, 0, 0.75);
     font-family: 'Noto Sans JP', sans-serif;
     }
 
@@ -263,7 +290,6 @@ label {
 
 /* ベースマップメニュー*/
 #menu_base {
-    background-color: #404040;
     position: absolute;
     /*         z-index: 1; */
     top: 5px;
@@ -272,11 +298,11 @@ label {
     width: 95%;
     /* border: 1px solid rgba(0, 0, 0, 0.4); */
     font-family: 'Noto Sans JP', sans-serif;
+    color: #ffffff;
 }
 
 /* ベースマップメニュー選択中*/
 #menu_base a {
-    background-color: rgba(0, 0, 0, 0.75);
     font-size: 14px;
     text-transform: none;
     line-height: 30px;
@@ -286,11 +312,11 @@ label {
     padding: 5px;
     text-decoration: none;
     border-bottom: 1px solid #a0a0a0;
+    color: #ffffff;
 }
 
 /* ベースマップメニュー最後 */
 #menu_base a:last-child {
-    background-color: rgba(0, 0, 0, 0.75);
     border: none;
 }
 
@@ -302,7 +328,6 @@ label {
 
 /* 重ねマップ */
 #menu_raster {
-    background-color: #404040;
     position: absolute;
     /*         z-index: 1; */
     top: 5px;
@@ -310,15 +335,15 @@ label {
     border-radius: 3px;
     width: 95%;
     border: 1px solid rgba(0, 0, 0, 0.4);
+    color: #ffffff;
     font-family: 'Noto Sans JP', sans-serif;
 }
 
 #menu_raster a {
-    background-color: rgba(0, 0, 0, 0.75);
+    color: #ffffff;
     font-size: 14px;
     text-transform: none;
     line-height: 30px;
-    color: #a0a0a0;
     display: block;
     margin: 0;
     padding: 5px;
@@ -328,19 +353,19 @@ label {
 
 /* 重ねマップ最後 */
 #menu_raster a:last-child {
-background-color: rgba(0, 0, 0, 0.75);
-border: none;
+    color: #ffffff;
+    border: none;
 }
 
 /* 重ねマップ選択中 */
 #menu_raster a.active {
-background-color: rgba(11, 126, 11, 0.75);
-color: #ffffff;
+    background-color: rgba(11, 126, 11, 0.75);
+    color: #ffffff;
 }
 
 /* ベクターメニュー */
 #menu_vector {
-    background-color: #404040;
+    color: #ffffff;
     position: absolute;
     /*         z-index: 1; */
     top: 5px;
@@ -352,11 +377,10 @@ color: #ffffff;
 }
 
 #menu_vector a {
-    background-color: rgba(0, 0, 0, 0.75);
     font-size: 14px;
     text-transform: none;
     line-height: 30px;
-    color: #a0a0a0;
+    color: #ffffff;
     display: block;
     margin: 0;
     padding: 5px;
@@ -366,7 +390,7 @@ color: #ffffff;
 
 /* ベクターメニュー最後 */
 #menu_vector a:last-child {
-    background-color: rgba(0, 0, 0, 0.75);
+    color: #ffffff;
     border: none;
 }
 
@@ -391,7 +415,6 @@ input[type="radio"] {
     margin: auto;
     display: flex;
     flex-flow: wrap;
-    background: rgba(0, 0, 0, 0.75);
     color: white;
     padding: 7px;
 }
@@ -403,7 +426,6 @@ input[type="radio"] {
     padding: 0px 0;
     cursor: pointer;
     order: -1; /* タブメニューは一番上に表示する */
-    background: rgba(0, 0, 0, 0.75);
     font-family: 'Noto Sans JP', sans-serif;
     font-size: 14px;
 
@@ -449,7 +471,6 @@ input[type="radio"] {
 }
 
 /* セレクトボタンスタイル */
-
 #property_base {
     display: none;
 }
@@ -462,6 +483,9 @@ input[type="radio"] {
     font-size: 18px;
     width: 100%;
     padding: 7px;
+    border-radius: 0.25rem;
+    color: #ffffff;
+    background: rgba(11, 126, 11, 0.75);
     font-family: 'Noto Sans JP', sans-serif;
 }
 
@@ -469,6 +493,9 @@ input[type="radio"] {
     font-size: 18px;
     width: 100%;
     padding: 7px;
+    border-radius: 0.25rem;
+    color: #ffffff;
+    background: rgba(11, 126, 11, 0.75);
     font-family: 'Noto Sans JP', sans-serif;
 }
 
@@ -476,6 +503,9 @@ input[type="radio"] {
     font-size: 18px;
     width: 100%;
     padding: 7px;
+    border-radius: 0.25rem;
+    color: #ffffff;
+    background: rgba(11, 126, 11, 0.75);
     font-family: 'Noto Sans JP', sans-serif;
 }
 
@@ -486,11 +516,11 @@ input[type="range"] {
     appearance: none;
     cursor: pointer;
     outline: none;
-    background: #ffffff;
+    background: #46454500;
     height: 12px;
     width: 100%;
     border-radius: 10px;
-    border: solid 3px #209c3554;
+    border: solid 3px #a0a0a0;
 }
 input[type="range"]::-webkit-slider-thumb {
     -webkit-appearance: none;
@@ -517,6 +547,13 @@ input[type="range"]::-moz-focus-outer {
 input[type="range"]:active::-webkit-slider-thumb {
     box-shadow: 0px 5px 10px -2px rgba(0, 0, 0, 0.3);
     pointer-events: all;
+}
+
+/* スライダー操作制限解除　pc*/
+@media (min-width: 640px) {
+    input[type="range"] {
+        pointer-events: auto;
+    }
 }
 
 /* 検索 */
@@ -568,7 +605,7 @@ input[type="range"]:active::-webkit-slider-thumb {
 }
 .mapboxgl-popup-close-button:hover {
     color: #ffffff;
-    background-color: rgba(211, 28, 28, 0.75);
+    background-color: rgba(11, 126, 11, 0.75);
     border-top-right-radius: 5px;
 }
 body .mapboxgl-map {
@@ -666,11 +703,13 @@ body .mapboxgl-map {
     pointer-events: none;
     top: 30%;
     left: 50%;
-    width: 60%;
+    width: 70%;
+    max-width: 32rem;
     font-size: 20px;
     font-family: 'Noto Sans JP', sans-serif;
     text-align: center;
     background-color: rgb(16,16,16);
+    border-radius: 0.25rem;
 }
 
 #append_splash_msg_inner.alert {
@@ -683,7 +722,6 @@ body .mapboxgl-map {
     pointer-events: none;
     top: 50%;
     left: 50%;
-    width: 50%;
     font-size: 20px;
     font-family: 'Noto Sans JP', sans-serif;
     text-align: center;
