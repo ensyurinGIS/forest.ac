@@ -10,7 +10,7 @@ window.setTimeout(function(){
         [136.926816, 35.555121] // northeastern corner of the bounds
         ]
         );
-}, 4500);
+}, 5000);
 
 //★★★アクセストークン★★★
 mapboxgl.accessToken = "pk.eyJ1IjoiZW5zeXVyaW5naXMiLCJhIjoiY2t6cHBhdHp2MDFlMTJ3bmRsNzY4dTlkbiJ9.BtuWDU9uyDaR5Var2Y6-4A";
