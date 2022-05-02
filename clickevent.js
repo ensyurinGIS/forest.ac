@@ -2,7 +2,12 @@
 
 //アイコン
 map.on("click", "mapicon", (e) => {
-    map.flyTo({ center: [136.92300400916308, 35.5509525769706], zoom: 14.5 });
+    map.fitBounds(
+        [
+        [136.919170, 35.546920], // southwestern corner of the bounds
+        [136.926816, 35.555121] // northeastern corner of the bounds
+        ]
+        );
     e.stopPropagation();
 });
 

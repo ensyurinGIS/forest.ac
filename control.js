@@ -120,13 +120,16 @@ class Control_360 {
             homeButton.innerHTML = setoff;
             map.removeLayer("background");
             map.removeLayer("360度写真");
+            
             map.flyTo({ center: [136.92300400916308, 35.5509525769706],
                 zoom: 14.5,
                 bearing: 0,
                 pitch: 0,
+                duration: 1000,
             });
         } else {
 
+            
         map.flyTo({ 
             center: [136.92143098183698, 35.55232856623586],
             zoom: 15.8,
@@ -185,20 +188,17 @@ class Control_360 {
     }
 }
 
-//スケール
-map.addControl(
-    new mapboxgl.ScaleControl({
-    maxWidth: 200,
-    unit: "metric",
-    }),
-    "bottom-right"
-);
+// //スケール
+// map.addControl(
+//     new mapboxgl.ScaleControl({
+//     maxWidth: 200,
+//     unit: "metric",
+//     }),
+//     "bottom-right"
+// );
 
 //地図情報
-map.addControl(new mapboxgl.AttributionControl(), "top-right");
-
-//フルスクリーン
-map.addControl(new mapboxgl.FullscreenControl());
+map.addControl(new mapboxgl.AttributionControl(), "bottom-right");
 
 //コンパス
 map.addControl(new mapboxgl.NavigationControl());

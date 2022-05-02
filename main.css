@@ -9,13 +9,6 @@ body {
     background: rgb(0,0,0);
     background: linear-gradient(334deg, rgba(0,0,0,1) 0%, rgba(9,73,0,1) 100%);
 }
-#map {
-    z-index: 1;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    width: 100%;
-}
 
 /* 起動画面*/
 #splash {
@@ -68,6 +61,22 @@ body {
     }
 }
 
+#map {
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+
+
+
+/* タイトルロゴの大きさ */
+#forestlogotitle {
+    width: 100%;
+}
+
 /* メニュー */
 label {
     cursor: pointer;
@@ -79,6 +88,28 @@ label {
 .u-hidden {
     visibility: hidden !important;
     position: absolute !important;
+}
+
+.maptitle {
+    z-index: 3;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 200px;
+    pointer-events:none;
+}
+
+@media (min-width: 640px) {
+    .maptitle {
+    z-index: 3;
+    position: absolute;
+    top: auto;
+    left: auto;
+    bottom: 15px;
+    right: 10px;
+    width: 300px;
+    pointer-events:none;
+    }
 }
 
 /* メニュースマホ */
