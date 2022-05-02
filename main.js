@@ -2843,5 +2843,3 @@ if (visibility === "visible") {
 const layers = document.getElementById("menu_vector");
 layers.appendChild(link);
 }
-
-
