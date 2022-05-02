@@ -84,7 +84,7 @@ map.on("load", () => {
         "<a href='http://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html' target='_blank'>国土地理院</a>",
     });
 
-    //森林基本図(マップボックスアカウントのマップデータから)
+    //基本図(マップボックスアカウントのマップデータから)
     map.addSource("kihonzu_Base", {
     type: "raster",
     tiles: [
@@ -400,7 +400,7 @@ map.on("load", () => {
         "<a href='http://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html' target='_blank'>国土地理院</a>",
     });
 
-    //森林基本図(マップボックスアカウントのマップデータから)R
+    //基本図(マップボックスアカウントのマップデータから)R
     map.addSource("kihonzu_Raster", {
     type: "raster",
     tiles: [
