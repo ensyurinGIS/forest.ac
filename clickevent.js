@@ -100,7 +100,7 @@ map.on("mouseleave", "美濃市指定緊急避難場所", () => {
     map.getCanvas().style.cursor = "";
 });
 
-map.on("click", "フェノロジー調査2020-植物", (e) => {
+map.on("click", "森林環境教育専攻-フェノロジー調査2020-植物", (e) => {
     new mapboxgl.Popup()
     .setLngLat(e.features[0].geometry.coordinates)
     .setHTML(
@@ -124,14 +124,14 @@ map.on("click", "フェノロジー調査2020-植物", (e) => {
     });
     e.stopPropagation();
 });
-map.on("mouseenter", "フェノロジー調査2020-植物", () => {
+map.on("mouseenter", "森林環境教育専攻-フェノロジー調査2020-植物", () => {
     map.getCanvas().style.cursor = "pointer";
 });
-map.on("mouseleave", "フェノロジー調査2020-植物", () => {
+map.on("mouseleave", "森林環境教育専攻-フェノロジー調査2020-植物", () => {
     map.getCanvas().style.cursor = "";
 });
 
-map.on("click", "フェノロジー調査2020-昆虫", (e) => {
+map.on("click", "森林環境教育専攻-フェノロジー調査2020-昆虫", (e) => {
     new mapboxgl.Popup()
     .setLngLat(e.features[0].geometry.coordinates)
     .setHTML(
@@ -155,14 +155,14 @@ map.on("click", "フェノロジー調査2020-昆虫", (e) => {
     });
     e.stopPropagation();
 });
-map.on("mouseenter", "フェノロジー調査2020-昆虫", () => {
+map.on("mouseenter", "森林環境教育専攻-フェノロジー調査2020-昆虫", () => {
     map.getCanvas().style.cursor = "pointer";
 });
-map.on("mouseleave", "フェノロジー調査2020-昆虫", () => {
+map.on("mouseleave", "森林環境教育専攻-フェノロジー調査2020-昆虫", () => {
     map.getCanvas().style.cursor = "";
 });
 
-map.on("click", "フェノロジー調査2020-哺乳類", (e) => {
+map.on("click", "森林環境教育専攻-フェノロジー調査2020-哺乳類", (e) => {
     new mapboxgl.Popup()
     .setLngLat(e.features[0].geometry.coordinates)
     .setHTML(
@@ -186,14 +186,14 @@ map.on("click", "フェノロジー調査2020-哺乳類", (e) => {
     });
     e.stopPropagation();
 });
-map.on("mouseenter", "フェノロジー調査2020-哺乳類", () => {
+map.on("mouseenter", "森林環境教育専攻-フェノロジー調査2020-哺乳類", () => {
     map.getCanvas().style.cursor = "pointer";
 });
-map.on("mouseleave", "フェノロジー調査2020-哺乳類", () => {
+map.on("mouseleave", "森林環境教育専攻-フェノロジー調査2020-哺乳類", () => {
     map.getCanvas().style.cursor = "";
 });
 
-map.on("click", "フェノロジー調査2020-鳥類", (e) => {
+map.on("click", "森林環境教育専攻-フェノロジー調査2020-鳥類", (e) => {
     new mapboxgl.Popup()
     .setLngLat(e.features[0].geometry.coordinates)
     .setHTML(
@@ -217,14 +217,14 @@ map.on("click", "フェノロジー調査2020-鳥類", (e) => {
     });
     e.stopPropagation();
 });
-map.on("mouseenter", "フェノロジー調査2020-鳥類", () => {
+map.on("mouseenter", "森林環境教育専攻-フェノロジー調査2020-鳥類", () => {
     map.getCanvas().style.cursor = "pointer";
 });
-map.on("mouseleave", "フェノロジー調査2020-鳥類", () => {
+map.on("mouseleave", "森林環境教育専攻-フェノロジー調査2020-鳥類", () => {
     map.getCanvas().style.cursor = "";
 });
 
-map.on("click", "フェノロジー調査2020-菌類", (e) => {
+map.on("click", "森林環境教育専攻-フェノロジー調査2020-菌類", (e) => {
     new mapboxgl.Popup()
     .setLngLat(e.features[0].geometry.coordinates)
     .setHTML(
@@ -248,14 +248,14 @@ map.on("click", "フェノロジー調査2020-菌類", (e) => {
     });
     e.stopPropagation();
 });
-map.on("mouseenter", "フェノロジー調査2020-菌類", () => {
+map.on("mouseenter", "森林環境教育専攻-フェノロジー調査2020-菌類", () => {
     map.getCanvas().style.cursor = "pointer";
 });
-map.on("mouseleave", "フェノロジー調査2020-菌類", () => {
+map.on("mouseleave", "森林環境教育専攻-フェノロジー調査2020-菌類", () => {
     map.getCanvas().style.cursor = "";
 });
 
-map.on("click", "フェノロジー調査2020-爬虫類", (e) => {
+map.on("click", "森林環境教育専攻-フェノロジー調査2020-爬虫類", (e) => {
     new mapboxgl.Popup()
     .setLngLat(e.features[0].geometry.coordinates)
     .setHTML(
@@ -279,14 +279,14 @@ map.on("click", "フェノロジー調査2020-爬虫類", (e) => {
     });
     e.stopPropagation();
 });
-map.on("mouseenter", "フェノロジー調査2020-爬虫類", () => {
+map.on("mouseenter", "森林環境教育専攻-フェノロジー調査2020-爬虫類", () => {
     map.getCanvas().style.cursor = "pointer";
 });
-map.on("mouseleave", "フェノロジー調査2020-爬虫類", () => {
+map.on("mouseleave", "森林環境教育専攻-フェノロジー調査2020-爬虫類", () => {
     map.getCanvas().style.cursor = "";
 });
 
-map.on("click", "フェノロジー調査2020-魚類", (e) => {
+map.on("click", "森林環境教育専攻-フェノロジー調査2020-魚類", (e) => {
     new mapboxgl.Popup()
     .setLngLat(e.features[0].geometry.coordinates)
     .setHTML(
@@ -311,14 +311,14 @@ map.on("click", "フェノロジー調査2020-魚類", (e) => {
     e.stopPropagation();
 });
 
-map.on("mouseenter", "フェノロジー調査2020-魚類", () => {
+map.on("mouseenter", "森林環境教育専攻-フェノロジー調査2020-魚類", () => {
     map.getCanvas().style.cursor = "pointer";
 });
-map.on("mouseleave", "フェノロジー調査2020-魚類", () => {
+map.on("mouseleave", "森林環境教育専攻-フェノロジー調査2020-魚類", () => {
     map.getCanvas().style.cursor = "";
 });
 
-map.on("click", "フェノロジー調査2020-両生類", (e) => {
+map.on("click", "森林環境教育専攻-フェノロジー調査2020-両生類", (e) => {
     new mapboxgl.Popup()
     .setLngLat(e.features[0].geometry.coordinates)
     .setHTML(
@@ -343,14 +343,14 @@ map.on("click", "フェノロジー調査2020-両生類", (e) => {
     e.stopPropagation();
 });
 
-map.on("mouseenter", "フェノロジー調査2020-両生類", () => {
+map.on("mouseenter", "森林環境教育専攻-フェノロジー調査2020-両生類", () => {
     map.getCanvas().style.cursor = "pointer";
 });
-map.on("mouseleave", "フェノロジー調査2020-両生類", () => {
+map.on("mouseleave", "森林環境教育専攻-フェノロジー調査2020-両生類", () => {
     map.getCanvas().style.cursor = "";
 });
 
-map.on("click", "フェノロジー調査2020-多足類", (e) => {
+map.on("click", "森林環境教育専攻-フェノロジー調査2020-多足類", (e) => {
     new mapboxgl.Popup()
     .setLngLat(e.features[0].geometry.coordinates)
     .setHTML(
@@ -375,14 +375,14 @@ map.on("click", "フェノロジー調査2020-多足類", (e) => {
     e.stopPropagation();
 });
 
-map.on("mouseenter", "フェノロジー調査2020-多足類", () => {
+map.on("mouseenter", "森林環境教育専攻-フェノロジー調査2020-多足類", () => {
     map.getCanvas().style.cursor = "pointer";
 });
-map.on("mouseleave", "フェノロジー調査2020-多足類", () => {
+map.on("mouseleave", "森林環境教育専攻-フェノロジー調査2020-多足類", () => {
     map.getCanvas().style.cursor = "";
 });
 
-map.on("click", "フェノロジー調査2020-地衣類", (e) => {
+map.on("click", "森林環境教育専攻-フェノロジー調査2020-地衣類", (e) => {
     new mapboxgl.Popup()
     .setLngLat(e.features[0].geometry.coordinates)
     .setHTML(
@@ -407,14 +407,14 @@ map.on("click", "フェノロジー調査2020-地衣類", (e) => {
     e.stopPropagation();
 });
 
-map.on("mouseenter", "フェノロジー調査2020-地衣類", () => {
+map.on("mouseenter", "森林環境教育専攻-フェノロジー調査2020-地衣類", () => {
     map.getCanvas().style.cursor = "pointer";
 });
-map.on("mouseleave", "フェノロジー調査2020-地衣類", () => {
+map.on("mouseleave", "森林環境教育専攻-フェノロジー調査2020-地衣類", () => {
     map.getCanvas().style.cursor = "";
 });
 
-map.on("click", "フェノロジー調査2020-コケ", (e) => {
+map.on("click", "森林環境教育専攻-フェノロジー調査2020-コケ", (e) => {
     new mapboxgl.Popup()
     .setLngLat(e.features[0].geometry.coordinates)
     .setHTML(
@@ -439,14 +439,14 @@ map.on("click", "フェノロジー調査2020-コケ", (e) => {
     e.stopPropagation();
 });
 
-map.on("mouseenter", "フェノロジー調査2020-コケ", () => {
+map.on("mouseenter", "森林環境教育専攻-フェノロジー調査2020-コケ", () => {
     map.getCanvas().style.cursor = "pointer";
 });
-map.on("mouseleave", "フェノロジー調査2020-コケ", () => {
+map.on("mouseleave", "森林環境教育専攻-フェノロジー調査2020-コケ", () => {
     map.getCanvas().style.cursor = "";
 });
 
-map.on("click", "フェノロジー調査2020-シダ植物", (e) => {
+map.on("click", "森林環境教育専攻-フェノロジー調査2020-シダ植物", (e) => {
     new mapboxgl.Popup()
     .setLngLat(e.features[0].geometry.coordinates)
     .setHTML(
@@ -471,14 +471,14 @@ map.on("click", "フェノロジー調査2020-シダ植物", (e) => {
     e.stopPropagation();
 });
 
-map.on("mouseenter", "フェノロジー調査2020-シダ植物", () => {
+map.on("mouseenter", "森林環境教育専攻-フェノロジー調査2020-シダ植物", () => {
     map.getCanvas().style.cursor = "pointer";
 });
-map.on("mouseleave", "フェノロジー調査2020-シダ植物", () => {
+map.on("mouseleave", "森林環境教育専攻-フェノロジー調査2020-シダ植物", () => {
     map.getCanvas().style.cursor = "";
 });
 
-map.on("click", "フェノロジー調査2020-虫こぶ", (e) => {
+map.on("click", "森林環境教育専攻-フェノロジー調査2020-虫こぶ", (e) => {
     new mapboxgl.Popup()
     .setLngLat(e.features[0].geometry.coordinates)
     .setHTML(
@@ -503,10 +503,10 @@ map.on("click", "フェノロジー調査2020-虫こぶ", (e) => {
     e.stopPropagation();
 });
 
-map.on("mouseenter", "フェノロジー調査2020-虫こぶ", () => {
+map.on("mouseenter", "森林環境教育専攻-フェノロジー調査2020-虫こぶ", () => {
     map.getCanvas().style.cursor = "pointer";
 });
-map.on("mouseleave", "フェノロジー調査2020-虫こぶ", () => {
+map.on("mouseleave", "森林環境教育専攻-フェノロジー調査2020-虫こぶ", () => {
     map.getCanvas().style.cursor = "";
 });
 
@@ -544,11 +544,11 @@ map.on("mouseleave", "翔楓祭2021企画", () => {
     map.getCanvas().style.cursor = "";
 });
 
-map.on("click", "OWL-立木データ", (e) => {
+map.on("click", "林業専攻-OWL利用研修立木計測データ", (e) => {
     new mapboxgl.Popup()
     .setLngLat(e.features[0].geometry.coordinates)
     .setHTML(
-    "<h3>OWL-立木データ</h3><hr>樹種：" +
+    "<h3>OWL-立木計測データ</h3><hr>樹種：" +
     e.features[0].properties.樹種 +
     "<br>DBH：" +
     e.features[0].properties.胸高直径cm +
@@ -571,10 +571,10 @@ map.on("click", "OWL-立木データ", (e) => {
     });
     e.stopPropagation();
 });
-map.on("mouseenter", "OWL-立木データ", () => {
+map.on("mouseenter", "林業専攻-OWL利用研修立木計測データ", () => {
     map.getCanvas().style.cursor = "pointer";
 });
-map.on("mouseleave", "OWL-立木データ", () => {
+map.on("mouseleave", "林業専攻-OWL利用研修立木計測データ", () => {
     map.getCanvas().style.cursor = "";
 });
 
@@ -695,7 +695,7 @@ map.on("mouseleave", "アカデミー施設・その他建物", () => {
     map.getCanvas().style.cursor = "";
 });
 
-map.on("click", "試験地", (e) => {
+map.on("click", "岐阜県森林研究所-試験地", (e) => {
     const coordinates = e.lngLat;
     new mapboxgl.Popup()
     .setLngLat(e.lngLat)
@@ -715,11 +715,11 @@ map.on("click", "試験地", (e) => {
     e.stopPropagation();
 });
 //カーソルをポインタに変更する//マウスは演習林-林班の上にあります。
-map.on("mouseenter", "試験地", () => {
+map.on("mouseenter", "岐阜県森林研究所-試験地", () => {
     map.getCanvas().style.cursor = "pointer";
 });
 //カーソルをポインタに戻します 状態レイヤーを離れるとき。
-map.on("mouseleave", "試験地", () => {
+map.on("mouseleave", "岐阜県森林研究所-試験地", () => {
     map.getCanvas().style.cursor = "";
 });
 
