@@ -142,25 +142,26 @@ label {
     border-right: 2px solid rgba(250, 245, 245, 0.15);
 }
 
+/* メニューボタン */
 .dropdown {
     max-width: 32rem;
 }
+
+/* メニューボタンのラジオボタンを見えなくする */
 .dropdown__radio:checked ~ .dropdown__label-open {
     display: none;
 }
 .dropdown__radio:not(:checked) ~ .dropdown__label-close {
     display: none;
 }
-
 .dropdown__radio:not(:checked) ~ .dropdown__label-close-left {
     display: none;
 }
-
 .dropdown__radio:not(:checked) ~ .dropdown__label-close-right {
     display: none;
 }
 
-/* button部分 */
+/* ボタン */
 .dropdown__label-open {
     display: block;
     line-height: 2.5rem;
