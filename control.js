@@ -226,3 +226,11 @@ map.addControl(
         showUserHeading: true,
     })
 );
+
+//スケール
+const Scale = new mapboxgl.ScaleControl({
+    maxWidth: 200,
+    unit: "metric",
+});
+
+document.getElementById('Scale').appendChild(Scale.onAdd(map));
