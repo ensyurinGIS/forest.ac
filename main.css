@@ -28,7 +28,7 @@ body {
     transform: translate(-50%, -50%);
 }
 
-/*アイコンの大きさ設定*/
+/*起動時のタイトルの大きさ設定*/
 #title {
     position: absolute;
     text-align: center;
@@ -38,7 +38,7 @@ body {
     color: #ffffff;
 }
 
-/* アカデミーロゴの大きさ */
+/* 起動時のアカデミーロゴの大きさ */
 #forestlogo {
     width: 70%;
 }
@@ -87,48 +87,24 @@ label {
     position: absolute !important;
 }
 
-.maptitle {
-    z-index: 3;
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    width: 200px;
-    pointer-events:none;
-}
-
-@media (min-width: 640px) {
-    .maptitle {
-    z-index: 3;
-    position: absolute;
-    top: auto;
-    left: auto;
-    bottom: 15px;
-    right: 10px;
-    width: 300px;
-    pointer-events:none;
-    }
-}
-
-/* メニュースマホ */
+/* メニュー */
 .controls {
     z-index: 2;
     position: absolute;
     display: flex;
     left: 10px;
-    bottom: 2rem;
     right: 10px;
-    max-width: 32rem;
+    bottom: 2.4rem;
+    right: 10px;
     height: 2.5rem;
-    background-color: rgb(0, 0, 0);
-    border-radius: 0.25rem;
 }
-/* メニューPC */
 @media (min-width: 640px) {
     .controls {
-        margin-left: auto;
+        display: block;
+        max-width: 4rem;
         margin-right: auto;
         bottom: auto;
-        top: 1rem;
+        top: 7.5px;
     }
 }
 
@@ -137,12 +113,10 @@ label {
     flex-grow: 1;
     min-height: 100%;
     line-height: 2.5rem;
-}
-.controls__item:not(:last-child) {
-    border-right: 2px solid rgba(250, 245, 245, 0.15);
+    margin: 0.17rem;
 }
 
-/* メニューボタン */
+/* メニューバー全体 */
 .dropdown {
     max-width: 32rem;
 }
@@ -154,83 +128,81 @@ label {
 .dropdown__radio:not(:checked) ~ .dropdown__label-close {
     display: none;
 }
-.dropdown__radio:not(:checked) ~ .dropdown__label-close-left {
-    display: none;
+
+/* ボタンのアイコン画像 */
+.icon {
+    height: 2.5rem;
+    padding: 0.2rem;
 }
-.dropdown__radio:not(:checked) ~ .dropdown__label-close-right {
-    display: none;
+
+
+/* ボタンアイコン画像PC */
+@media (min-width: 640px) {
+    .icon {
+        position: relative;
+        margin : 0 auto;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        padding: 0.7rem;
+        height: 3.5rem;
+    }
 }
 
 /* ボタン */
 .dropdown__label-open {
     display: block;
-    line-height: 2.5rem;
+    line-height: 1rem;
     color: white;
     text-align: center;
-    justify-content: center;
-    align-items: center;
+    background-color: rgb(0, 0, 0);
+    border-radius: 0.25rem;
 }
 
-/* 閉じるボタン */
+/* ボタンアクティブ */
 .dropdown__label-close {
     display: block;
-    line-height: 2.5rem;
+    line-height: 1rem;
     color: white;
     text-align: center;
-    background-color: rgba(11, 126, 11, 0.75);
+    background-color: rgb(24,110,24);
     font-family: 'Noto Sans JP', sans-serif;
-}
-
-.dropdown__label-close-left {
-    display: block;
-    line-height: 2.5rem;
-    color: white;
-    text-align: center;
-    background-color: rgba(11, 126, 11, 0.75);
-    font-family: 'Noto Sans JP', sans-serif;
-    border-radius: 0.25rem 0rem 0rem 0.25rem;
-}
-
-.dropdown__label-close-right {
-    display: block;
-    line-height: 2.5rem;
-    color: white;
-    text-align: center;
-    background-color: rgba(11, 126, 11, 0.75);
-    font-family: 'Noto Sans JP', sans-serif;
-    border-radius: 0rem 0.25rem 0.25rem 0rem;
+    border-radius: 0.25rem;
 }
 
 /* 隠しメニュー スマホ*/
 .dropdown__contents {
+    z-index: 2;
     position: fixed;
     left: 10px;
     right: 10px;
     bottom: 5rem;
-    top: 45%;
+    top: 15rem;
     height: auto;
     overflow: hidden;
     opacity: 0;
     pointer-events: none;
     border-radius: 0.25rem;
     transition: all 0.3s ease-in-out;
-    transform: translate3d(0, -1.5rem, 0) scaleY(0);
+    transform: translate3d(0, 0, 0) scaleY(0);
     transform-origin: 0 100%;
 }
 
 /* 隠しメニュー pc*/
 @media (min-width: 640px) {
     .dropdown__contents {
-        left: calc(50% - 16rem);
-        right: calc(50% - 16rem);
-        top: 4rem;
-        bottom: 55%;
-        transform: translate3d(0, -1.5rem, 0) scaleY(0);
+        z-index: 3;
+        left: 5rem;
+        width: 25rem;
+        top: 10px;
+        bottom: 6rem;
+        transform: translate3d(0, 0, 0) scaleX(0);
         transform-origin: 0 0;
     }
 }
 
 .dropdown__contents-inner {
+    z-index: 2;
     position: absolute;
     bottom: 0;
     left: 0;
@@ -245,6 +217,7 @@ label {
 /* コンテナpc*/
 @media (min-width: 640px) {
     .dropdown__contents-inner {
+        z-index: 2;
         bottom: auto;
         margin-left: auto;
         margin-right: auto;
@@ -677,13 +650,6 @@ body .mapboxgl-map {
     max-width: 100%;
     padding-top: 56%;
 }
-/* ボタンのアイコン */
-.icon {
-    left: 0;
-    right: 0;
-    bottom: 0;
-    margin: auto;
-}
 
 .title {
     z-index: 1;
@@ -702,7 +668,7 @@ body .mapboxgl-map {
 #append_splash_msg_inner.default {
     position: absolute;
     pointer-events: none;
-    top: 30%;
+    top: 5rem;
     left: 50%;
     width: 70%;
     max-width: 32rem;
@@ -733,4 +699,25 @@ body .mapboxgl-map {
 #map-overlay img {
     width: 100%;
     border: 2px rgba(48, 48, 48, 0.979) solid;
+}
+
+/* マップ上のアカデミーロゴ */
+.maptitle {
+    z-index: 1;
+    position: absolute;
+    top: -10px;
+    left: 10px;
+    width: 200px;
+    pointer-events: none;
+}
+@media (min-width: 640px) {
+    .maptitle {
+    z-index: 3;
+    position: absolute;
+    top: auto;
+    left: auto;
+    bottom: 14px;
+    right: 10px;
+    width: 400px;
+    }
 }

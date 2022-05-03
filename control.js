@@ -4,9 +4,9 @@
 class Control_DEM {
     onAdd(map) {
     const seton =
-        '<b>3D</b>';
-    const setoff =
         '<b>2D</b>';
+    const setoff =
+        '<b>3D</b>';
 
     this.map = map;
     const homeButton = document.createElement("button");
@@ -103,9 +103,9 @@ class Control_spinL {
 class Control_360 {
     onAdd(map) {
     const seton =
-        '<img src="https://img.icons8.com/ios-glyphs/25/05CB63/360-view.png"/>';
+        '<b>解除</b>';
     const setoff =
-        '<img src="https://img.icons8.com/ios-glyphs/25/000000/360-view.png"/>';
+        '<b>360°</b>';
 
     this.map = map;
     const homeButton = document.createElement("button");

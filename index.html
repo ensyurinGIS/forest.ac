@@ -285,177 +285,9 @@
             </div>
         </div>  
     </div>
-    <div class="controls">
-        <div class="controls__item">
-            <input type="radio" name="dropdown-radios" id="dropdown-radio-clear" class="u-hidden" />
-            <div class="dropdown">
-                <input type="radio" name="dropdown-radios" id="dropdown-radio-search" class="dropdown__radio u-hidden" />
-                <label class="dropdown__label-open" for="dropdown-radio-search" tabindex="0" onclick="massage_base()">
-                    <img class="icon" src="https://img.icons8.com/ios-glyphs/35/ffffff/world-map.png"/></label>
-                <label class="dropdown__label-close-left" for="dropdown-radio-clear">閉じる</label>
-                <div class="dropdown__contents">
-                    <div class="dropdown__contents-inner">
-                        <nav id="menu_base"></nav>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="controls__item">
-            <div class="dropdown">
-                <input type="radio" name="dropdown-radios" id="dropdown-radio-crop2" class="dropdown__radio u-hidden" />
-                <label class="dropdown__label-open" for="dropdown-radio-crop2" tabindex="0" onclick="massage_raster()">
-                    <img class="icon" src="https://img.icons8.com/material-outlined/35/ffffff/timezone-plus-2.png"/>
-                </label>
-                <label class="dropdown__label-close" for="dropdown-radio-clear">閉じる</label>
-                <div class="dropdown__contents">
-                    <div class="dropdown__contents-inner">
-                        <nav id="menu_raster"></nav>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="controls__item">
-            <div class="dropdown">
-                <input type="radio" name="dropdown-radios" id="dropdown-radio-crop" class="dropdown__radio u-hidden" />
-                <label class="dropdown__label-open" for="dropdown-radio-crop" tabindex="0" onclick="massage_vector()">
-                    <img class="icon" src="https://img.icons8.com/ios-glyphs/35/ffffff/layers.png"/></label>
-                <label class="dropdown__label-close" for="dropdown-radio-clear">閉じる</label>
-                <div class="dropdown__contents">
-                    <div class="dropdown__contents-inner">
-                        <nav id="menu_vector"></nav>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="controls__item">
-            <div class="dropdown">
-                <input type="radio" name="dropdown-radios" id="dropdown-radio-layers" class="dropdown__radio u-hidden" />
-                <label class="dropdown__label-open" for="dropdown-radio-layers" tabindex="0" onclick="massage_property()">
-                    <img src="https://img.icons8.com/material-outlined/35/ffffff/paint-palette.png"/></label>
-                <label class="dropdown__label-close" for="dropdown-radio-clear">閉じる</label>
-                <div class="dropdown__contents">
-                    <div class="dropdown__contents-inner"> 
-                        <div class="tab">
-                            <input id="tabumenuBase" class="tab-input" name="menu" type="radio" checked="checked">
-                            <label for="tabumenuBase" class="tab-item">マップ</label>
-                            <div class="tab-content">                          
-                                <div class="tabbox">    
-                                    <select id="property_base" onchange="CangeBase()">
-                                    </select>  
-                                    ベースマップを編集<br>
-                                    ▼不透明度：<span id="slider_base_opacity_value">100%</span><br>
-                                    <input id="slider_base_opacity" type="range" min="0" max="100" step="0" value="100"><br>
-                                    ▼色相：<span id="slider_base_saturation_value">0</span><br>
-                                    <input id="slider_base_saturation" type="range" min="-100" max="100" step="0" value="0"><br>
-                                    ▼コントラスト：<span id="slider_base_contrast_value">0</span><br>
-                                    <input id="slider_base_contrast" type="range" min="-100" max="100" step="0" value="0"><br>
-                                    ▼明るさ-最小輝度：<span id="slider_base_brightnessmin_value">0</span><br>
-                                    <input id="slider_base_brightnessmin" type="range" min="0" max="100" step="0" value="0"><br>
-                                    ▼明るさ-最大輝度：<span id="slider_base_brightnessmax_value">100</span><br>
-                                    <input id="slider_base_brightnessmax" type="range" min="0" max="100" step="0" value="100">
-                                    <script type="text/javascript" src="CangeBase.js" defer></script>
-                                </div>
-                            </div>            
-                            <input id="tabumenuRaster" class="tab-input" name="menu" type="radio">
-                            <label for="tabumenuRaster" class="tab-item">+マップ</label>
-                            <div class="tab-content">                          
-                                <div class="tabbox">
-                                    <select id="property_raster" onchange="CangeRaster()"></select>
-                                    重ね中のマップを編集<br>
-                                    ▼不透明度：<span id="slider_raster_opacity_value">---</span><br>
-                                    <input id="slider_raster_opacity" type="range" min="0" max="100" step="0" value="0"><br>
-                                    ▼色相：<span id="slider_raster_saturation_value">---</span><br>
-                                    <input id="slider_raster_saturation" type="range" min="-100" max="100" step="0" value="0"><br>
-                                    ▼コントラスト：<span id="slider_raster_contrast_value">---</span><br>
-                                    <input id="slider_raster_contrast" type="range" min="-100" max="100" step="0" value="0"><br>
-                                    ▼明るさ-最小輝度：<span id="slider_raster_brightnessmin_value">---</span><br>
-                                    <input id="slider_raster_brightnessmin" type="range" min="0" max="100" step="0" value="0"><br>
-                                    ▼明るさ-最大輝度：<span id="slider_raster_brightnessmax_value">---</span><br>
-                                    <input id="slider_raster_brightnessmax" type="range" min="0" max="100" step="0" value="100">
-                                        <script type="text/javascript" src="CangeRaster.js" defer></script>
-                                </div>
-                            </div>                        
-                            <input id="tabumenuPolygon" class="tab-input" name="menu" type="radio">
-                            <label for="tabumenuPolygon" class="tab-item">ポリゴン</label>
-                            <div class="tab-content">                          
-                                <div class="tabbox">
-                                    ▼編集するポリゴンレイヤーの選択
-                                    <select id="property_Polygon" onchange="CangePolygon()"></select>
-                                    ▼ポリゴンの色<br>
-                                    <input type="color" id="selectcolor_Polygon" value="#47504F"><br>
-                                    ▼不透明度：<span id="slider_Polygon_opacity_value">100%</span><br>
-                                    <input id="slider_Polygon_opacity" type="range" min="0" max="100" step="0" value="100">
-                                    <script type="text/javascript" src="CangePolygon.js" defer></script>
-                                </div>
-                            </div>
-                            <input id="tabumenuLine" class="tab-input" name="menu" type="radio">
-                            <label for="tabumenuLine" class="tab-item">ライン</label>
-                            <div class="tab-content">
-                                <div class="tabbox">
-                                    ▼編集するラインレイヤーの選択
-                                    <select id="property_line" onchange="CangeLine()"></select>
-                                    ▼ラインの色<br>
-                                    <input type="color" id="selectcolor_line" value="#8e8e7b"><br>
-                                    ▼ラインの幅：<span id="slider_line_width_value">5</span><br>
-                                    <input id="slider_line_width" type="range" min="100" max="1000" step="0" value="500"><br>
-                                    ▼不透明度：<span id="slider_line_opacity_value">80%</span><br>
-                                    <input id="slider_line_opacity" type="range" min="0" max="100" step="0" value="80">
-                                    <script type="text/javascript" src="CangeLine.js" defer></script>
-                                </div>
-                            </div>
-                            <input id="tabumenuText" class="tab-input" name="menu" type="radio">
-                            <label for="tabumenuText" class="tab-item">文字</label>
-                            <div class="tab-content">                          
-                                <div class="tabbox">
-                                    ▼編集する文字レイヤーの選択
-                                    <select id="property_text" onchange="CangeText()"></select>
-                                    <br>▼文字の色<br>
-                                    <input type="color" id="selectcolor_text" value="#99B8FF"><br>
-                                    ▼文字の縁の色<br>
-                                    <input type="color" id="selectcolor_texthalo" value="#000000"><br>
-                                    ▼文字の大きさ：<span id="slider_text_size_value">14</span><br>
-                                    <input id="slider_text_size" type="range" min="500" max="5000" step="0" value="1400"><br>
-                                    ▼文字の輪郭の太さ：<span id="slider_text_halowidth_value">2</span><br>
-                                    <input id="slider_text_halowidth" type="range" min="0" max="1000" step="0" value="100"><br>
-                                    ▼不透明度：<span id="slider_text_opacity_value">100%</span><br>
-                                    <input id="slider_text_opacity" type="range" min="0" max="100" step="0" value="100">
-                                    <script type="text/javascript" src="CangeText.js" defer></script>
-                                </div>
-                            </div>                 
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="controls__item">
-            <div class="dropdown">
-                <input type="radio" name="dropdown-radios" id="dropdown-radio-basemaps" class="dropdown__radio u-hidden" />
-                <label class="dropdown__label-open" for="dropdown-radio-basemaps" tabindex="0" onclick="massage_information()"><img src="https://img.icons8.com/material-outlined/35/ffffff/info.png"/></label>
-                <label class="dropdown__label-close-right" for="dropdown-radio-clear">閉じる</label>
-                <div class="dropdown__contents">
-                    <div class="dropdown__contents-inner">
-                        <div id="informationbox">
-                            <h2>演習林GISについて</h2>森林文化アカデミーの演習林（33ha）は校舎のすぐ近くにあり、アクセスしやすい場所にあります。学校関係者以外にも林業従事者の研修で使われたり、教育施設の子供たちの遊び場や研究員の試験地としても利用される森のフィールドです。しかし、その地図情報はGISソフトが使える人しか見れなかったため、利用者への共有ができていませんでした。また、紙媒体の地図などが別にあったりして地図情報がばらけていました。これらの演習林の地図情報を、誰もが手に届きやすいWebアプリにして一つにまとめました。<br><input type="button" class="linkbutton" onclick="window.open('https://sites.google.com/view/komatsugis')" value="詳細はコチラへ"><hr>
-                        <h2>リンク集</h2>
-                            <input type="button" class="linkbutton" onclick="window.open('https://www.forest.ac.jp/')" value="岐阜県立森林文化アカデミー HP"><br>
-                            <input type="button" class="linkbutton" onclick="window.open('https://sites.google.com/view/gifuac-shofusai')" value="森林文化アカデミー翔楓祭 HP"><br>
-                            <input type="button" class="linkbutton" onclick="window.open('https://morinos.net/')" value="morinos HP"><br>
-                            <input type="button" class="linkbutton" onclick="window.open('https://experience.arcgis.com/experience/d05d579ef68240d894052c3b04190d58/?draft=true')" value="ぎふ森林情報WebMAP"><hr>
-                        <h2>制作</h2>
-                            <div id="img_block">
-                                <img src="https://raw.githubusercontent.com/ensyurinGIS/map/main/sozai/creatoricon.png">
-                                <h3>Satoshi Komatsu</h3>森と木のクリエーター科20期生<br>専攻：林業専攻<br>
-                            </div>
-                        
-                        </div> 
-                    </div>           
-                </div>
-            </div>
-        </div>
-    </div>
     <div id="map"></div>
     <div class="maptitle">
-        <svg width="271" height="40" viewBox="0 0 271 40" id="forestlogotitle" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg width="271" height="60" viewBox="0 0 271 40" id="forestlogotitle" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M115.45 8.13H114.394V13.815H115.45V8.13Z" fill="white"/>
             <path d="M112.444 11.054V12.847C111.58 12.933 110.591 12.49 110.591 10.972C110.591 9.84498 111.256 9.091 112.224 9.091C113.017 9.091 113.365 9.291 113.5 9.427V8.40201C113.5 8.40201 113.051 8.13101 112.227 8.13101C110.994 8.13101 109.534 8.88499 109.534 10.994C109.534 13.089 110.995 13.815 112.144 13.815C112.707 13.815 113.104 13.815 113.501 13.642V11.054H112.444Z" fill="white"/>
             <path d="M119.327 9.091V8.13H116.321V13.814H117.378V11.206H119.327V10.246H117.378V9.091H119.327Z" fill="white"/>
@@ -651,6 +483,188 @@
             <path d="M2.948 30.594C2.948 30.585 2.95 30.573 2.951 30.564C2.951 30.573 2.95 30.585 2.948 30.594Z" fill="#B7E1F9"/>
             <path d="M3.328 25.519C3.953 18.581 8.646 10.35 15.516 6.95599C20.704 4.39299 22.516 4.14299 25.954 0.955994" stroke="#A5D4AD" stroke-width="0.3118" stroke-linecap="round"/>
         </svg>
+    </div>
+    <div class="controls">
+        <div class="controls__item">
+            <input type="radio" name="dropdown-radios" id="dropdown-radio-clear" class="u-hidden" />
+            <div class="dropdown">
+                <input type="radio" name="dropdown-radios" id="dropdown-radio-base" class="dropdown__radio u-hidden" />
+                <label class="dropdown__label-open" for="dropdown-radio-base" tabindex="0" onclick="massage_base()">
+                    <img class="icon" src="https://raw.githubusercontent.com/ensyurinGIS/map/main/sozai/base.svg"/>
+                </label>
+                <label class="dropdown__label-close" for="dropdown-radio-clear">
+                    <img class="icon" src="https://raw.githubusercontent.com/ensyurinGIS/map/main/sozai/base.svg"/>
+                </label>
+                <div class="dropdown__contents">
+                    <div class="dropdown__contents-inner">
+                        <nav id="menu_base"></nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="controls__item">
+            <div class="dropdown">
+                <input type="radio" name="dropdown-radios" id="dropdown-radio-raster" class="dropdown__radio u-hidden" />
+                <label class="dropdown__label-open" for="dropdown-radio-raster" tabindex="0" onclick="massage_raster()">
+                    <img class="icon" src="https://raw.githubusercontent.com/ensyurinGIS/map/main/sozai/raster.svg"/>
+                </label>
+                <label class="dropdown__label-close" for="dropdown-radio-clear">
+                    <img class="icon" src="https://raw.githubusercontent.com/ensyurinGIS/map/main/sozai/raster.svg"/>
+                </label>
+                <div class="dropdown__contents">
+                    <div class="dropdown__contents-inner">
+                        <nav id="menu_raster"></nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="controls__item">
+            <div class="dropdown">
+                <input type="radio" name="dropdown-radios" id="dropdown-radio-vector" class="dropdown__radio u-hidden" />
+                <label class="dropdown__label-open" for="dropdown-radio-vector" tabindex="0" onclick="massage_vector()">
+                    <img class="icon" src="https://raw.githubusercontent.com/ensyurinGIS/map/main/sozai/layer.svg"/>
+                </label>
+                <label class="dropdown__label-close" for="dropdown-radio-clear">
+                    <img class="icon" src="https://raw.githubusercontent.com/ensyurinGIS/map/main/sozai/layer.svg"/>
+                </label>
+                <div class="dropdown__contents">
+                    <div class="dropdown__contents-inner">
+                        <nav id="menu_vector"></nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="controls__item">
+            <div class="dropdown">
+                <input type="radio" name="dropdown-radios" id="dropdown-radio-property" class="dropdown__radio u-hidden" />
+                <label class="dropdown__label-open" for="dropdown-radio-property" tabindex="0" onclick="massage_property()">
+                    <img class="icon" src="https://raw.githubusercontent.com/ensyurinGIS/map/main/sozai/property.svg"/>
+                </label>
+                <label class="dropdown__label-close" for="dropdown-radio-clear">
+                    <img class="icon" src="https://raw.githubusercontent.com/ensyurinGIS/map/main/sozai/property.svg"/>
+                </label>
+                <div class="dropdown__contents">
+                    <div class="dropdown__contents-inner"> 
+                        <div class="tab">
+                            <input id="tabumenuBase" class="tab-input" name="menu" type="radio" checked="checked">
+                            <label for="tabumenuBase" class="tab-item">マップ</label>
+                            <div class="tab-content">                          
+                                <div class="tabbox">    
+                                    <select id="property_base" onchange="CangeBase()">
+                                    </select>  
+                                    ベースマップを編集<br>
+                                    ▼不透明度：<span id="slider_base_opacity_value">100%</span><br>
+                                    <input id="slider_base_opacity" type="range" min="0" max="100" step="0" value="100"><br>
+                                    ▼色相：<span id="slider_base_saturation_value">0</span><br>
+                                    <input id="slider_base_saturation" type="range" min="-100" max="100" step="0" value="0"><br>
+                                    ▼コントラスト：<span id="slider_base_contrast_value">0</span><br>
+                                    <input id="slider_base_contrast" type="range" min="-100" max="100" step="0" value="0"><br>
+                                    ▼明るさ-最小輝度：<span id="slider_base_brightnessmin_value">0</span><br>
+                                    <input id="slider_base_brightnessmin" type="range" min="0" max="100" step="0" value="0"><br>
+                                    ▼明るさ-最大輝度：<span id="slider_base_brightnessmax_value">100</span><br>
+                                    <input id="slider_base_brightnessmax" type="range" min="0" max="100" step="0" value="100">
+                                    <script type="text/javascript" src="CangeBase.js" defer></script>
+                                </div>
+                            </div>            
+                            <input id="tabumenuRaster" class="tab-input" name="menu" type="radio">
+                            <label for="tabumenuRaster" class="tab-item">+マップ</label>
+                            <div class="tab-content">                          
+                                <div class="tabbox">
+                                    <select id="property_raster" onchange="CangeRaster()"></select>
+                                    重ね中のマップを編集<br>
+                                    ▼不透明度：<span id="slider_raster_opacity_value">---</span><br>
+                                    <input id="slider_raster_opacity" type="range" min="0" max="100" step="0" value="0"><br>
+                                    ▼色相：<span id="slider_raster_saturation_value">---</span><br>
+                                    <input id="slider_raster_saturation" type="range" min="-100" max="100" step="0" value="0"><br>
+                                    ▼コントラスト：<span id="slider_raster_contrast_value">---</span><br>
+                                    <input id="slider_raster_contrast" type="range" min="-100" max="100" step="0" value="0"><br>
+                                    ▼明るさ-最小輝度：<span id="slider_raster_brightnessmin_value">---</span><br>
+                                    <input id="slider_raster_brightnessmin" type="range" min="0" max="100" step="0" value="0"><br>
+                                    ▼明るさ-最大輝度：<span id="slider_raster_brightnessmax_value">---</span><br>
+                                    <input id="slider_raster_brightnessmax" type="range" min="0" max="100" step="0" value="100">
+                                        <script type="text/javascript" src="CangeRaster.js" defer></script>
+                                </div>
+                            </div>                        
+                            <input id="tabumenuPolygon" class="tab-input" name="menu" type="radio">
+                            <label for="tabumenuPolygon" class="tab-item">ポリゴン</label>
+                            <div class="tab-content">                          
+                                <div class="tabbox">
+                                    ▼編集するポリゴンレイヤーの選択
+                                    <select id="property_Polygon" onchange="CangePolygon()"></select>
+                                    ▼ポリゴンの色<br>
+                                    <input type="color" id="selectcolor_Polygon" value="#47504F"><br>
+                                    ▼不透明度：<span id="slider_Polygon_opacity_value">100%</span><br>
+                                    <input id="slider_Polygon_opacity" type="range" min="0" max="100" step="0" value="100">
+                                    <script type="text/javascript" src="CangePolygon.js" defer></script>
+                                </div>
+                            </div>
+                            <input id="tabumenuLine" class="tab-input" name="menu" type="radio">
+                            <label for="tabumenuLine" class="tab-item">ライン</label>
+                            <div class="tab-content">
+                                <div class="tabbox">
+                                    ▼編集するラインレイヤーの選択
+                                    <select id="property_line" onchange="CangeLine()"></select>
+                                    ▼ラインの色<br>
+                                    <input type="color" id="selectcolor_line" value="#8e8e7b"><br>
+                                    ▼ラインの幅：<span id="slider_line_width_value">5</span><br>
+                                    <input id="slider_line_width" type="range" min="100" max="1000" step="0" value="500"><br>
+                                    ▼不透明度：<span id="slider_line_opacity_value">80%</span><br>
+                                    <input id="slider_line_opacity" type="range" min="0" max="100" step="0" value="80">
+                                    <script type="text/javascript" src="CangeLine.js" defer></script>
+                                </div>
+                            </div>
+                            <input id="tabumenuText" class="tab-input" name="menu" type="radio">
+                            <label for="tabumenuText" class="tab-item">文字</label>
+                            <div class="tab-content">                          
+                                <div class="tabbox">
+                                    ▼編集する文字レイヤーの選択
+                                    <select id="property_text" onchange="CangeText()"></select>
+                                    <br>▼文字の色<br>
+                                    <input type="color" id="selectcolor_text" value="#99B8FF"><br>
+                                    ▼文字の縁の色<br>
+                                    <input type="color" id="selectcolor_texthalo" value="#000000"><br>
+                                    ▼文字の大きさ：<span id="slider_text_size_value">14</span><br>
+                                    <input id="slider_text_size" type="range" min="500" max="5000" step="0" value="1400"><br>
+                                    ▼文字の輪郭の太さ：<span id="slider_text_halowidth_value">2</span><br>
+                                    <input id="slider_text_halowidth" type="range" min="0" max="1000" step="0" value="100"><br>
+                                    ▼不透明度：<span id="slider_text_opacity_value">100%</span><br>
+                                    <input id="slider_text_opacity" type="range" min="0" max="100" step="0" value="100">
+                                    <script type="text/javascript" src="CangeText.js" defer></script>
+                                </div>
+                            </div>                 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="controls__item">
+            <div class="dropdown">
+                <input type="radio" name="dropdown-radios" id="dropdown-radio-information" class="dropdown__radio u-hidden" />
+                <label class="dropdown__label-open" for="dropdown-radio-information" tabindex="0" onclick="massage_information()">
+                    <img class="icon" src="https://raw.githubusercontent.com/ensyurinGIS/map/main/sozai/info.svg"/>
+                </label>
+                <label class="dropdown__label-close" for="dropdown-radio-clear">
+                    <img class="icon" src="https://raw.githubusercontent.com/ensyurinGIS/map/main/sozai/info.svg"/>
+                </label>
+                <div class="dropdown__contents">
+                    <div class="dropdown__contents-inner">
+                        <div id="informationbox">
+                            <h2>演習林GISについて</h2>森林文化アカデミーの演習林（33ha）は校舎のすぐ近くにあり、アクセスしやすい場所にあります。学校関係者以外にも林業従事者の研修で使われたり、教育施設の子供たちの遊び場や研究員の試験地としても利用される森のフィールドです。しかし、その地図情報はGISソフトが使える人しか見れなかったため、利用者への共有ができていませんでした。また、紙媒体の地図などが別にあったりして地図情報がばらけていました。これらの演習林の地図情報を、誰もが手に届きやすいWebアプリにして一つにまとめました。<br><input type="button" class="linkbutton" onclick="window.open('https://sites.google.com/view/komatsugis')" value="詳細はコチラへ"><hr>
+                        <h2>リンク集</h2>
+                            <input type="button" class="linkbutton" onclick="window.open('https://www.forest.ac.jp/')" value="岐阜県立森林文化アカデミー HP"><br>
+                            <input type="button" class="linkbutton" onclick="window.open('https://sites.google.com/view/gifuac-shofusai')" value="森林文化アカデミー翔楓祭 HP"><br>
+                            <input type="button" class="linkbutton" onclick="window.open('https://morinos.net/')" value="morinos HP"><br>
+                            <input type="button" class="linkbutton" onclick="window.open('https://experience.arcgis.com/experience/d05d579ef68240d894052c3b04190d58/?draft=true')" value="ぎふ森林情報WebMAP"><hr>
+                        <h2>制作</h2>
+                            <div id="img_block">
+                                <img src="https://raw.githubusercontent.com/ensyurinGIS/map/main/sozai/creatoricon.png">
+                                <h3>Satoshi Komatsu</h3>森と木のクリエーター科20期生<br>専攻：林業専攻<br><br><br>
+                            </div>
+                        </div> 
+                    </div>           
+                </div>
+            </div>
+        </div>
     </div>
 </body>
     <script type="text/javascript" src="main.js" defer></script>
