@@ -1381,7 +1381,7 @@ map.on("load", () => {
     });
 
     map.addLayer({
-        id: "行政区画-文字",
+        id: "行政区画-ラベル",
         type: "symbol",
         source: "mapbox",
         "source-layer": "place_label",
@@ -1576,7 +1576,7 @@ map.on("load", () => {
         id: "演習林-林班境界線",
         type: "line",
         source: "ENSYURIN_3rinhan",
-        "source-layer": "ENSYURIN_rinhanzu",
+        "source-layer": "ENSYURIN_3rinhan",
         layout: {
         visibility: "visible",
         },
@@ -1751,7 +1751,7 @@ map.on("load", () => {
     });
 
     map.addLayer({
-        id: "試験地",
+        id: "岐阜県森林研究所-試験地",
         type: "fill",
         source: "ENSYURIN_sikenti",
         "source-layer": "ENSYURIN_sikenti",
@@ -1766,7 +1766,7 @@ map.on("load", () => {
     });
 
     map.addLayer({
-        id: "試験地-文字",
+        id: "岐阜県森林研究所-試験地-ラベル",
         source: "ENSYURIN_sikenti",
         "source-layer": "ENSYURIN_sikenti",
         type: "symbol",
@@ -1811,7 +1811,7 @@ map.on("load", () => {
     });
 
     map.addLayer({
-        id: "岐阜県20万分の1表層地質-文字",
+        id: "岐阜県20万分の1表層地質-ラベル",
         source: "GIFU-201tisitu",
         filter: ["all", ["match", ["geometry-type"], ["Polygon"], true, false]],
         type: "symbol",
@@ -1831,7 +1831,7 @@ map.on("load", () => {
     });
 
     map.addLayer({
-        id: "岐阜県20万分の1土壌分類-文字",
+        id: "岐阜県20万分の1土壌分類-ラベル",
         source: "GIFU-201dozyo",
         type: "symbol",
         layout: {
@@ -1850,7 +1850,7 @@ map.on("load", () => {
     });
 
     map.addLayer({
-        id: "岐阜県鳥獣保護区等(H30)-文字",
+        id: "岐阜県鳥獣保護区等(H30)-ラベル",
         source: "GIFU-tyouzyuhogokuH30",
         type: "symbol",
         layout: {
@@ -1869,7 +1869,7 @@ map.on("load", () => {
     });
 
     map.addLayer({
-        id: "自力建設-文字",
+        id: "自力建設-ラベル",
         source: "SISETU_NAME",
         type: "symbol",
         filter: ["all", ["match", ["get", "カテゴリ"], ["自力建設"], true, false]],
@@ -1891,7 +1891,7 @@ map.on("load", () => {
     });
 
     map.addLayer({
-        id: "アカデミー施設・その他建物-文字",
+        id: "アカデミー施設・その他建物-ラベル",
         source: "SISETU_NAME",
         type: "symbol",
         filter: ["all", ["match", ["get", "カテゴリ"], ["建物", "その他"], true, false]],
@@ -2095,7 +2095,7 @@ map.on("load", () => {
     });
 
     map.addLayer({
-        id: "フェノロジー調査2020(統計記録密度)",
+        id: "森林環境教育専攻-フェノロジー調査2020(統計記録密度)",
         type: "heatmap",
         source: "fenorozi-2020",
         layout: {
@@ -2105,7 +2105,7 @@ map.on("load", () => {
 
 
     map.addLayer({
-        id: "フェノロジー調査2020-植物",
+        id: "森林環境教育専攻-フェノロジー調査2020-植物",
         type: "symbol",
         source: "fenorozi-2020",
         filter: ["all", ["match", ["get", "分類群"], ["植物"], true, false]],
@@ -2134,7 +2134,7 @@ map.on("load", () => {
     });
 
     map.addLayer({
-        id: "フェノロジー調査2020-昆虫",
+        id: "森林環境教育専攻-フェノロジー調査2020-昆虫",
         type: "symbol",
         source: "fenorozi-2020",
         filter: ["all", ["match", ["get", "分類群"], ["昆虫"], true, false]],
@@ -2163,7 +2163,7 @@ map.on("load", () => {
     });
 
     map.addLayer({
-        id: "フェノロジー調査2020-菌類",
+        id: "森林環境教育専攻-フェノロジー調査2020-菌類",
         type: "symbol",
         source: "fenorozi-2020",
         filter: ["all", ["match", ["get", "分類群"], ["菌類"], true, false]],
@@ -2192,7 +2192,7 @@ map.on("load", () => {
     });
 
     map.addLayer({
-        id: "フェノロジー調査2020-鳥類",
+        id: "森林環境教育専攻-フェノロジー調査2020-鳥類",
         type: "symbol",
         source: "fenorozi-2020",
         filter: ["all", ["match", ["get", "分類群"], ["鳥類"], true, false]],
@@ -2221,7 +2221,7 @@ map.on("load", () => {
     });
 
     map.addLayer({
-        id: "フェノロジー調査2020-哺乳類",
+        id: "森林環境教育専攻-フェノロジー調査2020-哺乳類",
         type: "symbol",
         source: "fenorozi-2020",
         filter: ["all", ["match", ["get", "分類群"], ["哺乳類"], true, false]],
@@ -2250,7 +2250,7 @@ map.on("load", () => {
     });
 
     map.addLayer({
-        id: "フェノロジー調査2020-爬虫類",
+        id: "森林環境教育専攻-フェノロジー調査2020-爬虫類",
         type: "symbol",
         source: "fenorozi-2020",
         filter: ["all", ["match", ["get", "分類群"], ["爬虫類"], true, false]],
@@ -2279,7 +2279,7 @@ map.on("load", () => {
     });
 
     map.addLayer({
-        id: "フェノロジー調査2020-魚類",
+        id: "森林環境教育専攻-フェノロジー調査2020-魚類",
         type: "symbol",
         source: "fenorozi-2020",
         filter: ["all", ["match", ["get", "分類群"], ["魚類"], true, false]],
@@ -2308,7 +2308,7 @@ map.on("load", () => {
     });
 
     map.addLayer({
-        id: "フェノロジー調査2020-両生類",
+        id: "森林環境教育専攻-フェノロジー調査2020-両生類",
         type: "symbol",
         source: "fenorozi-2020",
         filter: ["all", ["match", ["get", "分類群"], ["両生類"], true, false]],
@@ -2337,7 +2337,7 @@ map.on("load", () => {
     });
 
     map.addLayer({
-        id: "フェノロジー調査2020-多足類",
+        id: "森林環境教育専攻-フェノロジー調査2020-多足類",
         type: "symbol",
         source: "fenorozi-2020",
         filter: ["all", ["match", ["get", "分類群"], ["多足類"], true, false]],
@@ -2366,7 +2366,7 @@ map.on("load", () => {
     });
 
     map.addLayer({
-        id: "フェノロジー調査2020-地衣類",
+        id: "森林環境教育専攻-フェノロジー調査2020-地衣類",
         type: "symbol",
         source: "fenorozi-2020",
         filter: ["all", ["match", ["get", "分類群"], ["地衣類"], true, false]],
@@ -2395,7 +2395,7 @@ map.on("load", () => {
     });
 
     map.addLayer({
-        id: "フェノロジー調査2020-コケ",
+        id: "森林環境教育専攻-フェノロジー調査2020-コケ",
         type: "symbol",
         source: "fenorozi-2020",
         filter: ["all", ["match", ["get", "分類群"], ["コケ"], true, false]],
@@ -2424,7 +2424,7 @@ map.on("load", () => {
     });
 
     map.addLayer({
-        id: "フェノロジー調査2020-シダ植物",
+        id: "森林環境教育専攻-フェノロジー調査2020-シダ植物",
         type: "symbol",
         source: "fenorozi-2020",
         filter: ["all", ["match", ["get", "分類群"], ["シダ植物"], true, false]],
@@ -2453,7 +2453,7 @@ map.on("load", () => {
     });
 
     map.addLayer({
-        id: "フェノロジー調査2020-虫こぶ",
+        id: "森林環境教育専攻-フェノロジー調査2020-虫こぶ",
         type: "symbol",
         source: "fenorozi-2020",
         filter: ["all", ["match", ["get", "分類群"], ["虫こぶ"], true, false]],
@@ -2482,7 +2482,7 @@ map.on("load", () => {
     });
     
     map.addLayer({
-        id: "OWL-立木データ",
+        id: "林業専攻-OWL利用研修立木計測データ",
         type: "circle",
         source: "OWL",
         "source-layer": "OWL",
@@ -2515,7 +2515,7 @@ map.on("load", () => {
     });
 
     map.addLayer({
-        id: "OWL-立木データ-文字",
+        id: "林業専攻-OWL利用研修立木計測データ-ラベル",
         type: "symbol",
         source: "OWL",
         "source-layer": "OWL",
@@ -2614,7 +2614,7 @@ map.on("load", () => {
     });
 
     map.addLayer({
-        id: "平面図-自力建設",
+        id: "木造建築専攻-自力建設平面図",
         type: "line",
         source: "ZIRIKI-CAD",
         layout: {
@@ -2713,9 +2713,9 @@ const toggleableLayerIds = [
     "道",
     "川",
     "アカデミー施設・その他建物",
-    "アカデミー施設・その他建物-文字",
+    "アカデミー施設・その他建物-ラベル",
     "自力建設",
-    "自力建設-文字",
+    "自力建設-ラベル",
     "演習林-スギ林",
     "演習林-ヒノキ林",
     "演習林-アカマツ林",
@@ -2762,29 +2762,29 @@ for (const id of toggleableLayerIds) {
 //レイヤー初期非表示
 const toggleableLayerIds2 = [
     "未来の森づくり予定地",
-    "平面図-自力建設",
     "施設案内塔",
     "駐車場",
     "サインポール",
-    "試験地",
-    "試験地-文字",
+    "岐阜県森林研究所-試験地",
+    "岐阜県森林研究所-試験地-ラベル",
     "アカデミー危険木調査結果(H25)",
-    "OWL-立木データ",
-    "OWL-立木データ-文字",
-    "フェノロジー調査2020-植物",
-    "フェノロジー調査2020-昆虫",
-    "フェノロジー調査2020-哺乳類",
-    "フェノロジー調査2020-鳥類",
-    "フェノロジー調査2020-菌類",
-    "フェノロジー調査2020-爬虫類",
-    "フェノロジー調査2020-魚類",
-    "フェノロジー調査2020-両生類",
-    "フェノロジー調査2020-多足類",
-    "フェノロジー調査2020-地衣類",
-    "フェノロジー調査2020-コケ",
-    "フェノロジー調査2020-シダ植物",
-    "フェノロジー調査2020-虫こぶ",
-    "フェノロジー調査2020(統計記録密度)",
+    "林業専攻-OWL利用研修立木計測データ",
+    "林業専攻-OWL利用研修立木計測データ-ラベル",
+    "森林環境教育専攻-フェノロジー調査2020-植物",
+    "森林環境教育専攻-フェノロジー調査2020-昆虫",
+    "森林環境教育専攻-フェノロジー調査2020-哺乳類",
+    "森林環境教育専攻-フェノロジー調査2020-鳥類",
+    "森林環境教育専攻-フェノロジー調査2020-菌類",
+    "森林環境教育専攻-フェノロジー調査2020-爬虫類",
+    "森林環境教育専攻-フェノロジー調査2020-魚類",
+    "森林環境教育専攻-フェノロジー調査2020-両生類",
+    "森林環境教育専攻-フェノロジー調査2020-多足類",
+    "森林環境教育専攻-フェノロジー調査2020-地衣類",
+    "森林環境教育専攻-フェノロジー調査2020-コケ",
+    "森林環境教育専攻-フェノロジー調査2020-シダ植物",
+    "森林環境教育専攻-フェノロジー調査2020-虫こぶ",
+    "森林環境教育専攻-フェノロジー調査2020(統計記録密度)",
+    "木造建築専攻-自力建設平面図",
     "翔楓祭2021企画",
     "古城山国有林-林分",
     "古城山国有林-林分境界線",
@@ -2800,16 +2800,16 @@ const toggleableLayerIds2 = [
     "美濃市指定避難場所",
     "美濃市指定緊急避難場所",
     "岐阜県鳥獣保護区等(H30)",
-    "岐阜県鳥獣保護区等(H30)-文字",
+    "岐阜県鳥獣保護区等(H30)-ラベル",
     "岐阜県20万分の1表層地質",
     "岐阜県20万分の1表層地質-断層",
-    "岐阜県20万分の1表層地質-文字",
+    "岐阜県20万分の1表層地質-ラベル",
     "岐阜県20万分の1土壌分類",
-    "岐阜県20万分の1土壌分類-文字",
+    "岐阜県20万分の1土壌分類-ラベル",
     "地すべり地形分布図",
     "全国傾斜量区分図（雪崩関連）",
     "行政区画",
-    "行政区画-文字",
+    "行政区画-ラベル",
 ];
 
 //各レイヤーに対応するトグルボタンを設定します。
