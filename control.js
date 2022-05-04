@@ -111,7 +111,6 @@ class Control_360 {
     const homeButton = document.createElement("button");
     homeButton.innerHTML = setoff;
     homeButton.addEventListener("click", (e) => {
-        const clickedLayer = "360度写真";
         e.preventDefault();
         e.stopPropagation();
         homeButton.innerHTML = seton;
@@ -121,20 +120,14 @@ class Control_360 {
             map.removeLayer("background");
             map.removeLayer("360度写真");
             
-            map.flyTo({ center: [136.92300400916308, 35.5509525769706],
-                zoom: 14.5,
-                bearing: 0,
-                pitch: 0,
-                duration: 1000,
-            });
         } else {
 
             
         map.flyTo({ 
             center: [136.92143098183698, 35.55232856623586],
             zoom: 15.8,
-            bearing: 137,
-            pitch: 40,
+            bearing: 70,
+            pitch: 30,
             duration: 3000,
                     });
 

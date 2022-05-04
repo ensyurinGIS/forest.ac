@@ -6,15 +6,27 @@ $("#splash_logo").delay(5000).fadeOut(1000);
 window.setTimeout(function(){
     map.fitBounds(
         [
-        [136.919170, 35.546920], // southwestern corner of the bounds
-        [136.926816, 35.555121] // northeastern corner of the bounds
-        ]
+        [136.915292, 35.547079], // southwestern corner of the bounds
+        [136.926577, 35.556588] // northeastern corner of the bounds
+        ],
+        {
+        padding: 30,
+        pitch: 30,
+        bearing: 70,
+        duration: 2000,
+        },
+        
         );
 
         new mapboxgl.Popup()
-.setLngLat([136.92300400916308, 35.5509525769706])
-.setHTML('<br><h1 style="text-align:center">アカデミー演習林<br><br>33ha</h1>')
-.addTo(map);
+        .setLngLat([136.91827968473524, 35.554555955370134])
+        .setHTML('<h2 style="text-align:center">校舎</h2>')
+        .addTo(map);
+
+        new mapboxgl.Popup()
+        .setLngLat([136.92297098338145, 35.551841797910726])
+        .setHTML('<br><h1 style="text-align:center">アカデミー演習林<br><br>33ha</h1>')
+        .addTo(map);
 }, 5000);
 
 //★★★アクセストークン★★★
