@@ -15,7 +15,6 @@ window.setTimeout(function(){
         bearing: 70,
         duration: 2000,
         },
-        
         );
 
         new mapboxgl.Popup()
