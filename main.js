@@ -20,12 +20,12 @@ window.setTimeout(function(){
 
         new mapboxgl.Popup()
         .setLngLat([136.91827968473524, 35.554555955370134])
-        .setHTML('<h2 style="text-align:center">校舎</h2>')
+        .setHTML('<h3 style="text-align:center">校舎</h3>')
         .addTo(map);
 
         new mapboxgl.Popup()
         .setLngLat([136.92297098338145, 35.551841797910726])
-        .setHTML('<br><h1 style="text-align:center">アカデミー演習林<br><br>33ha</h1>')
+        .setHTML('<h2 style="text-align:center">アカデミー演習林33ha　</h2>')
         .addTo(map);
 }, 5000);
 
