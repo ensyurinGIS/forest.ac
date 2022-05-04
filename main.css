@@ -92,8 +92,8 @@ label {
     z-index: 2;
     position: absolute;
     display: flex;
-    left: 10px;
-    right: 10px;
+    left: 6px;
+    right: 6px;
     bottom: 2.4rem;
     right: 10px;
     height: 2.5rem;
@@ -199,7 +199,7 @@ label {
         left: 5rem;
         width: 25rem;
         top: 10px;
-        bottom: 6rem;
+        bottom: 2rem;
         transform: translate3d(0, 0, 0) scaleX(0);
         transform-origin: 0 0;
     }
@@ -733,9 +733,9 @@ body .mapboxgl-map {
     width: 200px;
     pointer-events: none;
 }
+
 @media (min-width: 640px) {
     .maptitle {
-    z-index: 3;
     position: absolute;
     top: auto;
     left: auto;
@@ -745,18 +745,55 @@ body .mapboxgl-map {
     }
 }
 
+#slider_Pitch {
+    z-index: 2;
+    position: absolute;
+    display: inline-block;
+    width: 40px;
+    height: 220px;
+    padding: 0;
+    text-align: center;
+    padding: 10px;
+    bottom: 80px;
+    left: 10px;
+    background-color: rgba(0, 0, 0, 0.75);
+    color: #ffffff;
+    font-family: 'Noto Sans JP', sans-serif;
+    border-radius: 0.25rem;
+}
+
+@media (min-width: 640px) {
+    #slider_Pitch {
+        left: 15px;
+        bottom: 2rem;
+    }
+}
+
+#slider_Pitch input {
+    width: 150px;
+    height: 20px;
+    margin: 0;
+    transform-origin: 10px 10px;
+    transform: rotate(90deg);
+}
+
+.slider_icon {
+    cursor : pointer;
+}
+
 /* スケール */
 .Scale {
     z-index: 1;
     position: absolute;
     pointer-events: none;
-    left: 10px;
+    right: 10px;
     bottom: 80px;
 }
 
 @media (min-width: 640px) {
     .Scale {
-        bottom: 30px;
+        bottom: 10px;
+        left: 100px;
 
     }
 }

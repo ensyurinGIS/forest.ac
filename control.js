@@ -21,11 +21,9 @@ class Control_DEM {
 
         if (demcheck === 1) {
             homeButton.innerHTML = setoff;
-            map.easeTo({ pitch: 0 });
             map.setTerrain({ source: "mapbox-dem", exaggeration: 0 });
             massage_2D();
         } else {
-            map.easeTo({ pitch: 60 });
             map.setTerrain({ source: "mapbox-dem", exaggeration: 1 });
             massage_3D();
         }
@@ -181,15 +179,6 @@ class Control_360 {
     }
 }
 
-// //スケール
-// map.addControl(
-//     new mapboxgl.ScaleControl({
-//     maxWidth: 200,
-//     unit: "metric",
-//     }),
-//     "bottom-right"
-// );
-
 //地図情報
 map.addControl(new mapboxgl.AttributionControl(), "bottom-right");
 
@@ -226,4 +215,18 @@ const Scale = new mapboxgl.ScaleControl({
     unit: "metric",
 });
 
+//ピッチコントロール
 document.getElementById('Scale').appendChild(Scale.onAdd(map));
+
+map.on('pitch', () => {
+    const sliderValueO = document.getElementById('slider_Pitch_value');
+    const nowPitch = map.getPitch();
+    document.getElementById( "slider_Pitch_opacity" ).value = Math.trunc(nowPitch);
+    sliderValueO.textContent = Math.trunc(nowPitch) + "°";
+    });
+
+    slider_Pitch_opacity.addEventListener('input', (e) => {
+        const sliderValue = document.getElementById('slider_Pitch_value');
+        map.easeTo({ pitch: e.target.value });
+        sliderValue.textContent = e.target.value + "°";
+    });
