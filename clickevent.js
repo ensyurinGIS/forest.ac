@@ -115,7 +115,7 @@ map.on("click", "森林環境教育専攻-フェノロジー調査2020-植物", 
     e.features[0].properties.場所 +
     "<br>状態：" +
     e.features[0].properties.状態 +
-    "<style>a { color:#F00; }</style>"
+    "<style>a { color:rgb(89, 235, 89); }</style>"
     )
     .addTo(map);
     map.flyTo({ 
@@ -146,7 +146,7 @@ map.on("click", "森林環境教育専攻-フェノロジー調査2020-昆虫", 
     e.features[0].properties.場所 +
     "<br>状態：" +
     e.features[0].properties.状態 +
-    "<style>a { color:#F00; }</style>"
+    "<style>a { color:rgb(89, 235, 89); }</style>"
     )
     .addTo(map);
     map.flyTo({ 
@@ -177,7 +177,7 @@ map.on("click", "森林環境教育専攻-フェノロジー調査2020-哺乳類
     e.features[0].properties.場所 +
     "<br>状態：" +
     e.features[0].properties.状態 +
-    "<style>a { color:#F00; }</style>"
+    "<style>a { color:rgb(89, 235, 89); }</style>"
     )
     .addTo(map);
     map.flyTo({ 
@@ -208,7 +208,7 @@ map.on("click", "森林環境教育専攻-フェノロジー調査2020-鳥類", 
     e.features[0].properties.場所 +
     "<br>状態：" +
     e.features[0].properties.状態 +
-    "<style>a { color:#F00; }</style>"
+    "<style>a { color:rgb(89, 235, 89); }</style>"
     )
     .addTo(map);
     map.flyTo({ 
@@ -239,7 +239,7 @@ map.on("click", "森林環境教育専攻-フェノロジー調査2020-菌類", 
     e.features[0].properties.場所 +
     "<br>状態：" +
     e.features[0].properties.状態 +
-    "<style>a { color:#F00; }</style>"
+    "<style>a { color:rgb(89, 235, 89); }</style>"
     )
     .addTo(map);
     map.flyTo({ 
@@ -270,7 +270,7 @@ map.on("click", "森林環境教育専攻-フェノロジー調査2020-爬虫類
     e.features[0].properties.場所 +
     "<br>状態：" +
     e.features[0].properties.状態 +
-    "<style>a { color:#F00; }</style>"
+    "<style>a { color:rgb(89, 235, 89); }</style>"
     )
     .addTo(map);
     map.flyTo({ 
@@ -301,7 +301,7 @@ map.on("click", "森林環境教育専攻-フェノロジー調査2020-魚類", 
     e.features[0].properties.場所 +
     "<br>状態：" +
     e.features[0].properties.状態 +
-    "<style>a { color:#F00; }</style>"
+    "<style>a { color:rgb(89, 235, 89); }</style>"
     )
     .addTo(map);
     map.flyTo({ 
@@ -333,7 +333,7 @@ map.on("click", "森林環境教育専攻-フェノロジー調査2020-両生類
     e.features[0].properties.場所 +
     "<br>状態：" +
     e.features[0].properties.状態 +
-    "<style>a { color:#F00; }</style>"
+    "<style>a { color:rgb(89, 235, 89); }</style>"
     )
     .addTo(map);
     map.flyTo({ 
@@ -365,7 +365,7 @@ map.on("click", "森林環境教育専攻-フェノロジー調査2020-多足類
     e.features[0].properties.場所 +
     "<br>状態：" +
     e.features[0].properties.状態 +
-    "<style>a { color:#F00; }</style>"
+    "<style>a { color:rgb(89, 235, 89); }</style>"
     )
     .addTo(map);
     map.flyTo({ 
@@ -397,7 +397,7 @@ map.on("click", "森林環境教育専攻-フェノロジー調査2020-地衣類
     e.features[0].properties.場所 +
     "<br>状態：" +
     e.features[0].properties.状態 +
-    "<style>a { color:#F00; }</style>"
+    "<style>a { color:rgb(89, 235, 89); }</style>"
     )
     .addTo(map);
     map.flyTo({ 
@@ -429,7 +429,7 @@ map.on("click", "森林環境教育専攻-フェノロジー調査2020-コケ", 
     e.features[0].properties.場所 +
     "<br>状態：" +
     e.features[0].properties.状態 +
-    "<style>a { color:#F00; }</style>"
+    "<style>a { color:rgb(89, 235, 89); }</style>"
     )
     .addTo(map);
     map.flyTo({ 
@@ -461,7 +461,7 @@ map.on("click", "森林環境教育専攻-フェノロジー調査2020-シダ植
     e.features[0].properties.場所 +
     "<br>状態：" +
     e.features[0].properties.状態 +
-    "<style>a { color:#F00; }</style>"
+    "<style>a { color:rgb(89, 235, 89); }</style>"
     )
     .addTo(map);
     map.flyTo({ 
@@ -493,7 +493,7 @@ map.on("click", "森林環境教育専攻-フェノロジー調査2020-虫こぶ
     e.features[0].properties.場所 +
     "<br>状態：" +
     e.features[0].properties.状態 +
-    "<style>a { color:#F00; }</style>"
+    "<style>a { color:rgb(89, 235, 89); }</style>"
     )
     .addTo(map);
     map.flyTo({ 
@@ -526,7 +526,7 @@ map.on("click", "翔楓祭2021企画", (e) => {
     e.features[0].properties.写真 +
     "' target='_blank'rel='noopener noreferrer'><img src='" +
     e.features[0].properties.写真 +
-    "' width='100%' height='190px'></div></div><style>img { object-fit: cover;} a { color:#F00; }</style>"
+    "' width='100%' height='190px'></div></div><style>img { object-fit: cover;} a { color:rgb(89, 235, 89); }</style>"
     )
     .addTo(map);
     map.flyTo({ 
@@ -677,7 +677,7 @@ map.on("click", "アカデミー施設・その他建物", (e) => {
     e.features[0].properties.image +
     "' target='_blank'rel='noopener noreferrer'><img src='" +
     e.features[0].properties.image +
-    "' width='100%' height='190px'></div></div></div><style>img { object-fit: cover;} a { color:#F00; }</style>"
+    "' width='100%' height='190px'></div></div></div><style>img { object-fit: cover;} a { color:rgb(89, 235, 89); }</style>"
     )
     .addTo(map);
     let target = document.getElementById("scroll-top");
@@ -728,7 +728,7 @@ map.on("click", "未来の森づくり予定地", (e) => {
     new mapboxgl.Popup()
     .setLngLat(e.lngLat)
     .setHTML(
-    "<h3>未来の森づくり予定地</h3><hr>面積：0.85ha<br><br><a href='https://www.forest.ac.jp/about/20th_anniversary/forest-future/' target='_blank' rel='noopener noreferrer'>詳細Webページ</a>"
+    "<h3>未来の森づくり予定地</h3><hr>面積：0.85ha<br><br><a href='https://www.forest.ac.jp/about/20th_anniversary/forest-future/' target='_blank' rel='noopener noreferrer'>詳細Webページ</a><style>a { color:rgb(89, 235, 89); }</style>"
     )
     .addTo(map);
     map.flyTo({

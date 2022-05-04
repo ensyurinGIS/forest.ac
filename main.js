@@ -10,6 +10,11 @@ window.setTimeout(function(){
         [136.926816, 35.555121] // northeastern corner of the bounds
         ]
         );
+
+        new mapboxgl.Popup()
+.setLngLat([136.92300400916308, 35.5509525769706])
+.setHTML('<br><h1 style="text-align:center">アカデミー演習林<br><br>33ha</h1>')
+.addTo(map);
 }, 5000);
 
 //★★★アクセストークン★★★

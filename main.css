@@ -188,6 +188,10 @@ label {
     transform-origin: 0 100%;
 }
 
+.dropdown__contents a{
+    color: rgb(89, 235, 89);
+  }
+
 /* 隠しメニュー pc*/
 @media (min-width: 640px) {
     .dropdown__contents {
@@ -250,20 +254,25 @@ label {
 }
 
 #informationbox {
-    text-align: left;
-    padding: 0 1rem;
-    line-height: 2rem;
-    color: white;
-    font-family: 'Noto Sans JP', sans-serif;
-    }
+text-align: left;
+padding: 0 1rem;
+line-height: 2rem;
+color: white;
+font-family: 'Noto Sans JP', sans-serif;
+}
 
 #img_block{
     text-align: center;
 }
 
-#informationbox img {
-    width: 60%;
+
+.SNSicon {
+    padding: 0.3rem;
+    height: 6rem;
+    width: 6rem;
+    cursor : pointer;
 }
+
 .linkbutton{
     color: #fff;
     background-color: rgba(11, 126, 11, 0.75);
@@ -750,11 +759,4 @@ body .mapboxgl-map {
         bottom: 30px;
 
     }
-}
-
-/* SNS */
-.SNSicon {
-    padding: 0.3rem;
-    height: 6rem;
-    cursor : pointer;
 }
