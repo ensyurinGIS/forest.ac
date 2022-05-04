@@ -10,7 +10,7 @@ class Control_DEM {
 
     this.map = map;
     const homeButton = document.createElement("button");
-    homeButton.innerHTML = setoff;
+    homeButton.innerHTML = seton;
     homeButton.addEventListener("click", (e) => {
         e.preventDefault();
         e.stopPropagation();
@@ -124,8 +124,8 @@ class Control_360 {
         map.flyTo({ 
             center: [136.92143098183698, 35.55232856623586],
             zoom: 15.8,
-            bearing: 70,
-            pitch: 30,
+            bearing: 105,
+            pitch: 60,
             duration: 3000,
                     });
 

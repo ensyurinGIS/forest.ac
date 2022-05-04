@@ -10,20 +10,19 @@ window.setTimeout(function(){
         [136.926577, 35.556588] // northeastern corner of the bounds
         ],
         {
-        padding: 30,
-        pitch: 30,
-        bearing: 70,
-        duration: 2000,
+        pitch: 50,
+        bearing: 105,
+        duration: 3000,
         },
         );
 
         new mapboxgl.Popup()
-        .setLngLat([136.91827968473524, 35.554555955370134])
+        .setLngLat([136.918279, 35.554555])
         .setHTML('<h3 style="text-align:center">校舎</h3>')
         .addTo(map);
 
         new mapboxgl.Popup()
-        .setLngLat([136.92297098338145, 35.551841797910726])
+        .setLngLat([136.922970, 35.551341])
         .setHTML('<h2 style="text-align:center">アカデミー演習林33ha　</h2>')
         .addTo(map);
 }, 5000);
@@ -60,7 +59,7 @@ map.on("load", () => {
         url: "mapbox://mapbox.mapbox-terrain-dem-v1",
     });
 
-    map.setTerrain({'source': 'mapbox-dem', 'exaggeration': 0});
+    map.setTerrain({'source': 'mapbox-dem', 'exaggeration': 1});
 
     //スカイレイヤー(空)読み込み
     map.addLayer({
