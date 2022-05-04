@@ -10,7 +10,7 @@ window.setTimeout(function(){
         [136.926577, 35.556588] // northeastern corner of the bounds
         ],
         {
-        pitch: 50,
+        pitch: 60,
         bearing: 105,
         duration: 3000,
         },

@@ -4,15 +4,14 @@
 map.on("click", "mapicon", (e) => {
     map.fitBounds(
         [
-            [136.915292, 35.547079], // southwestern corner of the bounds
-            [136.926577, 35.556588] // northeastern corner of the bounds
-            ],
-            {
-            padding: 30,
-            pitch: 30,
-            bearing: 70,
-            duration: 3000,
-            },
+        [136.915292, 35.547079], // southwestern corner of the bounds
+        [136.926577, 35.556588] // northeastern corner of the bounds
+        ],
+        {
+        pitch: 60,
+        bearing: 105,
+        duration: 3000,
+        },
         );
     e.stopPropagation();
 });
