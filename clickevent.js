@@ -2,14 +2,16 @@
 
 //アイコン
 map.on("click", "mapicon", (e) => {
+
+    const bearingnow = Math.round(map.getBearing());
+
     map.fitBounds(
         [
         [136.915292, 35.547079], // southwestern corner of the bounds
         [136.926577, 35.556588] // northeastern corner of the bounds
         ],
         {
-        pitch: 60,
-        bearing: 105,
+        bearing: bearingnow,
         duration: 3000,
         },
         );

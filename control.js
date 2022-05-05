@@ -127,7 +127,7 @@ class Control_360 {
             center: [136.92143098183698, 35.55232856623586],
             zoom: 15.8,
             bearing: 105,
-            pitch: 60,
+            pitch: 40,
             duration: 3000,
                     });
 
