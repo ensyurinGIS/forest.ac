@@ -7,7 +7,6 @@ body {
     padding: 0;
     overscroll-behavior-y: none;/* スワイプリロード無効 */
     background: rgb(0,0,0);
-    background: linear-gradient(334deg, rgba(0,0,0,1) 0%, rgba(9,73,0,1) 100%);
 }
 
 /* 起動画面*/
@@ -49,7 +48,7 @@ body {
     fill: transparent;
     stroke: #ffffff;
     stroke-width: 5px;
-    animation: svg 3s ease-in both;
+    animation: svg 5s ease-in both;
 }
 @keyframes svg {
     0% {
@@ -754,16 +753,17 @@ body .mapboxgl-map {
     }
 }
 
+/* ピッチコントロール */
 #slider_Pitch {
     z-index: 2;
     position: absolute;
     display: inline-block;
     width: 40px;
-    height: 270px;
+    height: 220px;
     padding: 0;
     text-align: center;
     padding: 10px;
-    bottom: 82px;
+    bottom: 30%;
     left: 10px;
     background-color: rgba(0, 0, 0, 0.75);
     color: #ffffff;
@@ -779,15 +779,11 @@ body .mapboxgl-map {
 }
 
 #slider_Pitch input {
-    width: 200px;
+    width: 170px;
     height: 20px;
     margin: 0;
     transform-origin: 10px 10px;
     transform: rotate(90deg);
-}
-
-.slider_icon {
-    cursor : pointer;
 }
 
 /* スケール */

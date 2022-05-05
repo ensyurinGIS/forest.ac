@@ -26,7 +26,7 @@ class Control_DEM {
             massage_2D();
         } else {
             map.setTerrain({ source: "mapbox-dem", exaggeration: 1 });
-            map.easeTo({ pitch: 60 });
+            map.easeTo({ pitch: 50 });
             massage_3D();
         }
     });

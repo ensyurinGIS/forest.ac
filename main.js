@@ -1,16 +1,17 @@
 //ロード画面長さ
-$("#splash").delay(3000).fadeOut(1000);
-$("#splash_logo").delay(5000).fadeOut(1000);
+$("#splash").delay(4000).fadeOut(2000);
+$("#splash_logo").delay(6000).fadeOut(2000);
 
 //起動後にアップ
 window.setTimeout(function(){
+    map.setTerrain({'source': 'mapbox-dem', 'exaggeration': 1});
     map.fitBounds(
         [
         [136.915292, 35.547079], // southwestern corner of the bounds
         [136.926577, 35.556588] // northeastern corner of the bounds
         ],
         {
-        pitch: 60,
+        pitch: 50,
         bearing: 105,
         duration: 3000,
         },
@@ -20,7 +21,7 @@ window.setTimeout(function(){
         .setLngLat([136.922970, 35.551341])
         .setHTML('<h2 style="text-align:center">アカデミー演習林33ha　</h2>')
         .addTo(map);
-}, 5000);
+}, 6000);
 
 //★★★アクセストークン★★★
 mapboxgl.accessToken = "pk.eyJ1IjoiZW5zeXVyaW5naXMiLCJhIjoiY2t6cHBhdHp2MDFlMTJ3bmRsNzY4dTlkbiJ9.BtuWDU9uyDaR5Var2Y6-4A";
@@ -54,7 +55,6 @@ map.on("load", () => {
         url: "mapbox://mapbox.mapbox-terrain-dem-v1",
     });
 
-    map.setTerrain({'source': 'mapbox-dem', 'exaggeration': 1});
 
     //スカイレイヤー(空)読み込み
     map.addLayer({
