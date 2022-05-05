@@ -16,10 +16,6 @@ window.setTimeout(function(){
         },
         );
 
-        new mapboxgl.Popup()
-        .setLngLat([136.918279, 35.554555])
-        .setHTML('<h3 style="text-align:center">校舎</h3>')
-        .addTo(map);
 
         new mapboxgl.Popup()
         .setLngLat([136.922970, 35.551341])
@@ -1121,6 +1117,25 @@ map.on("load", () => {
             "raster-opacity": 0,
         },
     });
+
+    //shadow
+    // map.addLayer({
+    //     id: "shadow",
+    //     type: "raster",
+    //     source: "ineikizyou_Base",
+    //     minzoom: 0,
+    //     maxzoom: 24,
+    //     layout: {
+    //         visibility: "visible",
+    //     },
+    //     paint: {
+    //         "raster-opacity": 0.2,
+    //         "raster-brightness-min": 0,
+    //         "raster-brightness-max": 1,
+    //         "raster-contrast": 0,
+    //         "raster-saturation": 0,
+    //         },
+    //     });
 
     //全国傾斜量区分図（雪崩関連）
     map.addLayer({
