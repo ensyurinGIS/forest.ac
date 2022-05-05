@@ -1421,7 +1421,7 @@ map.on("load", () => {
             visibility: "none",
         },
         paint: {
-            "fill-opacity": 0.5,
+            "fill-opacity": 0.4,
             "fill-color": [
             "match",
             ["get", "国有林_樹種１"],
@@ -1465,7 +1465,7 @@ map.on("load", () => {
         visibility: "visible",
         },
         paint: {
-        "fill-opacity": 0.5,
+        "fill-opacity": 0.4,
         "fill-color": "#399210",
         "fill-outline-color": "#000000",
         },
@@ -1481,7 +1481,7 @@ map.on("load", () => {
         visibility: "visible",
         },
         paint: {
-        "fill-opacity": 0.5,
+        "fill-opacity": 0.4,
         "fill-color": "#4ADDA5",
         "fill-outline-color": "#000000",
         },
@@ -1497,7 +1497,7 @@ map.on("load", () => {
         visibility: "visible",
         },
         paint: {
-        "fill-opacity": 0.5,
+        "fill-opacity": 0.4,
         "fill-color": "#DD2B2B",
         "fill-outline-color": "#000000",
         },
@@ -1513,7 +1513,7 @@ map.on("load", () => {
         visibility: "visible",
         },
         paint: {
-        "fill-opacity": 0.5,
+        "fill-opacity": 0.4,
         "fill-color": "#B720BF",
         "fill-outline-color": "#000000",
         },
@@ -1529,7 +1529,7 @@ map.on("load", () => {
         visibility: "visible",
         },
         paint: {
-        "fill-opacity": 0.5,
+        "fill-opacity": 0.4,
         "fill-color": "#EBBC22",
         "fill-outline-color": "#000000",
         },
@@ -1545,7 +1545,7 @@ map.on("load", () => {
         visibility: "visible",
         },
         paint: {
-        "fill-opacity": 0.5,
+        "fill-opacity": 0.4,
         "fill-color": "#2351E5",
         "fill-outline-color": "#000000",
         },
@@ -1561,7 +1561,7 @@ map.on("load", () => {
         visibility: "visible",
         },
         paint: {
-        "fill-opacity": 0.5,
+        "fill-opacity": 0.4,
         "fill-color": "#D98F34",
         "fill-outline-color": "#000000",
         },
@@ -1606,7 +1606,7 @@ map.on("load", () => {
             visibility: "none",
         },
         paint: {
-            "fill-color": "#a3a815",
+            "fill-color": "#ffff00",
             "fill-opacity": 1,
         },
     });
