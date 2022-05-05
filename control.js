@@ -22,9 +22,11 @@ class Control_DEM {
         if (demcheck === 1) {
             homeButton.innerHTML = setoff;
             map.setTerrain({ source: "mapbox-dem", exaggeration: 0 });
+            map.easeTo({ pitch: 0 });
             massage_2D();
         } else {
             map.setTerrain({ source: "mapbox-dem", exaggeration: 1 });
+            map.easeTo({ pitch: 60 });
             massage_3D();
         }
     });
