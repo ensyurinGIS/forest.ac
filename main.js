@@ -1673,7 +1673,7 @@ map.on('load', () => {
         paint: {
             'line-opacity': 0.8,
             'line-color': '#8e8e7b',
-            'line-width': 5,
+            'line-width': ['match', ['get', '種類'], ['林道'], 10, 5],
         },
     });
 
