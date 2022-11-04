@@ -349,39 +349,6 @@ map.on('load', () => {
             "&copy; <a href='https://www.mapbox.com/map-feedback/'>Mapbox</a> © <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap</a>",
     });
 
-    //MIERUNE Streets
-    map.addSource('mieStreets_Base', {
-        type: 'raster',
-        tiles: [
-            'https://api.maptiler.com/maps/jp-mierune-streets/256/{z}/{x}/{y}.png?key=xPtuA8njyV3pfm2Y1HXB',
-        ],
-        tileSize: 256,
-        attribution:
-            "<a href='https://maptiler.jp/' target='_blank'>&copy; MIERUNE</a> <a href='https://www.maptiler.com/copyright/' target='_blank'>&copy; MapTiler</a> <a href='https://www.openstreetmap.org/copyright' target='_blank'>&copy; OpenStreetMap contributors</a>",
-    });
-
-    //MIERUNE Gray
-    map.addSource('mieGray_Base', {
-        type: 'raster',
-        tiles: [
-            'https://api.maptiler.com/maps/jp-mierune-gray/256/{z}/{x}/{y}.png?key=xPtuA8njyV3pfm2Y1HXB',
-        ],
-        tileSize: 256,
-        attribution:
-            "<a href='https://maptiler.jp/' target='_blank'>&copy; MIERUNE</a> <a href='https://www.maptiler.com/copyright/' target='_blank'>&copy; MapTiler</a> <a href='https://www.openstreetmap.org/copyright' target='_blank'>&copy; OpenStreetMap contributors</a>",
-    });
-
-    //MIERUNE Dark
-    map.addSource('mieDark_Base', {
-        type: 'raster',
-        tiles: [
-            'https://api.maptiler.com/maps/jp-mierune-dark/256/{z}/{x}/{y}.png?key=xPtuA8njyV3pfm2Y1HXB',
-        ],
-        tileSize: 256,
-        attribution:
-            "<a href='https://maptiler.jp/' target='_blank'>&copy; MIERUNE</a> <a href='https://www.maptiler.com/copyright/' target='_blank'>&copy; MapTiler</a> <a href='https://www.openstreetmap.org/copyright' target='_blank'>&copy; OpenStreetMap contributors</a>",
-    });
-
     //★重ね用ラスターレイヤー読み込み
 
     //地図なし
@@ -655,38 +622,6 @@ map.on('load', () => {
             "&copy; <a href='https://www.mapbox.com/map-feedback/'>Mapbox</a> © <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap</a>",
     });
 
-    //MIERUNE StreetsR
-    map.addSource('mieStreets_Raster', {
-        type: 'raster',
-        tiles: [
-            'https://api.maptiler.com/maps/jp-mierune-streets/256/{z}/{x}/{y}.png?key=xPtuA8njyV3pfm2Y1HXB',
-        ],
-        tileSize: 256,
-        attribution:
-            "<a href='https://maptiler.jp/' target='_blank'>&copy; MIERUNE</a> <a href='https://www.maptiler.com/copyright/' target='_blank'>&copy; MapTiler</a> <a href='https://www.openstreetmap.org/copyright' target='_blank'>&copy; OpenStreetMap contributors</a>",
-    });
-
-    //MIERUNE GrayR
-    map.addSource('mieGray_Raster', {
-        type: 'raster',
-        tiles: [
-            'https://api.maptiler.com/maps/jp-mierune-gray/256/{z}/{x}/{y}.png?key=xPtuA8njyV3pfm2Y1HXB',
-        ],
-        tileSize: 256,
-        attribution:
-            "<a href='https://maptiler.jp/' target='_blank'>&copy; MIERUNE</a> <a href='https://www.maptiler.com/copyright/' target='_blank'>&copy; MapTiler</a> <a href='https://www.openstreetmap.org/copyright' target='_blank'>&copy; OpenStreetMap contributors</a>",
-    });
-
-    //MIERUNE DarkR
-    map.addSource('mieDark_Raster', {
-        type: 'raster',
-        tiles: [
-            'https://api.maptiler.com/maps/jp-mierune-dark/256/{z}/{x}/{y}.png?key=xPtuA8njyV3pfm2Y1HXB',
-        ],
-        tileSize: 256,
-        attribution:
-            "<a href='https://maptiler.jp/' target='_blank'>&copy; MIERUNE</a> <a href='https://www.maptiler.com/copyright/' target='_blank'>&copy; MapTiler</a> <a href='https://www.openstreetmap.org/copyright' target='_blank'>&copy; OpenStreetMap contributors</a>",
-    });
     //★ベクターレイヤー読み込み
 
     //その他ポイント
