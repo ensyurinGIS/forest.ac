@@ -701,6 +701,10 @@ body .mapboxgl-map {
 }
 
 /* スプラッシュメッセージ */
+#append_splash_msg {
+    pointer-events: none;
+}
+
 #append_splash_msg_inner.default {
     position: absolute;
     pointer-events: none;

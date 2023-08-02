@@ -35,18 +35,17 @@ if (matchMedia('only screen and (max-width: 640px)').matches) {
             },
         );
 
-        new mapboxgl.Popup()
+        new mapboxgl.Popup({
+            focusAfterOpen: false,
+        })
             .setLngLat([136.92297, 35.551341])
-            .setHTML(
-                '<h2 style="text-align:center">アカデミー演習林33ha　</h2>',
-            )
+            .setHTML('<h2 style="text-align:center">アカデミー演習林33ha　</h2>')
             .addTo(map);
     }, 6000);
 }
 
 //★★★アクセストークン★★★
-mapboxgl.accessToken =
-    'pk.eyJ1IjoiZW5zeXVyaW5naXMiLCJhIjoiY2t6cHBhdHp2MDFlMTJ3bmRsNzY4dTlkbiJ9.BtuWDU9uyDaR5Var2Y6-4A';
+mapboxgl.accessToken = 'pk.eyJ1IjoiZW5zeXVyaW5naXMiLCJhIjoiY2t6cHBhdHp2MDFlMTJ3bmRsNzY4dTlkbiJ9.BtuWDU9uyDaR5Var2Y6-4A';
 
 //マップの表示範囲制限
 const bounds = [
@@ -90,12 +89,9 @@ map.on('load', () => {
     //全国最新写真(シームレス)
     map.addSource('saisinsyasin_Base', {
         type: 'raster',
-        tiles: [
-            'https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/{z}/{x}/{y}.jpg',
-        ],
+        tiles: ['https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/{z}/{x}/{y}.jpg'],
         tileSize: 256,
-        attribution:
-            "<a href='http://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html' target='_blank'>国土地理院</a>",
+        attribution: "<a href='http://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html' target='_blank'>国土地理院</a>",
     });
 
     //電子国土基本図（オルソ画像）
@@ -103,8 +99,7 @@ map.on('load', () => {
         type: 'raster',
         tiles: ['https://cyberjapandata.gsi.go.jp/xyz/ort/{z}/{x}/{y}.jpg'],
         tileSize: 256,
-        attribution:
-            "<a href='http://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html' target='_blank'>国土地理院</a>",
+        attribution: "<a href='http://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html' target='_blank'>国土地理院</a>",
     });
 
     //空中写真(1979年頃)
@@ -112,8 +107,7 @@ map.on('load', () => {
         type: 'raster',
         tiles: ['https://cyberjapandata.gsi.go.jp/xyz/gazo2/{z}/{x}/{y}.jpg'],
         tileSize: 256,
-        attribution:
-            "<a href='http://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html' target='_blank'>国土地理院</a>",
+        attribution: "<a href='http://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html' target='_blank'>国土地理院</a>",
     });
 
     //基本図(マップボックスアカウントのマップデータから)
@@ -130,8 +124,7 @@ map.on('load', () => {
         type: 'raster',
         tiles: ['https://cyberjapandata.gsi.go.jp/xyz/std/{z}/{x}/{y}.png'],
         tileSize: 256,
-        attribution:
-            "<a href='http://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html' target='_blank'>国土地理院</a>",
+        attribution: "<a href='http://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html' target='_blank'>国土地理院</a>",
     });
 
     //地理院タイル淡色
@@ -139,8 +132,7 @@ map.on('load', () => {
         type: 'raster',
         tiles: ['https://cyberjapandata.gsi.go.jp/xyz/pale/{z}/{x}/{y}.png'],
         tileSize: 256,
-        attribution:
-            "<a href='http://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html' target='_blank'>国土地理院</a>",
+        attribution: "<a href='http://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html' target='_blank'>国土地理院</a>",
     });
 
     //地理院タイル白地図
@@ -148,8 +140,7 @@ map.on('load', () => {
         type: 'raster',
         tiles: ['https://cyberjapandata.gsi.go.jp/xyz/blank/{z}/{x}/{y}.png'],
         tileSize: 256,
-        attribution:
-            "<a href='http://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html' target='_blank'>国土地理院</a>",
+        attribution: "<a href='http://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html' target='_blank'>国土地理院</a>",
     });
 
     //色別標高図
@@ -157,41 +148,31 @@ map.on('load', () => {
         type: 'raster',
         tiles: ['https://cyberjapandata.gsi.go.jp/xyz/relief/{z}/{x}/{y}.png'],
         tileSize: 256,
-        attribution:
-            "<a href='http://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html' target='_blank'>国土地理院</a>",
+        attribution: "<a href='http://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html' target='_blank'>国土地理院</a>",
     });
 
     // 陰影起伏図
     map.addSource('ineikizyou_Base', {
         type: 'raster',
-        tiles: [
-            'https://cyberjapandata.gsi.go.jp/xyz/hillshademap/{z}/{x}/{y}.png',
-        ],
+        tiles: ['https://cyberjapandata.gsi.go.jp/xyz/hillshademap/{z}/{x}/{y}.png'],
         tileSize: 256,
-        attribution:
-            "<a href='http://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html' target='_blank'>国土地理院</a>",
+        attribution: "<a href='http://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html' target='_blank'>国土地理院</a>",
     });
 
     // 傾斜量図白黒
     map.addSource('keisyasirokuro_Base', {
         type: 'raster',
-        tiles: [
-            'https://cyberjapandata.gsi.go.jp/xyz/slopemap/{z}/{x}/{y}.png',
-        ],
+        tiles: ['https://cyberjapandata.gsi.go.jp/xyz/slopemap/{z}/{x}/{y}.png'],
         tileSize: 256,
-        attribution:
-            "<a href='http://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html' target='_blank'>国土地理院</a>",
+        attribution: "<a href='http://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html' target='_blank'>国土地理院</a>",
     });
 
     //傾斜区分図(岐阜県森林研究所)
     map.addSource('keiyakubun_Base', {
         type: 'raster',
-        tiles: [
-            'https://tiles.arcgis.com/tiles/jJQWqgqiNhLLjkin/arcgis/rest/services/Gifu_2021Slpoe/MapServer/tile/{z}/{y}/{x}',
-        ],
+        tiles: ['https://tiles.arcgis.com/tiles/jJQWqgqiNhLLjkin/arcgis/rest/services/Gifu_2021Slpoe/MapServer/tile/{z}/{y}/{x}'],
         tileSize: 256,
-        attribution:
-            "<a href='https://www.forest.rd.pref.gifu.lg.jp/shiyou/CSrittaizu.html' target='_blank'>岐阜県森林研究所</a>",
+        attribution: "<a href='https://www.forest.rd.pref.gifu.lg.jp/shiyou/CSrittaizu.html' target='_blank'>岐阜県森林研究所</a>",
     });
 
     // 植生図
@@ -199,19 +180,15 @@ map.on('load', () => {
         type: 'raster',
         tiles: ['https://map.ecoris.info/tiles/vege67hill/{z}/{x}/{y}.png'],
         tileSize: 256,
-        attribution:
-            "<a href='https://map.ecoris.info/#contents' target='_blank'>エコリス地図タイル</a>",
+        attribution: "<a href='https://map.ecoris.info/#contents' target='_blank'>エコリス地図タイル</a>",
     });
 
     // シームレス地質図
     map.addSource('tisitus_Base', {
         type: 'raster',
-        tiles: [
-            'https://gbank.gsj.jp/seamless/v2/api/1.2.1/tiles/{z}/{y}/{x}.png',
-        ],
+        tiles: ['https://gbank.gsj.jp/seamless/v2/api/1.2.1/tiles/{z}/{y}/{x}.png'],
         tileSize: 256,
-        attribution:
-            "<a href='https://gbank.gsj.jp/seamless/index.html?lang=ja&' target='_blank'>産総研地質調査総合センター</a>",
+        attribution: "<a href='https://gbank.gsj.jp/seamless/index.html?lang=ja&' target='_blank'>産総研地質調査総合センター</a>",
     });
 
     // 活断層図
@@ -219,30 +196,23 @@ map.on('load', () => {
         type: 'raster',
         tiles: ['https://cyberjapandata.gsi.go.jp/xyz/afm/{z}/{x}/{y}.png'],
         tileSize: 256,
-        attribution:
-            "<a href='http://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html' target='_blank'>国土地理院</a>",
+        attribution: "<a href='http://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html' target='_blank'>国土地理院</a>",
     });
 
     // CS立体図(岐阜県森林研究所)
     map.addSource('csrittai_Base', {
         type: 'raster',
-        tiles: [
-            'https://tiles.arcgis.com/tiles/jJQWqgqiNhLLjkin/arcgis/rest/services/Gifu2021CS_Mosic/MapServer/tile/{z}/{y}/{x}',
-        ],
+        tiles: ['https://tiles.arcgis.com/tiles/jJQWqgqiNhLLjkin/arcgis/rest/services/Gifu2021CS_Mosic/MapServer/tile/{z}/{y}/{x}'],
         tileSize: 256,
-        attribution:
-            "<a href='https://www.forest.rd.pref.gifu.lg.jp/shiyou/CSrittaizu.html' target='_blank'>岐阜県森林研究所</a>",
+        attribution: "<a href='https://www.forest.rd.pref.gifu.lg.jp/shiyou/CSrittaizu.html' target='_blank'>岐阜県森林研究所</a>",
     });
 
     //赤色立体図10mメッシュ
     map.addSource('sekisyoku_Base', {
         type: 'raster',
-        tiles: [
-            'https://cyberjapandata.gsi.go.jp/xyz/sekishoku/{z}/{x}/{y}.png',
-        ],
+        tiles: ['https://cyberjapandata.gsi.go.jp/xyz/sekishoku/{z}/{x}/{y}.png'],
         tileSize: 256,
-        attribution:
-            "<a href='https://www.rrim.jp/' target='_blank'>アジア航測株式会社</a>",
+        attribution: "<a href='https://www.rrim.jp/' target='_blank'>アジア航測株式会社</a>",
     });
 
     //OpenStreetMap
@@ -250,30 +220,23 @@ map.on('load', () => {
         type: 'raster',
         tiles: ['https://tile.openstreetmap.org/{z}/{x}/{y}.png'],
         tileSize: 256,
-        attribution:
-            "&copy; <a href='http://osm.org/copyright'>OpenStreetMap</a> contributors",
+        attribution: "&copy; <a href='http://osm.org/copyright'>OpenStreetMap</a> contributors",
     });
 
     //Esri World Street
     map.addSource('esriWS_Base', {
         type: 'raster',
-        tiles: [
-            'https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}.png',
-        ],
+        tiles: ['https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}.png'],
         tileSize: 256,
-        attribution:
-            "&copy; <a href='http://osm.org/copyright'>ESRI</a> contributors",
+        attribution: "&copy; <a href='http://osm.org/copyright'>ESRI</a> contributors",
     });
 
     //Esri World Imagery
     map.addSource('esriWI_Base', {
         type: 'raster',
-        tiles: [
-            'https://services.arcgisonline.com/arcgis/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
-        ],
+        tiles: ['https://services.arcgisonline.com/arcgis/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}'],
         tileSize: 256,
-        attribution:
-            "&copy; <a href='http://osm.org/copyright'>ESRI</a> contributors",
+        attribution: "&copy; <a href='http://osm.org/copyright'>ESRI</a> contributors",
     });
 
     //Stamen_t
@@ -281,30 +244,23 @@ map.on('load', () => {
         type: 'raster',
         tiles: ['https://stamen-tiles.a.ssl.fastly.net/toner/{z}/{x}/{y}.png'],
         tileSize: 256,
-        attribution:
-            "&copy; <a href='https://stamen.com/'>Stamen</a> contributors",
+        attribution: "&copy; <a href='https://stamen.com/'>Stamen</a> contributors",
     });
 
     //Stamen_Terrain
     map.addSource('StamenT_Base', {
         type: 'raster',
-        tiles: [
-            'https://stamen-tiles.a.ssl.fastly.net/terrain/{z}/{x}/{y}.png',
-        ],
+        tiles: ['https://stamen-tiles.a.ssl.fastly.net/terrain/{z}/{x}/{y}.png'],
         tileSize: 256,
-        attribution:
-            "&copy; <a href='https://stamen.com/'>Stamen</a> contributors",
+        attribution: "&copy; <a href='https://stamen.com/'>Stamen</a> contributors",
     });
 
     //Stamen_w
     map.addSource('StamenW_Base', {
         type: 'raster',
-        tiles: [
-            'https://stamen-tiles.a.ssl.fastly.net/watercolor/{z}/{x}/{y}.jpg',
-        ],
+        tiles: ['https://stamen-tiles.a.ssl.fastly.net/watercolor/{z}/{x}/{y}.jpg'],
         tileSize: 256,
-        attribution:
-            "&copy; <a href='https://stamen.com/'>Stamen</a> contributors",
+        attribution: "&copy; <a href='https://stamen.com/'>Stamen</a> contributors",
     });
 
     //岐阜県共有空間データ
@@ -312,41 +268,31 @@ map.on('load', () => {
         type: 'raster',
         tiles: ['https://mapdata.qchizu.xyz/gifu_pref_00/{z}/{x}/{y}.png'],
         tileSize: 256,
-        attribution:
-            "<a href='https://info.qchizu.xyz/qchizu/reprint/' target='_blank'>Q地図タイル</a>",
+        attribution: "<a href='https://info.qchizu.xyz/qchizu/reprint/' target='_blank'>Q地図タイル</a>",
     });
 
     //Mapbox Streets
     map.addSource('mapboxS_Base', {
         type: 'raster',
-        tiles: [
-            'https://api.mapbox.com/styles/v1/mapbox/streets-v11/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoiZW5zeXVyaW5naXMiLCJhIjoiY2t6cHBhdHp2MDFlMTJ3bmRsNzY4dTlkbiJ9.BtuWDU9uyDaR5Var2Y6-4A',
-        ],
+        tiles: ['https://api.mapbox.com/styles/v1/mapbox/streets-v11/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoiZW5zeXVyaW5naXMiLCJhIjoiY2t6cHBhdHp2MDFlMTJ3bmRsNzY4dTlkbiJ9.BtuWDU9uyDaR5Var2Y6-4A'],
         tileSize: 256,
-        attribution:
-            "&copy; <a href='https://www.mapbox.com/map-feedback/'>Mapbox</a> © <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap</a>",
+        attribution: "&copy; <a href='https://www.mapbox.com/map-feedback/'>Mapbox</a> © <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap</a>",
     });
 
     //Mapbox Dark
     map.addSource('mapboxD_Base', {
         type: 'raster',
-        tiles: [
-            'https://api.mapbox.com/styles/v1/mapbox/dark-v10/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoiZW5zeXVyaW5naXMiLCJhIjoiY2t6cHBhdHp2MDFlMTJ3bmRsNzY4dTlkbiJ9.BtuWDU9uyDaR5Var2Y6-4A',
-        ],
+        tiles: ['https://api.mapbox.com/styles/v1/mapbox/dark-v10/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoiZW5zeXVyaW5naXMiLCJhIjoiY2t6cHBhdHp2MDFlMTJ3bmRsNzY4dTlkbiJ9.BtuWDU9uyDaR5Var2Y6-4A'],
         tileSize: 256,
-        attribution:
-            "&copy; <a href='https://www.mapbox.com/map-feedback/'>Mapbox</a> © <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap</a>",
+        attribution: "&copy; <a href='https://www.mapbox.com/map-feedback/'>Mapbox</a> © <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap</a>",
     });
 
     //Mapbox Mapbox Satelite
     map.addSource('mapboxSL_Base', {
         type: 'raster',
-        tiles: [
-            'https://api.mapbox.com/styles/v1/mapbox/satellite-v9/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoiZW5zeXVyaW5naXMiLCJhIjoiY2t6cHBhdHp2MDFlMTJ3bmRsNzY4dTlkbiJ9.BtuWDU9uyDaR5Var2Y6-4A',
-        ],
+        tiles: ['https://api.mapbox.com/styles/v1/mapbox/satellite-v9/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoiZW5zeXVyaW5naXMiLCJhIjoiY2t6cHBhdHp2MDFlMTJ3bmRsNzY4dTlkbiJ9.BtuWDU9uyDaR5Var2Y6-4A'],
         tileSize: 256,
-        attribution:
-            "&copy; <a href='https://www.mapbox.com/map-feedback/'>Mapbox</a> © <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap</a>",
+        attribution: "&copy; <a href='https://www.mapbox.com/map-feedback/'>Mapbox</a> © <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap</a>",
     });
 
     //★重ね用ラスターレイヤー読み込み
@@ -363,12 +309,9 @@ map.on('load', () => {
     //全国最新写真(シームレス)R
     map.addSource('saisinsyasin_Raster', {
         type: 'raster',
-        tiles: [
-            'https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/{z}/{x}/{y}.jpg',
-        ],
+        tiles: ['https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/{z}/{x}/{y}.jpg'],
         tileSize: 256,
-        attribution:
-            "<a href='http://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html' target='_blank'>国土地理院</a>",
+        attribution: "<a href='http://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html' target='_blank'>国土地理院</a>",
     });
 
     //電子国土基本図（オルソ画像）R
@@ -376,8 +319,7 @@ map.on('load', () => {
         type: 'raster',
         tiles: ['https://cyberjapandata.gsi.go.jp/xyz/ort/{z}/{x}/{y}.jpg'],
         tileSize: 256,
-        attribution:
-            "<a href='http://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html' target='_blank'>国土地理院</a>",
+        attribution: "<a href='http://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html' target='_blank'>国土地理院</a>",
     });
 
     //空中写真(1979年頃)R
@@ -385,8 +327,7 @@ map.on('load', () => {
         type: 'raster',
         tiles: ['https://cyberjapandata.gsi.go.jp/xyz/gazo2/{z}/{x}/{y}.jpg'],
         tileSize: 256,
-        attribution:
-            "<a href='http://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html' target='_blank'>国土地理院</a>",
+        attribution: "<a href='http://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html' target='_blank'>国土地理院</a>",
     });
 
     //基本図(マップボックスアカウントのマップデータから)R
@@ -403,8 +344,7 @@ map.on('load', () => {
         type: 'raster',
         tiles: ['https://cyberjapandata.gsi.go.jp/xyz/std/{z}/{x}/{y}.png'],
         tileSize: 256,
-        attribution:
-            "<a href='http://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html' target='_blank'>国土地理院</a>",
+        attribution: "<a href='http://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html' target='_blank'>国土地理院</a>",
     });
 
     //地理院タイル淡色R
@@ -412,8 +352,7 @@ map.on('load', () => {
         type: 'raster',
         tiles: ['https://cyberjapandata.gsi.go.jp/xyz/pale/{z}/{x}/{y}.png'],
         tileSize: 256,
-        attribution:
-            "<a href='http://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html' target='_blank'>国土地理院</a>",
+        attribution: "<a href='http://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html' target='_blank'>国土地理院</a>",
     });
 
     //地理院タイル白地図R
@@ -421,8 +360,7 @@ map.on('load', () => {
         type: 'raster',
         tiles: ['https://cyberjapandata.gsi.go.jp/xyz/blank/{z}/{x}/{y}.png'],
         tileSize: 256,
-        attribution:
-            "<a href='http://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html' target='_blank'>国土地理院</a>",
+        attribution: "<a href='http://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html' target='_blank'>国土地理院</a>",
     });
 
     //色別標高図R
@@ -430,41 +368,31 @@ map.on('load', () => {
         type: 'raster',
         tiles: ['https://cyberjapandata.gsi.go.jp/xyz/relief/{z}/{x}/{y}.png'],
         tileSize: 256,
-        attribution:
-            "<a href='http://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html' target='_blank'>国土地理院</a>",
+        attribution: "<a href='http://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html' target='_blank'>国土地理院</a>",
     });
 
     // 陰影起伏図R
     map.addSource('ineikizyou_Raster', {
         type: 'raster',
-        tiles: [
-            'https://cyberjapandata.gsi.go.jp/xyz/hillshademap/{z}/{x}/{y}.png',
-        ],
+        tiles: ['https://cyberjapandata.gsi.go.jp/xyz/hillshademap/{z}/{x}/{y}.png'],
         tileSize: 256,
-        attribution:
-            "<a href='http://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html' target='_blank'>国土地理院</a>",
+        attribution: "<a href='http://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html' target='_blank'>国土地理院</a>",
     });
 
     // 傾斜量図白黒R
     map.addSource('keisyasirokuro_Raster', {
         type: 'raster',
-        tiles: [
-            'https://cyberjapandata.gsi.go.jp/xyz/slopemap/{z}/{x}/{y}.png',
-        ],
+        tiles: ['https://cyberjapandata.gsi.go.jp/xyz/slopemap/{z}/{x}/{y}.png'],
         tileSize: 256,
-        attribution:
-            "<a href='http://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html' target='_blank'>国土地理院</a>",
+        attribution: "<a href='http://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html' target='_blank'>国土地理院</a>",
     });
 
     //傾斜区分図(岐阜県森林研究所)R
     map.addSource('keiyakubun_Raster', {
         type: 'raster',
-        tiles: [
-            'https://tiles.arcgis.com/tiles/jJQWqgqiNhLLjkin/arcgis/rest/services/Gifu_2021Slpoe/MapServer/tile/{z}/{y}/{x}',
-        ],
+        tiles: ['https://tiles.arcgis.com/tiles/jJQWqgqiNhLLjkin/arcgis/rest/services/Gifu_2021Slpoe/MapServer/tile/{z}/{y}/{x}'],
         tileSize: 256,
-        attribution:
-            "<a href='https://www.forest.rd.pref.gifu.lg.jp/shiyou/CSrittaizu.html' target='_blank'>岐阜県森林研究所</a>",
+        attribution: "<a href='https://www.forest.rd.pref.gifu.lg.jp/shiyou/CSrittaizu.html' target='_blank'>岐阜県森林研究所</a>",
     });
 
     // 植生図R
@@ -472,19 +400,15 @@ map.on('load', () => {
         type: 'raster',
         tiles: ['https://map.ecoris.info/tiles/vege67hill/{z}/{x}/{y}.png'],
         tileSize: 256,
-        attribution:
-            "<a href='https://map.ecoris.info/#contents' target='_blank'>エコリス地図タイル</a>",
+        attribution: "<a href='https://map.ecoris.info/#contents' target='_blank'>エコリス地図タイル</a>",
     });
 
     // シームレス地質図R
     map.addSource('tisitus_Raster', {
         type: 'raster',
-        tiles: [
-            'https://gbank.gsj.jp/seamless/v2/api/1.2.1/tiles/{z}/{y}/{x}.png',
-        ],
+        tiles: ['https://gbank.gsj.jp/seamless/v2/api/1.2.1/tiles/{z}/{y}/{x}.png'],
         tileSize: 256,
-        attribution:
-            "<a href='https://gbank.gsj.jp/seamless/index.html?lang=ja&' target='_blank'>産総研地質調査総合センター</a>",
+        attribution: "<a href='https://gbank.gsj.jp/seamless/index.html?lang=ja&' target='_blank'>産総研地質調査総合センター</a>",
     });
 
     // 活断層図R
@@ -492,30 +416,23 @@ map.on('load', () => {
         type: 'raster',
         tiles: ['https://cyberjapandata.gsi.go.jp/xyz/afm/{z}/{x}/{y}.png'],
         tileSize: 256,
-        attribution:
-            "<a href='http://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html' target='_blank'>国土地理院</a>",
+        attribution: "<a href='http://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html' target='_blank'>国土地理院</a>",
     });
 
     // CS立体図(岐阜県森林研究所)R
     map.addSource('csrittai_Raster', {
         type: 'raster',
-        tiles: [
-            'https://tiles.arcgis.com/tiles/jJQWqgqiNhLLjkin/arcgis/rest/services/Gifu2021CS_Mosic/MapServer/tile/{z}/{y}/{x}',
-        ],
+        tiles: ['https://tiles.arcgis.com/tiles/jJQWqgqiNhLLjkin/arcgis/rest/services/Gifu2021CS_Mosic/MapServer/tile/{z}/{y}/{x}'],
         tileSize: 256,
-        attribution:
-            "<a href='https://www.forest.rd.pref.gifu.lg.jp/shiyou/CSrittaizu.html' target='_blank'>岐阜県森林研究所</a>",
+        attribution: "<a href='https://www.forest.rd.pref.gifu.lg.jp/shiyou/CSrittaizu.html' target='_blank'>岐阜県森林研究所</a>",
     });
 
     //赤色立体図10mメッシュR
     map.addSource('sekisyoku_Raster', {
         type: 'raster',
-        tiles: [
-            'https://cyberjapandata.gsi.go.jp/xyz/sekishoku/{z}/{x}/{y}.png',
-        ],
+        tiles: ['https://cyberjapandata.gsi.go.jp/xyz/sekishoku/{z}/{x}/{y}.png'],
         tileSize: 256,
-        attribution:
-            "<a href='https://www.rrim.jp/' target='_blank'>アジア航測株式会社</a>",
+        attribution: "<a href='https://www.rrim.jp/' target='_blank'>アジア航測株式会社</a>",
     });
 
     //OpenStreetMapR
@@ -523,30 +440,23 @@ map.on('load', () => {
         type: 'raster',
         tiles: ['https://tile.openstreetmap.org/{z}/{x}/{y}.png'],
         tileSize: 256,
-        attribution:
-            "&copy; <a href='http://osm.org/copyright'>OpenStreetMap</a> contributors",
+        attribution: "&copy; <a href='http://osm.org/copyright'>OpenStreetMap</a> contributors",
     });
 
     //Esri World StreetR
     map.addSource('esriWS_Raster', {
         type: 'raster',
-        tiles: [
-            'https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}.png',
-        ],
+        tiles: ['https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}.png'],
         tileSize: 256,
-        attribution:
-            "&copy; <a href='http://osm.org/copyright'>ESRI</a> contributors",
+        attribution: "&copy; <a href='http://osm.org/copyright'>ESRI</a> contributors",
     });
 
     //Esri World ImageryR
     map.addSource('esriWI_Raster', {
         type: 'raster',
-        tiles: [
-            'https://services.arcgisonline.com/arcgis/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
-        ],
+        tiles: ['https://services.arcgisonline.com/arcgis/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}'],
         tileSize: 256,
-        attribution:
-            "&copy; <a href='http://osm.org/copyright'>ESRI</a> contributors",
+        attribution: "&copy; <a href='http://osm.org/copyright'>ESRI</a> contributors",
     });
 
     //Stamen_tR
@@ -554,30 +464,23 @@ map.on('load', () => {
         type: 'raster',
         tiles: ['https://stamen-tiles.a.ssl.fastly.net/toner/{z}/{x}/{y}.png'],
         tileSize: 256,
-        attribution:
-            "&copy; <a href='https://stamen.com/'>Stamen</a> contributors",
+        attribution: "&copy; <a href='https://stamen.com/'>Stamen</a> contributors",
     });
 
     //Stamen_TerrainR
     map.addSource('StamenT_Raster', {
         type: 'raster',
-        tiles: [
-            'https://stamen-tiles.a.ssl.fastly.net/terrain/{z}/{x}/{y}.png',
-        ],
+        tiles: ['https://stamen-tiles.a.ssl.fastly.net/terrain/{z}/{x}/{y}.png'],
         tileSize: 256,
-        attribution:
-            "&copy; <a href='https://stamen.com/'>Stamen</a> contributors",
+        attribution: "&copy; <a href='https://stamen.com/'>Stamen</a> contributors",
     });
 
     //Stamen_wR
     map.addSource('StamenW_Raster', {
         type: 'raster',
-        tiles: [
-            'https://stamen-tiles.a.ssl.fastly.net/watercolor/{z}/{x}/{y}.jpg',
-        ],
+        tiles: ['https://stamen-tiles.a.ssl.fastly.net/watercolor/{z}/{x}/{y}.jpg'],
         tileSize: 256,
-        attribution:
-            "&copy; <a href='https://stamen.com/'>Stamen</a> contributors",
+        attribution: "&copy; <a href='https://stamen.com/'>Stamen</a> contributors",
     });
 
     //岐阜県共有空間データR
@@ -585,41 +488,31 @@ map.on('load', () => {
         type: 'raster',
         tiles: ['https://mapdata.qchizu.xyz/gifu_pref_00/{z}/{x}/{y}.png'],
         tileSize: 256,
-        attribution:
-            "<a href='https://info.qchizu.xyz/qchizu/reprint/' target='_blank'>Q地図タイル</a>",
+        attribution: "<a href='https://info.qchizu.xyz/qchizu/reprint/' target='_blank'>Q地図タイル</a>",
     });
 
     //Mapbox StreetsR
     map.addSource('mapboxS_Raster', {
         type: 'raster',
-        tiles: [
-            'https://api.mapbox.com/styles/v1/mapbox/streets-v11/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoiZW5zeXVyaW5naXMiLCJhIjoiY2t6cHBhdHp2MDFlMTJ3bmRsNzY4dTlkbiJ9.BtuWDU9uyDaR5Var2Y6-4A',
-        ],
+        tiles: ['https://api.mapbox.com/styles/v1/mapbox/streets-v11/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoiZW5zeXVyaW5naXMiLCJhIjoiY2t6cHBhdHp2MDFlMTJ3bmRsNzY4dTlkbiJ9.BtuWDU9uyDaR5Var2Y6-4A'],
         tileSize: 256,
-        attribution:
-            "&copy; <a href='https://www.mapbox.com/map-feedback/'>Mapbox</a> © <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap</a>",
+        attribution: "&copy; <a href='https://www.mapbox.com/map-feedback/'>Mapbox</a> © <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap</a>",
     });
 
     //Mapbox DarkR
     map.addSource('mapboxD_Raster', {
         type: 'raster',
-        tiles: [
-            'https://api.mapbox.com/styles/v1/mapbox/dark-v10/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoiZW5zeXVyaW5naXMiLCJhIjoiY2t6cHBhdHp2MDFlMTJ3bmRsNzY4dTlkbiJ9.BtuWDU9uyDaR5Var2Y6-4A',
-        ],
+        tiles: ['https://api.mapbox.com/styles/v1/mapbox/dark-v10/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoiZW5zeXVyaW5naXMiLCJhIjoiY2t6cHBhdHp2MDFlMTJ3bmRsNzY4dTlkbiJ9.BtuWDU9uyDaR5Var2Y6-4A'],
         tileSize: 256,
-        attribution:
-            "&copy; <a href='https://www.mapbox.com/map-feedback/'>Mapbox</a> © <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap</a>",
+        attribution: "&copy; <a href='https://www.mapbox.com/map-feedback/'>Mapbox</a> © <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap</a>",
     });
 
     //Mapbox Mapbox SateliteR
     map.addSource('mapboxSL_Raster', {
         type: 'raster',
-        tiles: [
-            'https://api.mapbox.com/styles/v1/mapbox/satellite-v9/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoiZW5zeXVyaW5naXMiLCJhIjoiY2t6cHBhdHp2MDFlMTJ3bmRsNzY4dTlkbiJ9.BtuWDU9uyDaR5Var2Y6-4A',
-        ],
+        tiles: ['https://api.mapbox.com/styles/v1/mapbox/satellite-v9/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoiZW5zeXVyaW5naXMiLCJhIjoiY2t6cHBhdHp2MDFlMTJ3bmRsNzY4dTlkbiJ9.BtuWDU9uyDaR5Var2Y6-4A'],
         tileSize: 256,
-        attribution:
-            "&copy; <a href='https://www.mapbox.com/map-feedback/'>Mapbox</a> © <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap</a>",
+        attribution: "&copy; <a href='https://www.mapbox.com/map-feedback/'>Mapbox</a> © <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap</a>",
     });
 
     //★ベクターレイヤー読み込み
@@ -725,78 +618,57 @@ map.on('load', () => {
     //洪水浸水想定区域
     map.addSource('kousuisoutei', {
         type: 'raster',
-        tiles: [
-            'https://disaportaldata.gsi.go.jp/raster/01_flood_l2_shinsuishin_pref_data/21/{z}/{x}/{y}.png',
-        ],
+        tiles: ['https://disaportaldata.gsi.go.jp/raster/01_flood_l2_shinsuishin_pref_data/21/{z}/{x}/{y}.png'],
         tileSize: 256,
-        attribution:
-            "<a href='https://disaportal.gsi.go.jp/index.html' target='_blank'>ハザードマップポータルサイト</a>",
+        attribution: "<a href='https://disaportal.gsi.go.jp/index.html' target='_blank'>ハザードマップポータルサイト</a>",
     });
 
     //土砂災害警戒区域（土石流）
     map.addSource('dosyadoseki', {
         type: 'raster',
-        tiles: [
-            'https://disaportaldata.gsi.go.jp/raster/05_dosekiryukeikaikuiki_data/21/{z}/{x}/{y}.png',
-        ],
+        tiles: ['https://disaportaldata.gsi.go.jp/raster/05_dosekiryukeikaikuiki_data/21/{z}/{x}/{y}.png'],
         tileSize: 256,
-        attribution:
-            "<a href='https://disaportal.gsi.go.jp/index.html' target='_blank'>ハザードマップポータルサイト</a>",
+        attribution: "<a href='https://disaportal.gsi.go.jp/index.html' target='_blank'>ハザードマップポータルサイト</a>",
     });
 
     //土砂災害警戒区域（急傾斜地の崩壊）
     map.addSource('dosyakyusyati', {
         type: 'raster',
-        tiles: [
-            'https://disaportaldata.gsi.go.jp/raster/05_kyukeishakeikaikuiki_data/21/{z}/{x}/{y}.png',
-        ],
+        tiles: ['https://disaportaldata.gsi.go.jp/raster/05_kyukeishakeikaikuiki_data/21/{z}/{x}/{y}.png'],
         tileSize: 256,
-        attribution:
-            "<a href='https://disaportal.gsi.go.jp/index.html' target='_blank'>ハザードマップポータルサイト</a>",
+        attribution: "<a href='https://disaportal.gsi.go.jp/index.html' target='_blank'>ハザードマップポータルサイト</a>",
     });
 
     //土石流危険渓流
     map.addSource('dosekiryu', {
         type: 'raster',
-        tiles: [
-            'https://disaportaldata.gsi.go.jp/raster/05_dosekiryukikenkeiryu_data/21/{z}/{x}/{y}.png',
-        ],
+        tiles: ['https://disaportaldata.gsi.go.jp/raster/05_dosekiryukikenkeiryu_data/21/{z}/{x}/{y}.png'],
         tileSize: 256,
-        attribution:
-            "<a href='https://disaportal.gsi.go.jp/index.html' target='_blank'>ハザードマップポータルサイト</a>",
+        attribution: "<a href='https://disaportal.gsi.go.jp/index.html' target='_blank'>ハザードマップポータルサイト</a>",
     });
 
     //急傾斜地崩壊危険箇所
     map.addSource('kyusyati', {
         type: 'raster',
-        tiles: [
-            'https://disaportaldata.gsi.go.jp/raster/05_kyukeisyachihoukai_data/21/{z}/{x}/{y}.png',
-        ],
+        tiles: ['https://disaportaldata.gsi.go.jp/raster/05_kyukeisyachihoukai_data/21/{z}/{x}/{y}.png'],
         tileSize: 256,
-        attribution:
-            "<a href='https://disaportal.gsi.go.jp/index.html' target='_blank'>ハザードマップポータルサイト</a>",
+        attribution: "<a href='https://disaportal.gsi.go.jp/index.html' target='_blank'>ハザードマップポータルサイト</a>",
     });
 
     // 全国傾斜量区分図(雪崩関連)
     map.addSource('keisyanadare', {
         type: 'raster',
-        tiles: [
-            'https://cyberjapandata.gsi.go.jp/xyz/slopezone1map/{z}/{x}/{y}.png',
-        ],
+        tiles: ['https://cyberjapandata.gsi.go.jp/xyz/slopezone1map/{z}/{x}/{y}.png'],
         tileSize: 256,
-        attribution:
-            "<a href='http://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html' target='_blank'>国土地理院</a>",
+        attribution: "<a href='http://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html' target='_blank'>国土地理院</a>",
     });
 
     // 地すべり地形分布図日本全国版（防災科学技術研究所）
     map.addSource('zisuberi', {
         type: 'raster',
-        tiles: [
-            'https://jmapweb3v.bosai.go.jp/map/xyz/landslide/{z}/{x}/{y}.png',
-        ],
+        tiles: ['https://jmapweb3v.bosai.go.jp/map/xyz/landslide/{z}/{x}/{y}.png'],
         tileSize: 256,
-        attribution:
-            "<a href='https://www.j-shis.bosai.go.jp/landslidemap' target='_blank'>防災科学技術研究所</a>",
+        attribution: "<a href='https://www.j-shis.bosai.go.jp/landslidemap' target='_blank'>防災科学技術研究所</a>",
     });
 
     //★geojsonデータ読み込み
@@ -1170,10 +1042,7 @@ map.on('load', () => {
         id: '岐阜県20万分の1表層地質-断層',
         type: 'line',
         source: 'GIFU-201tisitu',
-        filter: [
-            'all',
-            ['match', ['geometry-type'], ['LineString'], true, false],
-        ],
+        filter: ['all', ['match', ['geometry-type'], ['LineString'], true, false]],
         layout: {
             visibility: 'none',
         },
@@ -1347,12 +1216,7 @@ map.on('load', () => {
         layout: {
             visibility: 'none',
             'text-field': ['to-string', ['get', 'name']],
-            'text-size': [
-                'case',
-                ['match', ['get', 'type'], ['city'], true, false],
-                17,
-                13,
-            ],
+            'text-size': ['case', ['match', ['get', 'type'], ['city'], true, false], 17, 13],
         },
         paint: {
             'text-halo-color': '#ffffff',
@@ -1371,21 +1235,7 @@ map.on('load', () => {
         },
         paint: {
             'fill-opacity': 0.4,
-            'fill-color': [
-                'match',
-                ['get', '国有林_樹種１'],
-                ['スギ'],
-                '#3a9310',
-                ['ヒノキ'],
-                '#4adea5',
-                ['アカマツ'],
-                '#DD2B2B',
-                ['他Ｌ'],
-                '#ecbd22',
-                ['天ヒノキ'],
-                '#34eac2',
-                '#000000',
-            ],
+            'fill-color': ['match', ['get', '国有林_樹種１'], ['スギ'], '#3a9310', ['ヒノキ'], '#4adea5', ['アカマツ'], '#DD2B2B', ['他Ｌ'], '#ecbd22', ['天ヒノキ'], '#34eac2', '#000000'],
             'fill-outline-color': '#000000',
         },
     });
@@ -1457,10 +1307,7 @@ map.on('load', () => {
         type: 'fill',
         source: 'ENSYURIN_rinhanzu',
         'source-layer': 'ENSYURIN_rinhanzu',
-        filter: [
-            'all',
-            ['match', ['get', '樹種'], ['スラッシュマツ'], true, false],
-        ],
+        filter: ['all', ['match', ['get', '樹種'], ['スラッシュマツ'], true, false]],
         layout: {
             visibility: 'visible',
         },
@@ -1508,10 +1355,7 @@ map.on('load', () => {
         type: 'fill',
         source: 'ENSYURIN_rinhanzu',
         'source-layer': 'ENSYURIN_rinhanzu',
-        filter: [
-            'all',
-            ['match', ['get', '樹種'], ['その他岩石'], true, false],
-        ],
+        filter: ['all', ['match', ['get', '樹種'], ['その他岩石'], true, false]],
         layout: {
             visibility: 'visible',
         },
@@ -1623,32 +1467,12 @@ map.on('load', () => {
                 'match',
                 ['get', '樹種'],
                 ['広葉樹'],
-                [
-                    'to-string',
-                    ['concat', ['get', '小林班ID'], '\n', ['get', '樹種']],
-                ],
+                ['to-string', ['concat', ['get', '小林班ID'], '\n', ['get', '樹種']]],
                 ['草地'],
-                [
-                    'to-string',
-                    ['concat', ['get', '小林班ID'], '\n', ['get', '樹種']],
-                ],
+                ['to-string', ['concat', ['get', '小林班ID'], '\n', ['get', '樹種']]],
                 ['その他岩石'],
-                [
-                    'to-string',
-                    ['concat', ['get', '小林班ID'], '\n', ['get', '樹種']],
-                ],
-                [
-                    'to-string',
-                    [
-                        'concat',
-                        ['get', '小林班ID'],
-                        '\n',
-                        ['get', '樹種'],
-                        ' ',
-                        ['+', ['get', '林齢'], 3],
-                        '年生',
-                    ],
-                ],
+                ['to-string', ['concat', ['get', '小林班ID'], '\n', ['get', '樹種']]],
+                ['to-string', ['concat', ['get', '小林班ID'], '\n', ['get', '樹種'], ' ', ['+', ['get', '林齢'], 3], '年生']],
             ],
             'text-max-width': 12,
             'text-size': 12,
@@ -1673,35 +1497,10 @@ map.on('load', () => {
             'text-field': [
                 'case',
                 ['match', ['get', '国有林_樹種１'], ['他Ｌ'], true, false],
-                [
-                    'to-string',
-                    ['concat', ['get', '国有林_名前'], '\n', '広葉樹'],
-                ],
-                [
-                    'match',
-                    ['get', '国有林_林小班名称'],
-                    [
-                        '3142_林班_イ',
-                        '3147_林班_イ',
-                        '3147_林班_ロ',
-                        '3149_林班_イ',
-                    ],
-                    true,
-                    false,
-                ],
+                ['to-string', ['concat', ['get', '国有林_名前'], '\n', '広葉樹']],
+                ['match', ['get', '国有林_林小班名称'], ['3142_林班_イ', '3147_林班_イ', '3147_林班_ロ', '3149_林班_イ'], true, false],
                 ['to-string', ['get', '国有林_名前']],
-                [
-                    'to-string',
-                    [
-                        'concat',
-                        ['get', '国有林_名前'],
-                        '\n',
-                        ['get', '国有林_樹種１'],
-                        ' ',
-                        ['+', ['get', '国有林_最新林齢１'], 3],
-                        '年生',
-                    ],
-                ],
+                ['to-string', ['concat', ['get', '国有林_名前'], '\n', ['get', '国有林_樹種１'], ' ', ['+', ['get', '国有林_最新林齢１'], 3], '年生']],
             ],
             'text-max-width': 12,
             'text-size': 12,
@@ -1759,10 +1558,7 @@ map.on('load', () => {
                 ['get', '活用期間'],
                 ['不明～'],
                 ['to-string', ['concat', '？年～', '\n', ['get', '活用内容']]],
-                [
-                    'to-string',
-                    ['concat', ['get', '活用期間'], '\n', ['get', '活用内容']],
-                ],
+                ['to-string', ['concat', ['get', '活用期間'], '\n', ['get', '活用内容']]],
             ],
             'text-variable-anchor': ['top', 'bottom', 'left', 'right'],
             'text-radial-offset': 0.5,
@@ -1781,10 +1577,7 @@ map.on('load', () => {
         id: '自力建設',
         type: 'fill',
         source: 'TATEMONO',
-        filter: [
-            'all',
-            ['match', ['get', 'カテゴリ'], ['自力建設'], true, false],
-        ],
+        filter: ['all', ['match', ['get', 'カテゴリ'], ['自力建設'], true, false]],
         layout: {
             visibility: 'visible',
         },
@@ -1857,10 +1650,7 @@ map.on('load', () => {
         id: '自力建設-ラベル',
         source: 'SISETU_NAME',
         type: 'symbol',
-        filter: [
-            'all',
-            ['match', ['get', 'カテゴリ'], ['自力建設'], true, false],
-        ],
+        filter: ['all', ['match', ['get', 'カテゴリ'], ['自力建設'], true, false]],
         layout: {
             visibility: 'visible',
             'text-field': ['to-string', ['get', 'name']],
@@ -1882,10 +1672,7 @@ map.on('load', () => {
         id: 'アカデミー施設・その他建物-ラベル',
         source: 'SISETU_NAME',
         type: 'symbol',
-        filter: [
-            'all',
-            ['match', ['get', 'カテゴリ'], ['建物', 'その他'], true, false],
-        ],
+        filter: ['all', ['match', ['get', 'カテゴリ'], ['建物', 'その他'], true, false]],
         layout: {
             visibility: 'visible',
             'text-field': ['to-string', ['get', 'name']],
@@ -1895,32 +1682,13 @@ map.on('load', () => {
             'text-justify': 'auto',
             'icon-image': [
                 'case',
-                [
-                    'match',
-                    ['get', 'name'],
-                    ['森林総合教育センター(morinos)'],
-                    true,
-                    false,
-                ],
+                ['match', ['get', 'name'], ['森林総合教育センター(morinos)'], true, false],
                 'morinosuマーク',
                 ['match', ['get', 'name'], ['アカデミーセンター'], true, false],
                 'アカデミーマークアイコン',
                 'dot-11',
             ],
-            'icon-size': [
-                'case',
-                [
-                    'match',
-                    ['get', 'name'],
-                    ['森林総合教育センター(morinos)'],
-                    true,
-                    false,
-                ],
-                0.4,
-                ['match', ['get', 'name'], ['アカデミーセンター'], true, false],
-                0.3,
-                1,
-            ],
+            'icon-size': ['case', ['match', ['get', 'name'], ['森林総合教育センター(morinos)'], true, false], 0.4, ['match', ['get', 'name'], ['アカデミーセンター'], true, false], 0.3, 1],
         },
         paint: {
             'text-halo-color': '#000000',
@@ -2014,13 +1782,7 @@ map.on('load', () => {
                 'toilet',
                 ['match', ['get', 'name'], ['古城山山頂'], true, false],
                 'mountain',
-                [
-                    'match',
-                    ['get', 'name'],
-                    ['車止めゲート', '国有林ゲート', 'チェーンゲート'],
-                    true,
-                    false,
-                ],
+                ['match', ['get', 'name'], ['車止めゲート', '国有林ゲート', 'チェーンゲート'], true, false],
                 'marker',
                 ['match', ['get', 'name'], ['大杉'], true, false],
                 'park',
@@ -2036,12 +1798,7 @@ map.on('load', () => {
                 '鉄塔',
                 'dot-11',
             ],
-            'icon-size': [
-                'case',
-                ['match', ['get', '種類'], ['鉄塔'], true, false],
-                0.05,
-                1,
-            ],
+            'icon-size': ['case', ['match', ['get', '種類'], ['鉄塔'], true, false], 0.05, 1],
         },
         paint: {
             'text-halo-color': '#000000',
@@ -2098,10 +1855,7 @@ map.on('load', () => {
             'icon-size': 0.05,
             'text-justify': 'left',
             'text-anchor': 'bottom-left',
-            'text-field': [
-                'to-string',
-                ['concat', ['get', '種名'], '\n', ['get', '状態']],
-            ],
+            'text-field': ['to-string', ['concat', ['get', '種名'], '\n', ['get', '状態']]],
         },
         paint: {
             'text-halo-color': '#FFFFFF',
@@ -2127,10 +1881,7 @@ map.on('load', () => {
             'icon-size': 0.05,
             'text-justify': 'left',
             'text-anchor': 'bottom-left',
-            'text-field': [
-                'to-string',
-                ['concat', ['get', '種名'], '\n', ['get', '状態']],
-            ],
+            'text-field': ['to-string', ['concat', ['get', '種名'], '\n', ['get', '状態']]],
         },
         paint: {
             'text-halo-color': '#FFFFFF',
@@ -2156,10 +1907,7 @@ map.on('load', () => {
             'icon-size': 0.05,
             'text-justify': 'left',
             'text-anchor': 'bottom-left',
-            'text-field': [
-                'to-string',
-                ['concat', ['get', '種名'], '\n', ['get', '状態']],
-            ],
+            'text-field': ['to-string', ['concat', ['get', '種名'], '\n', ['get', '状態']]],
         },
         paint: {
             'text-halo-color': '#FFFFFF',
@@ -2185,10 +1933,7 @@ map.on('load', () => {
             'icon-size': 0.05,
             'text-justify': 'left',
             'text-anchor': 'bottom-left',
-            'text-field': [
-                'to-string',
-                ['concat', ['get', '種名'], '\n', ['get', '状態']],
-            ],
+            'text-field': ['to-string', ['concat', ['get', '種名'], '\n', ['get', '状態']]],
         },
         paint: {
             'text-halo-color': '#FFFFFF',
@@ -2214,10 +1959,7 @@ map.on('load', () => {
             'icon-size': 0.05,
             'text-justify': 'left',
             'text-anchor': 'bottom-left',
-            'text-field': [
-                'to-string',
-                ['concat', ['get', '種名'], '\n', ['get', '状態']],
-            ],
+            'text-field': ['to-string', ['concat', ['get', '種名'], '\n', ['get', '状態']]],
         },
         paint: {
             'text-halo-color': '#FFFFFF',
@@ -2243,10 +1985,7 @@ map.on('load', () => {
             'icon-size': 0.05,
             'text-justify': 'left',
             'text-anchor': 'bottom-left',
-            'text-field': [
-                'to-string',
-                ['concat', ['get', '種名'], '\n', ['get', '状態']],
-            ],
+            'text-field': ['to-string', ['concat', ['get', '種名'], '\n', ['get', '状態']]],
         },
         paint: {
             'text-halo-color': '#FFFFFF',
@@ -2272,10 +2011,7 @@ map.on('load', () => {
             'icon-size': 0.05,
             'text-justify': 'left',
             'text-anchor': 'bottom-left',
-            'text-field': [
-                'to-string',
-                ['concat', ['get', '種名'], '\n', ['get', '状態']],
-            ],
+            'text-field': ['to-string', ['concat', ['get', '種名'], '\n', ['get', '状態']]],
         },
         paint: {
             'text-halo-color': '#FFFFFF',
@@ -2301,10 +2037,7 @@ map.on('load', () => {
             'icon-size': 0.05,
             'text-justify': 'left',
             'text-anchor': 'bottom-left',
-            'text-field': [
-                'to-string',
-                ['concat', ['get', '種名'], '\n', ['get', '状態']],
-            ],
+            'text-field': ['to-string', ['concat', ['get', '種名'], '\n', ['get', '状態']]],
         },
         paint: {
             'text-halo-color': '#FFFFFF',
@@ -2330,10 +2063,7 @@ map.on('load', () => {
             'icon-size': 0.05,
             'text-justify': 'left',
             'text-anchor': 'bottom-left',
-            'text-field': [
-                'to-string',
-                ['concat', ['get', '種名'], '\n', ['get', '状態']],
-            ],
+            'text-field': ['to-string', ['concat', ['get', '種名'], '\n', ['get', '状態']]],
         },
         paint: {
             'text-halo-color': '#FFFFFF',
@@ -2359,10 +2089,7 @@ map.on('load', () => {
             'icon-size': 0.05,
             'text-justify': 'left',
             'text-anchor': 'bottom-left',
-            'text-field': [
-                'to-string',
-                ['concat', ['get', '種名'], '\n', ['get', '状態']],
-            ],
+            'text-field': ['to-string', ['concat', ['get', '種名'], '\n', ['get', '状態']]],
         },
         paint: {
             'text-halo-color': '#FFFFFF',
@@ -2388,10 +2115,7 @@ map.on('load', () => {
             'icon-size': 0.05,
             'text-justify': 'left',
             'text-anchor': 'bottom-left',
-            'text-field': [
-                'to-string',
-                ['concat', ['get', '種名'], '\n', ['get', '状態']],
-            ],
+            'text-field': ['to-string', ['concat', ['get', '種名'], '\n', ['get', '状態']]],
         },
         paint: {
             'text-halo-color': '#FFFFFF',
@@ -2405,10 +2129,7 @@ map.on('load', () => {
         id: '森林環境教育専攻-フェノロジー調査2020-シダ植物',
         type: 'symbol',
         source: 'fenorozi-2020',
-        filter: [
-            'all',
-            ['match', ['get', '分類群'], ['シダ植物'], true, false],
-        ],
+        filter: ['all', ['match', ['get', '分類群'], ['シダ植物'], true, false]],
         layout: {
             visibility: 'none',
             'text-variable-anchor': ['top', 'bottom', 'left', 'right'],
@@ -2420,10 +2141,7 @@ map.on('load', () => {
             'icon-size': 0.05,
             'text-justify': 'left',
             'text-anchor': 'bottom-left',
-            'text-field': [
-                'to-string',
-                ['concat', ['get', '種名'], '\n', ['get', '状態']],
-            ],
+            'text-field': ['to-string', ['concat', ['get', '種名'], '\n', ['get', '状態']]],
         },
         paint: {
             'text-halo-color': '#FFFFFF',
@@ -2449,10 +2167,7 @@ map.on('load', () => {
             'icon-size': 0.05,
             'text-justify': 'left',
             'text-anchor': 'bottom-left',
-            'text-field': [
-                'to-string',
-                ['concat', ['get', '種名'], '\n', ['get', '状態']],
-            ],
+            'text-field': ['to-string', ['concat', ['get', '種名'], '\n', ['get', '状態']]],
         },
         paint: {
             'text-halo-color': '#FFFFFF',
@@ -2473,24 +2188,8 @@ map.on('load', () => {
         paint: {
             'circle-stroke-width': 2,
             'circle-stroke-color': '#FFFFFF',
-            'circle-color': [
-                'interpolate',
-                ['linear'],
-                ['get', '樹高m'],
-                4.1,
-                'hsl(52, 93%, 85%)',
-                18.7,
-                'hsl(0, 79%, 57%)',
-            ],
-            'circle-radius': [
-                'interpolate',
-                ['linear'],
-                ['get', '胸高直径cm'],
-                7,
-                5,
-                42.5,
-                10,
-            ],
+            'circle-color': ['interpolate', ['linear'], ['get', '樹高m'], 4.1, 'hsl(52, 93%, 85%)', 18.7, 'hsl(0, 79%, 57%)'],
+            'circle-radius': ['interpolate', ['linear'], ['get', '胸高直径cm'], 7, 5, 42.5, 10],
             // "circle-opacity" :0
         },
     });
@@ -2509,16 +2208,7 @@ map.on('load', () => {
             'text-radial-offset': 1,
             'text-justify': 'left',
             'text-anchor': 'bottom-left',
-            'text-field': [
-                'to-string',
-                [
-                    'concat',
-                    ['get', '樹種'],
-                    '\nDBH：',
-                    ['get', '胸高直径cm'],
-                    'cm',
-                ],
-            ],
+            'text-field': ['to-string', ['concat', ['get', '樹種'], '\nDBH：', ['get', '胸高直径cm'], 'cm']],
         },
         paint: {
             'text-halo-color': '#FFFFFF',
@@ -2543,10 +2233,7 @@ map.on('load', () => {
             'icon-image': 'caution',
             'text-justify': 'left',
             'text-anchor': 'bottom-left',
-            'text-field': [
-                'to-string',
-                ['concat', ['get', '樹種'], '\n', ['get', '状態']],
-            ],
+            'text-field': ['to-string', ['concat', ['get', '樹種'], '\n', ['get', '状態']]],
         },
         paint: {
             'text-halo-color': '#FFFFFF',
@@ -2660,42 +2347,37 @@ map.on('load', () => {
     });
 
     //アカデミーマップアイコン
-    map.loadImage(
-        'https://raw.githubusercontent.com/ensyurinGIS/map/main/sozai/mapicon.png',
-        (error, image) => {
-            if (error) throw error;
-            map.addImage('mapicon', image);
+    map.loadImage('https://raw.githubusercontent.com/ensyurinGIS/map/main/sozai/mapicon.png', (error, image) => {
+        if (error) throw error;
+        map.addImage('mapicon', image);
 
-            map.addSource('mapicon', {
-                type: 'geojson',
-                data: {
-                    type: 'FeatureCollection',
-                    features: [
-                        {
-                            type: 'Feature',
-                            geometry: {
-                                type: 'Point',
-                                coordinates: [
-                                    136.91826224059088, 35.555001266741186,
-                                ],
-                            },
+        map.addSource('mapicon', {
+            type: 'geojson',
+            data: {
+                type: 'FeatureCollection',
+                features: [
+                    {
+                        type: 'Feature',
+                        geometry: {
+                            type: 'Point',
+                            coordinates: [136.91826224059088, 35.555001266741186],
                         },
-                    ],
-                },
-            });
+                    },
+                ],
+            },
+        });
 
-            map.addLayer({
-                id: 'mapicon',
-                type: 'symbol',
-                source: 'mapicon',
-                layout: {
-                    'icon-image': 'mapicon',
-                    'icon-size': 0.25,
-                },
-            });
-            map.setLayerZoomRange('mapicon', 0, 11);
-        },
-    );
+        map.addLayer({
+            id: 'mapicon',
+            type: 'symbol',
+            source: 'mapicon',
+            layout: {
+                'icon-image': 'mapicon',
+                'icon-size': 0.25,
+            },
+        });
+        map.setLayerZoomRange('mapicon', 0, 11);
+    });
 });
 
 const toggleableLayerIds = [
