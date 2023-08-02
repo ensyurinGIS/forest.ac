@@ -170,7 +170,7 @@ map.on('load', () => {
     //傾斜区分図(岐阜県森林研究所)
     map.addSource('keiyakubun_Base', {
         type: 'raster',
-        tiles: ['https://tiles.arcgis.com/tiles/jJQWqgqiNhLLjkin/arcgis/rest/services/Gifu_2021Slpoe/MapServer/tile/{z}/{y}/{x}'],
+        tiles: ['https://tiles.arcgis.com/tiles/jJQWqgqiNhLLjkin/arcgis/rest/services/Gifu_2021Slpoe_2022_07_25_15_54/MapServer/tile/{z}/{y}/{x}'],
         tileSize: 256,
         attribution: "<a href='https://www.forest.rd.pref.gifu.lg.jp/shiyou/CSrittaizu.html' target='_blank'>岐阜県森林研究所</a>",
     });
@@ -390,7 +390,7 @@ map.on('load', () => {
     //傾斜区分図(岐阜県森林研究所)R
     map.addSource('keiyakubun_Raster', {
         type: 'raster',
-        tiles: ['https://tiles.arcgis.com/tiles/jJQWqgqiNhLLjkin/arcgis/rest/services/Gifu_2021Slpoe/MapServer/tile/{z}/{y}/{x}'],
+        tiles: ['https://tiles.arcgis.com/tiles/jJQWqgqiNhLLjkin/arcgis/rest/services/Gifu_2021Slpoe_2022_07_25_15_54/MapServer/tile/{z}/{y}/{x}'],
         tileSize: 256,
         attribution: "<a href='https://www.forest.rd.pref.gifu.lg.jp/shiyou/CSrittaizu.html' target='_blank'>岐阜県森林研究所</a>",
     });
