@@ -48,7 +48,7 @@ body {
     fill: transparent;
     stroke: #ffffff;
     stroke-width: 5px;
-    animation: svg 5s ease-in both;
+    animation: svg 3s ease-in both;
 }
 @keyframes svg {
     0% {
