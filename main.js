@@ -544,7 +544,7 @@ map.on('load', () => {
     //国有林
     map.addSource('kozyousan', {
         type: 'geojson',
-        data: 'https://raw.githubusercontent.com/ensyurinGIS/map/main/geojson/kozyousan.geojson',
+        data: 'https://raw.githubusercontent.com/ensyurinGIS/forest.ac/main/geojson/kozyousan.geojson',
     });
 
     //林班合体
@@ -676,55 +676,55 @@ map.on('load', () => {
     //自力建設＆アカデミー施設
     map.addSource('TATEMONO', {
         type: 'geojson',
-        data: 'https://raw.githubusercontent.com/ensyurinGIS/map/main/geojson/TATEMONO.geojson',
+        data: 'https://raw.githubusercontent.com/ensyurinGIS/forest.ac/main/geojson/TATEMONO.geojson',
     });
 
     //アカデミー施設名
     map.addSource('SISETU_NAME', {
         type: 'geojson',
-        data: 'https://raw.githubusercontent.com/ensyurinGIS/map/main/geojson/SISETU_NAME.geojson',
+        data: 'https://raw.githubusercontent.com/ensyurinGIS/forest.ac/main/geojson/SISETU_NAME.geojson',
     });
 
     //美濃市指定避難所
     map.addSource('MINOSI-hinan', {
         type: 'geojson',
-        data: 'https://raw.githubusercontent.com/ensyurinGIS/map/main/geojson/MINOSI-hinan.geojson',
+        data: 'https://raw.githubusercontent.com/ensyurinGIS/forest.ac/main/geojson/MINOSI-hinan.geojson',
     });
 
     //美濃市指定緊急避難所
     map.addSource('MINOSI-kinkyuhinan.geojson', {
         type: 'geojson',
-        data: 'https://raw.githubusercontent.com/ensyurinGIS/map/main/geojson/MINOSI-kinkyuhinan.geojson',
+        data: 'https://raw.githubusercontent.com/ensyurinGIS/forest.ac/main/geojson/MINOSI-kinkyuhinan.geojson',
     });
 
     //フェノロジー2020
     map.addSource('fenorozi-2020', {
         type: 'geojson',
-        data: 'https://raw.githubusercontent.com/ensyurinGIS/map/main/geojson/fenorozi-2020.geojson',
+        data: 'https://raw.githubusercontent.com/ensyurinGIS/forest.ac/main/geojson/fenorozi-2020.geojson',
     });
 
     //鳥獣保護区等(H30)
     map.addSource('GIFU-tyouzyuhogokuH30', {
         type: 'geojson',
-        data: 'https://raw.githubusercontent.com/ensyurinGIS/map/main/geojson/GIFU-tyouzyuhogokuH30.geojson',
+        data: 'https://raw.githubusercontent.com/ensyurinGIS/forest.ac/main/geojson/GIFU-tyouzyuhogokuH30.geojson',
     });
 
     //岐阜県表層地質
     map.addSource('GIFU-201tisitu', {
         type: 'geojson',
-        data: 'https://raw.githubusercontent.com/ensyurinGIS/map/main/geojson/GIFU-201tisitu.geojson',
+        data: 'https://raw.githubusercontent.com/ensyurinGIS/forest.ac/main/geojson/GIFU-201tisitu.geojson',
     });
 
     //岐阜県20万分の1土壌分類
     map.addSource('GIFU-201dozyo', {
         type: 'geojson',
-        data: 'https://raw.githubusercontent.com/ensyurinGIS/map/main/geojson/GIFU-201dozyo.geojson',
+        data: 'https://raw.githubusercontent.com/ensyurinGIS/forest.ac/main/geojson/GIFU-201dozyo.geojson',
     });
 
     //平面図-自力建設
     map.addSource('ZIRIKI-CAD', {
         type: 'geojson',
-        data: 'https://raw.githubusercontent.com/ensyurinGIS/map/main/geojson/ZIRIKI-CAD.geojson',
+        data: 'https://raw.githubusercontent.com/ensyurinGIS/forest.ac/main/geojson/ZIRIKI-CAD.geojson',
     });
 
     //施設案内塔
@@ -736,7 +736,7 @@ map.on('load', () => {
     //翔楓祭2021企画
     map.addSource('syohusai2021', {
         type: 'geojson',
-        data: 'https://raw.githubusercontent.com/ensyurinGIS/map/main/geojson/syohusai2021.geojson',
+        data: 'https://raw.githubusercontent.com/ensyurinGIS/forest.ac/main/geojson/syohusai2021.geojson',
     });
 
     //ベースマップメニュー作成
@@ -1193,14 +1193,14 @@ map.on('load', () => {
     });
 
     map.addLayer({
-        id: '行政区画',
-        type: 'line',
-        source: 'mapbox',
+        'id': '行政区画',
+        'type': 'line',
+        'source': 'mapbox',
         'source-layer': 'admin',
-        layout: {
+        'layout': {
             visibility: 'none',
         },
-        paint: {
+        'paint': {
             'line-opacity': 1,
             'line-width': ['interpolate', ['linear'], ['zoom'], 2, 0.1, 22, 9],
             'line-color': '#02b6a1',
@@ -1209,16 +1209,16 @@ map.on('load', () => {
     });
 
     map.addLayer({
-        id: '行政区画-ラベル',
-        type: 'symbol',
-        source: 'mapbox',
+        'id': '行政区画-ラベル',
+        'type': 'symbol',
+        'source': 'mapbox',
         'source-layer': 'place_label',
-        layout: {
-            visibility: 'none',
+        'layout': {
+            'visibility': 'none',
             'text-field': ['to-string', ['get', 'name']],
             'text-size': ['case', ['match', ['get', 'type'], ['city'], true, false], 17, 13],
         },
-        paint: {
+        'paint': {
             'text-halo-color': '#ffffff',
             'text-halo-width': 3,
             'text-opacity': 1,
@@ -1255,15 +1255,15 @@ map.on('load', () => {
     });
 
     map.addLayer({
-        id: '演習林-スギ林',
-        type: 'fill',
-        source: 'ENSYURIN_rinhanzu',
+        'id': '演習林-スギ林',
+        'type': 'fill',
+        'source': 'ENSYURIN_rinhanzu',
         'source-layer': 'ENSYURIN_rinhanzu',
-        filter: ['all', ['match', ['get', '樹種'], ['スギ'], true, false]],
-        layout: {
+        'filter': ['all', ['match', ['get', '樹種'], ['スギ'], true, false]],
+        'layout': {
             visibility: 'visible',
         },
-        paint: {
+        'paint': {
             'fill-opacity': 0.4,
             'fill-color': '#399210',
             'fill-outline-color': '#000000',
@@ -1271,15 +1271,15 @@ map.on('load', () => {
     });
 
     map.addLayer({
-        id: '演習林-ヒノキ林',
-        type: 'fill',
-        source: 'ENSYURIN_rinhanzu',
+        'id': '演習林-ヒノキ林',
+        'type': 'fill',
+        'source': 'ENSYURIN_rinhanzu',
         'source-layer': 'ENSYURIN_rinhanzu',
-        filter: ['all', ['match', ['get', '樹種'], ['ヒノキ'], true, false]],
-        layout: {
+        'filter': ['all', ['match', ['get', '樹種'], ['ヒノキ'], true, false]],
+        'layout': {
             visibility: 'visible',
         },
-        paint: {
+        'paint': {
             'fill-opacity': 0.4,
             'fill-color': '#4ADDA5',
             'fill-outline-color': '#000000',
@@ -1287,15 +1287,15 @@ map.on('load', () => {
     });
 
     map.addLayer({
-        id: '演習林-アカマツ林',
-        type: 'fill',
-        source: 'ENSYURIN_rinhanzu',
+        'id': '演習林-アカマツ林',
+        'type': 'fill',
+        'source': 'ENSYURIN_rinhanzu',
         'source-layer': 'ENSYURIN_rinhanzu',
-        filter: ['all', ['match', ['get', '樹種'], ['アカマツ'], true, false]],
-        layout: {
+        'filter': ['all', ['match', ['get', '樹種'], ['アカマツ'], true, false]],
+        'layout': {
             visibility: 'visible',
         },
-        paint: {
+        'paint': {
             'fill-opacity': 0.4,
             'fill-color': '#DD2B2B',
             'fill-outline-color': '#000000',
@@ -1303,15 +1303,15 @@ map.on('load', () => {
     });
 
     map.addLayer({
-        id: '演習林-スラッシュマツ林',
-        type: 'fill',
-        source: 'ENSYURIN_rinhanzu',
+        'id': '演習林-スラッシュマツ林',
+        'type': 'fill',
+        'source': 'ENSYURIN_rinhanzu',
         'source-layer': 'ENSYURIN_rinhanzu',
-        filter: ['all', ['match', ['get', '樹種'], ['スラッシュマツ'], true, false]],
-        layout: {
+        'filter': ['all', ['match', ['get', '樹種'], ['スラッシュマツ'], true, false]],
+        'layout': {
             visibility: 'visible',
         },
-        paint: {
+        'paint': {
             'fill-opacity': 0.4,
             'fill-color': '#B720BF',
             'fill-outline-color': '#000000',
@@ -1319,15 +1319,15 @@ map.on('load', () => {
     });
 
     map.addLayer({
-        id: '演習林-広葉樹林',
-        type: 'fill',
-        source: 'ENSYURIN_rinhanzu',
+        'id': '演習林-広葉樹林',
+        'type': 'fill',
+        'source': 'ENSYURIN_rinhanzu',
         'source-layer': 'ENSYURIN_rinhanzu',
-        filter: ['all', ['match', ['get', '樹種'], ['広葉樹'], true, false]],
-        layout: {
+        'filter': ['all', ['match', ['get', '樹種'], ['広葉樹'], true, false]],
+        'layout': {
             visibility: 'visible',
         },
-        paint: {
+        'paint': {
             'fill-opacity': 0.4,
             'fill-color': '#EBBC22',
             'fill-outline-color': '#000000',
@@ -1335,15 +1335,15 @@ map.on('load', () => {
     });
 
     map.addLayer({
-        id: '演習林-草地',
-        type: 'fill',
-        source: 'ENSYURIN_rinhanzu',
+        'id': '演習林-草地',
+        'type': 'fill',
+        'source': 'ENSYURIN_rinhanzu',
         'source-layer': 'ENSYURIN_rinhanzu',
-        filter: ['all', ['match', ['get', '樹種'], ['草地'], true, false]],
-        layout: {
+        'filter': ['all', ['match', ['get', '樹種'], ['草地'], true, false]],
+        'layout': {
             visibility: 'visible',
         },
-        paint: {
+        'paint': {
             'fill-opacity': 0.4,
             'fill-color': '#2351E5',
             'fill-outline-color': '#000000',
@@ -1351,15 +1351,15 @@ map.on('load', () => {
     });
 
     map.addLayer({
-        id: '演習林-その他岩石',
-        type: 'fill',
-        source: 'ENSYURIN_rinhanzu',
+        'id': '演習林-その他岩石',
+        'type': 'fill',
+        'source': 'ENSYURIN_rinhanzu',
         'source-layer': 'ENSYURIN_rinhanzu',
-        filter: ['all', ['match', ['get', '樹種'], ['その他岩石'], true, false]],
-        layout: {
+        'filter': ['all', ['match', ['get', '樹種'], ['その他岩石'], true, false]],
+        'layout': {
             visibility: 'visible',
         },
-        paint: {
+        'paint': {
             'fill-opacity': 0.4,
             'fill-color': '#D98F34',
             'fill-outline-color': '#000000',
@@ -1367,14 +1367,14 @@ map.on('load', () => {
     });
 
     map.addLayer({
-        id: '演習林-小林班境界線',
-        type: 'line',
-        source: 'ENSYURIN_rinhanzu',
+        'id': '演習林-小林班境界線',
+        'type': 'line',
+        'source': 'ENSYURIN_rinhanzu',
         'source-layer': 'ENSYURIN_rinhanzu',
-        layout: {
+        'layout': {
             visibility: 'visible',
         },
-        paint: {
+        'paint': {
             'line-color': '#000000',
             'line-width': 1.5,
             'line-opacity': 1,
@@ -1382,14 +1382,14 @@ map.on('load', () => {
     });
 
     map.addLayer({
-        id: '演習林-林班境界線',
-        type: 'line',
-        source: 'ENSYURIN_3rinhan',
+        'id': '演習林-林班境界線',
+        'type': 'line',
+        'source': 'ENSYURIN_3rinhan',
         'source-layer': 'ENSYURIN_3rinhan',
-        layout: {
+        'layout': {
             visibility: 'visible',
         },
-        paint: {
+        'paint': {
             'line-color': '#000000',
             'line-opacity': 1,
             'line-width': 2,
@@ -1397,14 +1397,14 @@ map.on('load', () => {
     });
 
     map.addLayer({
-        id: '未来の森づくり予定地',
-        type: 'fill',
-        source: 'ENSYURIN_mirainomori',
+        'id': '未来の森づくり予定地',
+        'type': 'fill',
+        'source': 'ENSYURIN_mirainomori',
         'source-layer': 'ENSYURIN_mirainomori',
-        layout: {
+        'layout': {
             visibility: 'none',
         },
-        paint: {
+        'paint': {
             'fill-color': '#ffff00',
             'fill-opacity': 1,
         },
@@ -1426,14 +1426,14 @@ map.on('load', () => {
     });
 
     map.addLayer({
-        id: '川',
-        type: 'line',
-        source: 'KAWA',
+        'id': '川',
+        'type': 'line',
+        'source': 'KAWA',
         'source-layer': 'KAWA',
-        layout: {
+        'layout': {
             visibility: 'visible',
         },
-        paint: {
+        'paint': {
             'line-opacity': 0.8,
             'line-width': 5,
             'line-color': '#0f7acc',
@@ -1441,15 +1441,15 @@ map.on('load', () => {
     });
 
     map.addLayer({
-        id: '道',
-        type: 'line',
-        source: 'ENSYURIN_MITI',
+        'id': '道',
+        'type': 'line',
+        'source': 'ENSYURIN_MITI',
         'source-layer': 'ENSYURIN_MITI',
-        layout: {
-            visibility: 'visible',
+        'layout': {
+            'visibility': 'visible',
             'line-join': 'bevel',
         },
-        paint: {
+        'paint': {
             'line-opacity': 0.8,
             'line-color': '#8e8e7b',
             'line-width': ['match', ['get', '種類'], ['林道'], 10, 5],
@@ -1457,12 +1457,12 @@ map.on('load', () => {
     });
 
     map.addLayer({
-        id: '演習林-林分ラベル',
-        source: 'ENSYURIN_rinhanzu',
+        'id': '演習林-林分ラベル',
+        'source': 'ENSYURIN_rinhanzu',
         'source-layer': 'ENSYURIN_rinhanzu',
-        type: 'symbol',
-        layout: {
-            visibility: 'visible',
+        'type': 'symbol',
+        'layout': {
+            'visibility': 'visible',
             'text-field': [
                 'match',
                 ['get', '樹種'],
@@ -1480,7 +1480,7 @@ map.on('load', () => {
             // "text-radial-offset": 0.5,
             // "text-justify": "auto",
         },
-        paint: {
+        'paint': {
             'text-color': '#000000',
             'text-halo-color': '#e0e0e0',
             'text-halo-width': 2,
@@ -1493,7 +1493,7 @@ map.on('load', () => {
         source: 'kozyousan',
         type: 'symbol',
         layout: {
-            visibility: 'none',
+            'visibility': 'none',
             'text-field': [
                 'case',
                 ['match', ['get', '国有林_樹種１'], ['他Ｌ'], true, false],
@@ -1517,14 +1517,14 @@ map.on('load', () => {
     });
 
     map.addLayer({
-        id: '駐車場',
-        type: 'fill',
-        source: 'tyusyazyo',
+        'id': '駐車場',
+        'type': 'fill',
+        'source': 'tyusyazyo',
         'source-layer': 'tyusyazyo',
-        layout: {
+        'layout': {
             visibility: 'none',
         },
-        paint: {
+        'paint': {
             'fill-color': '#4a8fe3',
             'fill-opacity': 0.6,
             'fill-outline-color': '#000000',
@@ -1532,14 +1532,14 @@ map.on('load', () => {
     });
 
     map.addLayer({
-        id: '岐阜県森林研究所-試験地',
-        type: 'fill',
-        source: 'ENSYURIN_sikenti',
+        'id': '岐阜県森林研究所-試験地',
+        'type': 'fill',
+        'source': 'ENSYURIN_sikenti',
         'source-layer': 'ENSYURIN_sikenti',
-        layout: {
+        'layout': {
             visibility: 'none',
         },
-        paint: {
+        'paint': {
             'fill-opacity': 0.8,
             'fill-color': '#26BBF2',
             'fill-outline-color': '#000000',
@@ -1547,12 +1547,12 @@ map.on('load', () => {
     });
 
     map.addLayer({
-        id: '岐阜県森林研究所-試験地-ラベル',
-        source: 'ENSYURIN_sikenti',
+        'id': '岐阜県森林研究所-試験地-ラベル',
+        'source': 'ENSYURIN_sikenti',
         'source-layer': 'ENSYURIN_sikenti',
-        type: 'symbol',
-        layout: {
-            visibility: 'none',
+        'type': 'symbol',
+        'layout': {
+            'visibility': 'none',
             'text-field': [
                 'match',
                 ['get', '活用期間'],
@@ -1565,7 +1565,7 @@ map.on('load', () => {
             'text-justify': 'auto',
             'text-size': 14,
         },
-        paint: {
+        'paint': {
             'text-color': '#000000',
             'text-halo-color': '#ffffff',
             'text-opacity': 1,
@@ -1594,7 +1594,7 @@ map.on('load', () => {
         filter: ['all', ['match', ['geometry-type'], ['Polygon'], true, false]],
         type: 'symbol',
         layout: {
-            visibility: 'none',
+            'visibility': 'none',
             'text-field': ['to-string', ['get', '属性2']],
             'text-variable-anchor': ['top', 'bottom', 'left', 'right'],
             'text-radial-offset': 0.5,
@@ -1613,7 +1613,7 @@ map.on('load', () => {
         source: 'GIFU-201dozyo',
         type: 'symbol',
         layout: {
-            visibility: 'none',
+            'visibility': 'none',
             'text-field': ['to-string', ['get', '属性2']],
             'text-variable-anchor': ['top', 'bottom', 'left', 'right'],
             'text-radial-offset': 0.5,
@@ -1632,7 +1632,7 @@ map.on('load', () => {
         source: 'GIFU-tyouzyuhogokuH30',
         type: 'symbol',
         layout: {
-            visibility: 'none',
+            'visibility': 'none',
             'text-field': ['to-string', ['get', '種類']],
             'text-variable-anchor': ['top', 'bottom', 'left', 'right'],
             'text-radial-offset': 0.5,
@@ -1652,7 +1652,7 @@ map.on('load', () => {
         type: 'symbol',
         filter: ['all', ['match', ['get', 'カテゴリ'], ['自力建設'], true, false]],
         layout: {
-            visibility: 'visible',
+            'visibility': 'visible',
             'text-field': ['to-string', ['get', 'name']],
             'text-size': 14,
             'text-radial-offset': 0.5,
@@ -1674,7 +1674,7 @@ map.on('load', () => {
         type: 'symbol',
         filter: ['all', ['match', ['get', 'カテゴリ'], ['建物', 'その他'], true, false]],
         layout: {
-            visibility: 'visible',
+            'visibility': 'visible',
             'text-field': ['to-string', ['get', 'name']],
             'text-size': 14,
             'text-variable-anchor': ['top', 'bottom', 'left', 'right'],
@@ -1699,16 +1699,16 @@ map.on('load', () => {
     });
 
     map.addLayer({
-        id: '等高線',
-        type: 'line',
-        source: 'japan-gsi-contour-mts',
+        'id': '等高線',
+        'type': 'line',
+        'source': 'japan-gsi-contour-mts',
         'source-layer': 'japan-gsi-contour-mts',
-        layout: {
-            visibility: 'none',
+        'layout': {
+            'visibility': 'none',
             'line-join': 'round',
             'line-cap': 'round',
         },
-        paint: {
+        'paint': {
             'line-color': '#05CB63',
             'line-width': 1,
             'line-opacity': 1,
@@ -1716,18 +1716,18 @@ map.on('load', () => {
     });
 
     map.addLayer({
-        id: '等高線-標高ラベル',
-        source: 'japan-gsi-contour-mts',
+        'id': '等高線-標高ラベル',
+        'source': 'japan-gsi-contour-mts',
         'source-layer': 'japan-gsi-contour-mts',
-        type: 'symbol',
-        layout: {
-            visibility: 'none',
+        'type': 'symbol',
+        'layout': {
+            'visibility': 'none',
             'text-field': ['to-string', ['get', 'ele']],
             'text-size': 12,
             'symbol-placement': 'line',
             'symbol-spacing': 200,
         },
-        paint: {
+        'paint': {
             'text-color': '#000000',
             'text-halo-color': '#FFFFFF',
             'text-opacity': 1,
@@ -1736,12 +1736,12 @@ map.on('load', () => {
     });
 
     map.addLayer({
-        id: '標高点',
-        source: 'japan-gsi-elevpt-mts',
+        'id': '標高点',
+        'source': 'japan-gsi-elevpt-mts',
         'source-layer': 'japan-gsi-elevpt-mts',
-        type: 'symbol',
-        layout: {
-            visibility: 'none',
+        'type': 'symbol',
+        'layout': {
+            'visibility': 'none',
             'text-field': ['concat', ['to-string', ['get', 'ele']], 'm'],
             'text-offset': [0, -1],
             'text-variable-anchor': ['top', 'bottom', 'left', 'right'],
@@ -1749,7 +1749,7 @@ map.on('load', () => {
             'text-justify': 'auto',
             'icon-image': 'mountain',
         },
-        paint: {
+        'paint': {
             'text-halo-color': '#000000',
             'text-halo-width': 1,
             'text-opacity': 1,
@@ -1758,12 +1758,12 @@ map.on('load', () => {
     });
 
     map.addLayer({
-        id: 'その他地点',
-        source: 'TITEN',
+        'id': 'その他地点',
+        'source': 'TITEN',
         'source-layer': 'TITEN',
-        type: 'symbol',
-        layout: {
-            visibility: 'visible',
+        'type': 'symbol',
+        'layout': {
+            'visibility': 'visible',
             'text-field': ['to-string', ['get', 'name']],
             'text-size': 14,
             'text-offset': [0, -1],
@@ -1800,7 +1800,7 @@ map.on('load', () => {
             ],
             'icon-size': ['case', ['match', ['get', '種類'], ['鉄塔'], true, false], 0.05, 1],
         },
-        paint: {
+        'paint': {
             'text-halo-color': '#000000',
             'text-halo-width': 2,
             'text-opacity': 1,
@@ -1809,12 +1809,12 @@ map.on('load', () => {
     });
 
     map.addLayer({
-        id: 'サインポール',
-        source: 'ENSYURIN_pole',
+        'id': 'サインポール',
+        'source': 'ENSYURIN_pole',
         'source-layer': 'ENSYURIN_pole',
-        type: 'symbol',
-        layout: {
-            visibility: 'none',
+        'type': 'symbol',
+        'layout': {
+            'visibility': 'none',
             'text-field': ['to-string', ['get', '名前']],
             'text-offset': [0, -1],
             'text-variable-anchor': ['top', 'bottom', 'left', 'right'],
@@ -1822,7 +1822,7 @@ map.on('load', () => {
             'text-justify': 'auto',
             'icon-image': 'circle',
         },
-        paint: {
+        'paint': {
             'text-halo-color': '#000000',
             'text-halo-width': 1,
             'text-opacity': 1,
@@ -1845,7 +1845,7 @@ map.on('load', () => {
         source: 'fenorozi-2020',
         filter: ['all', ['match', ['get', '分類群'], ['植物'], true, false]],
         layout: {
-            visibility: 'none',
+            'visibility': 'none',
             'text-variable-anchor': ['top', 'bottom', 'left', 'right'],
             'text-radial-offset': 0.5,
             'text-justify': 'auto',
@@ -1871,7 +1871,7 @@ map.on('load', () => {
         source: 'fenorozi-2020',
         filter: ['all', ['match', ['get', '分類群'], ['昆虫'], true, false]],
         layout: {
-            visibility: 'none',
+            'visibility': 'none',
             'text-variable-anchor': ['top', 'bottom', 'left', 'right'],
             'text-radial-offset': 0.5,
             'text-justify': 'auto',
@@ -1897,7 +1897,7 @@ map.on('load', () => {
         source: 'fenorozi-2020',
         filter: ['all', ['match', ['get', '分類群'], ['菌類'], true, false]],
         layout: {
-            visibility: 'none',
+            'visibility': 'none',
             'text-variable-anchor': ['top', 'bottom', 'left', 'right'],
             'text-radial-offset': 0.5,
             'text-justify': 'auto',
@@ -1923,7 +1923,7 @@ map.on('load', () => {
         source: 'fenorozi-2020',
         filter: ['all', ['match', ['get', '分類群'], ['鳥類'], true, false]],
         layout: {
-            visibility: 'none',
+            'visibility': 'none',
             'text-variable-anchor': ['top', 'bottom', 'left', 'right'],
             'text-radial-offset': 0.5,
             'text-justify': 'auto',
@@ -1949,7 +1949,7 @@ map.on('load', () => {
         source: 'fenorozi-2020',
         filter: ['all', ['match', ['get', '分類群'], ['哺乳類'], true, false]],
         layout: {
-            visibility: 'none',
+            'visibility': 'none',
             'text-variable-anchor': ['top', 'bottom', 'left', 'right'],
             'text-radial-offset': 0.5,
             'text-justify': 'auto',
@@ -1975,7 +1975,7 @@ map.on('load', () => {
         source: 'fenorozi-2020',
         filter: ['all', ['match', ['get', '分類群'], ['爬虫類'], true, false]],
         layout: {
-            visibility: 'none',
+            'visibility': 'none',
             'text-variable-anchor': ['top', 'bottom', 'left', 'right'],
             'text-radial-offset': 0.5,
             'text-justify': 'auto',
@@ -2001,7 +2001,7 @@ map.on('load', () => {
         source: 'fenorozi-2020',
         filter: ['all', ['match', ['get', '分類群'], ['魚類'], true, false]],
         layout: {
-            visibility: 'none',
+            'visibility': 'none',
             'text-variable-anchor': ['top', 'bottom', 'left', 'right'],
             'text-radial-offset': 0.5,
             'text-justify': 'auto',
@@ -2027,7 +2027,7 @@ map.on('load', () => {
         source: 'fenorozi-2020',
         filter: ['all', ['match', ['get', '分類群'], ['両生類'], true, false]],
         layout: {
-            visibility: 'none',
+            'visibility': 'none',
             'text-variable-anchor': ['top', 'bottom', 'left', 'right'],
             'text-radial-offset': 0.5,
             'text-justify': 'auto',
@@ -2053,7 +2053,7 @@ map.on('load', () => {
         source: 'fenorozi-2020',
         filter: ['all', ['match', ['get', '分類群'], ['多足類'], true, false]],
         layout: {
-            visibility: 'none',
+            'visibility': 'none',
             'text-variable-anchor': ['top', 'bottom', 'left', 'right'],
             'text-radial-offset': 0.5,
             'text-justify': 'auto',
@@ -2079,7 +2079,7 @@ map.on('load', () => {
         source: 'fenorozi-2020',
         filter: ['all', ['match', ['get', '分類群'], ['地衣類'], true, false]],
         layout: {
-            visibility: 'none',
+            'visibility': 'none',
             'text-variable-anchor': ['top', 'bottom', 'left', 'right'],
             'text-radial-offset': 0.5,
             'text-justify': 'auto',
@@ -2105,7 +2105,7 @@ map.on('load', () => {
         source: 'fenorozi-2020',
         filter: ['all', ['match', ['get', '分類群'], ['コケ'], true, false]],
         layout: {
-            visibility: 'none',
+            'visibility': 'none',
             'text-variable-anchor': ['top', 'bottom', 'left', 'right'],
             'text-radial-offset': 0.5,
             'text-justify': 'auto',
@@ -2131,7 +2131,7 @@ map.on('load', () => {
         source: 'fenorozi-2020',
         filter: ['all', ['match', ['get', '分類群'], ['シダ植物'], true, false]],
         layout: {
-            visibility: 'none',
+            'visibility': 'none',
             'text-variable-anchor': ['top', 'bottom', 'left', 'right'],
             'text-radial-offset': 0.5,
             'text-justify': 'auto',
@@ -2157,7 +2157,7 @@ map.on('load', () => {
         source: 'fenorozi-2020',
         filter: ['all', ['match', ['get', '分類群'], ['虫こぶ'], true, false]],
         layout: {
-            visibility: 'none',
+            'visibility': 'none',
             'text-variable-anchor': ['top', 'bottom', 'left', 'right'],
             'text-radial-offset': 0.5,
             'text-justify': 'auto',
@@ -2178,14 +2178,14 @@ map.on('load', () => {
     });
 
     map.addLayer({
-        id: '林業専攻-OWL利用研修立木計測データ',
-        type: 'circle',
-        source: 'OWL',
+        'id': '林業専攻-OWL利用研修立木計測データ',
+        'type': 'circle',
+        'source': 'OWL',
         'source-layer': 'OWL',
-        layout: {
+        'layout': {
             visibility: 'none',
         },
-        paint: {
+        'paint': {
             'circle-stroke-width': 2,
             'circle-stroke-color': '#FFFFFF',
             'circle-color': ['interpolate', ['linear'], ['get', '樹高m'], 4.1, 'hsl(52, 93%, 85%)', 18.7, 'hsl(0, 79%, 57%)'],
@@ -2195,12 +2195,12 @@ map.on('load', () => {
     });
 
     map.addLayer({
-        id: '林業専攻-OWL利用研修立木計測データ-ラベル',
-        type: 'symbol',
-        source: 'OWL',
+        'id': '林業専攻-OWL利用研修立木計測データ-ラベル',
+        'type': 'symbol',
+        'source': 'OWL',
         'source-layer': 'OWL',
-        layout: {
-            visibility: 'none',
+        'layout': {
+            'visibility': 'none',
             'text-variable-anchor': ['top', 'bottom', 'left', 'right'],
             'text-radial-offset': 0.5,
             'text-justify': 'auto',
@@ -2210,7 +2210,7 @@ map.on('load', () => {
             'text-anchor': 'bottom-left',
             'text-field': ['to-string', ['concat', ['get', '樹種'], '\nDBH：', ['get', '胸高直径cm'], 'cm']],
         },
-        paint: {
+        'paint': {
             'text-halo-color': '#FFFFFF',
             'text-halo-width': 1,
             'text-opacity': 1,
@@ -2219,12 +2219,12 @@ map.on('load', () => {
     });
 
     map.addLayer({
-        id: 'アカデミー危険木調査結果(H25)',
-        type: 'symbol',
-        source: 'ENSYURIN-kikenbokuH25',
+        'id': 'アカデミー危険木調査結果(H25)',
+        'type': 'symbol',
+        'source': 'ENSYURIN-kikenbokuH25',
         'source-layer': 'ENSYURIN-kikenbokuH25',
-        layout: {
-            visibility: 'none',
+        'layout': {
+            'visibility': 'none',
             'text-variable-anchor': ['top', 'bottom', 'left', 'right'],
             'text-radial-offset': 0.5,
             'text-justify': 'auto',
@@ -2235,7 +2235,7 @@ map.on('load', () => {
             'text-anchor': 'bottom-left',
             'text-field': ['to-string', ['concat', ['get', '樹種'], '\n', ['get', '状態']]],
         },
-        paint: {
+        'paint': {
             'text-halo-color': '#FFFFFF',
             'text-halo-width': 1,
             'text-opacity': 1,
@@ -2248,7 +2248,7 @@ map.on('load', () => {
         source: 'MINOSI-kinkyuhinan.geojson',
         type: 'symbol',
         layout: {
-            visibility: 'none',
+            'visibility': 'none',
             'text-field': ['to-string', ['get', '名称']],
             'text-offset': [0, -1],
             'text-variable-anchor': ['top', 'bottom', 'left', 'right'],
@@ -2270,7 +2270,7 @@ map.on('load', () => {
         source: 'MINOSI-hinan',
         type: 'symbol',
         layout: {
-            visibility: 'none',
+            'visibility': 'none',
             'text-field': ['to-string', ['get', '名称']],
             'text-offset': [0, -1],
             'text-variable-anchor': ['top', 'bottom', 'left', 'right'],
@@ -2302,12 +2302,12 @@ map.on('load', () => {
     });
 
     map.addLayer({
-        id: '施設案内塔',
-        source: 'sisetuannaitou',
+        'id': '施設案内塔',
+        'source': 'sisetuannaitou',
         'source-layer': 'sisetuannaitou',
-        type: 'symbol',
-        layout: {
-            visibility: 'none',
+        'type': 'symbol',
+        'layout': {
+            'visibility': 'none',
             'text-field': ['to-string', ['get', 'name']],
             'text-size': 14,
             'text-variable-anchor': ['top', 'bottom', 'left', 'right'],
@@ -2316,7 +2316,7 @@ map.on('load', () => {
             'icon-image': 'monument',
             'icon-size': 1,
         },
-        paint: {
+        'paint': {
             'text-halo-color': '#ffffff',
             'text-halo-width': 1,
             'text-opacity': 1,
@@ -2329,7 +2329,7 @@ map.on('load', () => {
         source: 'syohusai2021',
         type: 'symbol',
         layout: {
-            visibility: 'none',
+            'visibility': 'none',
             'text-field': ['to-string', ['get', 'name']],
             'text-size': 14,
             'text-variable-anchor': ['top', 'bottom', 'left', 'right'],
@@ -2347,7 +2347,7 @@ map.on('load', () => {
     });
 
     //アカデミーマップアイコン
-    map.loadImage('https://raw.githubusercontent.com/ensyurinGIS/map/main/sozai/mapicon.png', (error, image) => {
+    map.loadImage('https://raw.githubusercontent.com/ensyurinGIS/forest.ac/main/sozai/mapicon.png', (error, image) => {
         if (error) throw error;
         map.addImage('mapicon', image);
 
