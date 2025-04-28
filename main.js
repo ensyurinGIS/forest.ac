@@ -1,48 +1,6 @@
 //ロード画面長さ
-$('#splash').delay(4000).fadeOut(2000);
-$('#splash_logo').delay(6000).fadeOut(2000);
-
-//起動後にアップ
-
-if (matchMedia('only screen and (max-width: 640px)').matches) {
-    window.setTimeout(function () {
-        map.setTerrain({ source: 'mapbox-dem', exaggeration: 0 });
-        map.fitBounds(
-            [
-                [136.91917, 35.54692], // southwestern corner of the bounds
-                [136.926816, 35.555121], // northeastern corner of the bounds
-            ],
-            {
-                padding: 20,
-                pitch: 0,
-                duration: 3000,
-            },
-        );
-    }, 6000);
-} else {
-    //PCの時の処理
-    window.setTimeout(function () {
-        map.setTerrain({ source: 'mapbox-dem', exaggeration: 1 });
-        map.fitBounds(
-            [
-                [136.915292, 35.547079], // southwestern corner of the bounds
-                [136.926577, 35.556588], // northeastern corner of the bounds
-            ],
-            {
-                pitch: 50,
-                bearing: 105,
-                duration: 3000,
-            },
-        );
-
-        new mapboxgl.Popup({
-            focusAfterOpen: false,
-        })
-            .setLngLat([136.92297, 35.551341])
-            .setHTML('<h2 style="text-align:center">アカデミー演習林33ha　</h2>')
-            .addTo(map);
-    }, 6000);
-}
+$('#splash').delay(3000).fadeOut(1000);
+$('#splash_logo').delay(3000).fadeOut(1000);
 
 //★★★アクセストークン★★★
 mapboxgl.accessToken = 'pk.eyJ1IjoiZW5zeXVyaW5naXMiLCJhIjoiY2t6cHBhdHp2MDFlMTJ3bmRsNzY4dTlkbiJ9.BtuWDU9uyDaR5Var2Y6-4A';
